@@ -1,0 +1,70 @@
+[
+    {
+      "id": "http://example.org/normdata/concept/1",
+      "label": "General Concepts",
+      "children": [
+        {
+          "id": "http://example.org/normdata/concept/1.1",
+          "label": "Art and Culture",
+          "children": [
+            {
+              "id": "http://example.org/normdata/concept/1.1.1",
+              "label": "Painting"
+            },
+            {
+              "id": "http://example.org/normdata/concept/1.1.2",
+              "label": "Sculpture"
+            }
+          ]
+        },
+        {
+          "id": "http://example.org/normdata/concept/1.2",
+          "label": "Historical Periods",
+          "children": [
+            {
+              "id": "http://example.org/normdata/concept/1.2.1",
+              "label": "Ancient History"
+            },
+            {
+              "id": "http://example.org/normdata/concept/1.2.2",
+              "label": "Medieval Period"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://example.org/normdata/concept/2",
+      "label": "Locations",
+      "children": [
+        {
+          "id": "http://example.org/normdata/concept/2.1",
+          "label": "Europe",
+          "children": [
+            {
+              "id": "http://example.org/normdata/concept/2.1.1",
+              "label": "Germany"
+            },
+            {
+              "id": "http://example.org/normdata/concept/2.1.2",
+              "label": "France"
+            }
+          ]
+        },
+        {
+          "id": "http://example.org/normdata/concept/2.2",
+          "label": "Asia",
+          "children": [
+            {
+              "id": "http://example.org/normdata/concept/2.2.1",
+              "label": "Japan"
+            },
+            {
+              "id": "http://example.org/normdata/concept/2.2.2",
+              "label": "China"
+            }
+          ]
+        }
+      ]
+    }
+  ]

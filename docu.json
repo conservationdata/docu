@@ -1,0 +1,991 @@
+[
+  {
+    "notation": "B51DAF",
+    "prefLabel": "Objektkennzeichnung",
+    "definition": "Übergeordneter Begriff zur eindeutigen Kennzeichnung des zu behandelnden Objektes sowie Erfassung weiterer indentifizierender Merkmale, die eine zweifelsfreie Zuordnung des Objektes während des gesamten Behandlungsprozesses gewährleistet.",
+    "broader": "top",
+    "Wiederholbar": "Nein",
+    "narrower": [
+      {
+        "notation": "B5DD1A",
+        "prefLabel": "Objektansprache",
+        "altLabel": "Objekttitel",
+        "definition": "Benennung des konkreten Objektes. Kann sich aus einem offiziellen Titel oder aus Objekttyp und beschreibenden Attributen zusammensetzen.\r\n\r\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "F7D3DB",
+        "prefLabel": "Kennzeichnungsnummer",
+        "definition": "Nummer, die das Objekt eindeutig identifiziert. Dies sollte im Idealfall eine Inventarnummer sein, aber auch andere Arten von eindeutigen Identifikationsnummern sind möglich.\r\n\r\nBeispiel: \"O.3649\", \"2025-05-21\" ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text ",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "K343FVC",
+        "prefLabel": "Weitere Objektnummern",
+        "altLabel": "Alternative Nummern",
+        "definition": "Weitere Nummern, die in der Vergangenheit dem Objekt zugeordnet wurden.",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "optional",
+        "Feldwert": "Text ",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "F9GB13",
+        "prefLabel": "Datierung",
+        "definition": "zeitliche Einordnung des Objektes.\r\n\r\nBeispiel: \"Urnenfelderzeit\" , \"15. Jh.\" ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "CD3341",
+        "prefLabel": "Herkunft",
+        "altLabel": "Fundort|kulturelle Verortung|Herstellungsort",
+        "definition": "Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. \r\n\r\nBeispiel: \"Fundort: Italien - Numana - Grab 34\", \"kultureller Kontext: Renaissance\"",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "F2A45F",
+        "prefLabel": "Eingangsdatum",
+        "definition": "Datum, an dem das Objekt in die aktuell zuständige Sammlung aufgenommen wurde. An dieser Stelle ist (noch) nicht das Datum, an dem das Objekt in die Restaurierungseinrichtung eingeliefert wurde gemeint. ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "F3G8D1",
+        "prefLabel": "Ansprechpartner*in",
+        "definition": "Benannte Person, die für Rückfragen in Bezug auf das Objekt und den Umgang mit diesem kontaktiert werden kann. Dies kann bei Privatbesitz der Eigentümer sein oder bei Objekten aus öffentlichen Einrichtungen z.B. der/die zuständige Kurator*in.  ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "optional",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "G76A78",
+        "prefLabel": "Schöpfer*in",
+        "definition": "Angaben zur Person, die das Objekt hergestellt hat - sofern bekannt. \r\n\r\nBeispiel: \"Leonardo da Vinci\" ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "optional",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "GB6DF3",
+        "prefLabel": "Objektbeziehung",
+        "definition": "Sofern das Objekt Teil eines Ensemble, einer definierten Sammlung ist oder anderweitig besondere Beziehungen zu anderen Objekten aufweist, sollten diese erfasst werden. \r\n\r\nBeispiel: \"Teil der Sammlung Becker\" ",
+        "broader": "B51DAF",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      }
+    ]
+  },
+  {
+    "notation": "DA2D73",
+    "prefLabel": "Objektbeschreibung",
+    "definition": "Oberbegriff für Informationen, die die Beschaffenheit des Objektes näher beschreiben",
+    "broader": "top",
+    "Wiederholbar": "Nein",
+    "narrower": [
+      {
+        "notation": "F1BA31",
+        "prefLabel": "Objekttyp",
+        "definition": "grundlegende formale Kategorie, in die das Objekt eingeordnet wird. \r\n\r\nBeispiel: \"Gemälde\" , \"Skulptur\", \"Münze\" ",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "URI",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "BGC9F3",
+        "prefLabel": "Weitere Objekteigenschaften",
+        "definition": "Möglichkeit weitere charakteristische Eigenschaften des Objektes zu beschreiben, die sich nicht eindeutig zum Objekttyp oder einer der anderen definierten Beschreibungselemente zuordnen lassen. \r\n\r\nBeispiel: Farbe, Form, Besonderheit beim Aussehen",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "optional",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "D866AD",
+        "prefLabel": "Objektmaterial",
+        "altLabel": "Objektwerkstoff",
+        "definition": "Angaben zum Material bzw. den Materialien aus dem/aus denen das Objekt besteht. \r\n\r\nIdealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, zum Beispiel ob zur Materialbestimmung eine naturwissenschaftliche Analyse verwendet wurde oder ob sie lediglich auf einer visuellen Begutachtung des Objektes beruht. \r\n\r\nBeispiel: \"Bronze (Ergebnis RFA)\", \"Buntmetall (Ergebnis visuelle Begutachtung) \"",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "URI",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "C4BCF8",
+        "prefLabel": "Herstellungstechnik",
+        "definition": "Angaben zur Technik bzw. zu Techniken, die zur Herstellung des Objektes verwendet wurden. \r\n\r\nIdealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, z.B. die Spuren/Indizien die auf dem Objekt beobachtet wurden. \r\n\r\nBeispiel: \"Geschmiedet (Hammerspuren)\"",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "DBC278",
+        "prefLabel": "aktuelle Maße",
+        "definition": "Angaben zu den räumlichen Dimensionen des Objektes, zum letzten Zeitpunkt der Begutachtung. Die Maße des Objektes können sich im Laufe der Zeit verändern (z.B. durch Beschädigung oder die Zusammensetzung eines zerscherbten Objektes).",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (standartisiertes Längenmaß)",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "GF856C",
+            "prefLabel": "Länge",
+            "broader": "DBC278",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text (standartisiertes Längenmaß)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "WF436G",
+            "prefLabel": "Breite",
+            "broader": "DBC278",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text (standartisiertes Längenmaß)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "QD45G7",
+            "prefLabel": "Tiefe",
+            "broader": "DBC278",
+            "Verpflichtungsgrad": "optional",
+            "Feldwert": "Text (standartisiertes Längenmaß)",
+            "Wiederholbar": "Nein"
+          }
+        ]
+      },
+      {
+        "notation": "C7C3B7",
+        "prefLabel": "aktuelles Gewicht",
+        "definition": "Angaben zum Gewicht des Objekts zum letzten Zeitpunkt der Objektuntersuchung",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "optional",
+        "Feldwert": "Text (standartisiertes Gewichtsmaß)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "FC3322",
+        "prefLabel": "aktueller Standort",
+        "definition": "Angaben zum letzten bekannten Standort des Objekts.",
+        "broader": "DA2D73",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Nein"
+      }
+    ]
+  },
+  {
+    "notation": "F52262",
+    "prefLabel": "Zustandserfassung",
+    "altLabel": "Zustandserhebung",
+    "definition": "Oberbegriff für Informationen, die die systematische Erfassung des Zustands eines Objektes zu einem definierten Zeitpunkt dokumentieren.",
+    "broader": "top",
+    "Wiederholbar": "Ja",
+    "narrower": [
+      {
+        "notation": "A8ABBA",
+        "prefLabel": "Erfassungszeitpunkt",
+        "altLabel": "Zeitpunkt der Erfassung",
+        "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \r\n\r\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
+        "broader": "F52262",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (vor Eingriff, nach Eingriff, zwischen Eingriff, Monitoring)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "CA1BC5",
+        "prefLabel": "Erfassungsdatum",
+        "altLabel": "Datum der Erfassung (Zustandserfassung) ",
+        "definition": "Angabe des Datums, an dem die Erfassung des Zustandes durchgeführt wurde. ",
+        "broader": "F52262",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "CDD6B5",
+        "prefLabel": "Dokumentationsform",
+        "definition": "Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.\r\n\r\nBeispiel: \"Zustandsbericht + Fotos\" ",
+        "broader": "F52262",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja",
+        "narrower": [
+          {
+            "notation": "GDF23F",
+            "prefLabel": "Verweis",
+            "altLabel": "Kennnummer",
+            "definition": "Eindeutiger Hinweis, an welchem Ort die Dokumentation(en) zu finden ist/sind. Dies kann zum Beispiel eine URI oder URL zum entsprechenden Datensatz sein oder bei analogen Daten eine Identifikationsnummer oder Angabe zum Standort der Ablage. ",
+            "broader": "CDD6B5",
+            "Verpflichtungsgrad": "bedingte Pflicht",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein"
+          }
+        ]
+      },
+      {
+        "notation": "AC1786",
+        "prefLabel": "Zustandsbeschreibung",
+        "altLabel": "Diagnose",
+        "definition": "Oberbegriff für beobachtete, gemessene, geprüfte oder bewertete Informationen, die den Zustand des Objektes zum Zeitpunkt der Erfassung näher beschreiben. Insbesondere Veränderungen des Objektes, die im Vergleich zu einem früheren oder ursprünglichen Zustand bzw. vom zuletzt berichteten Zustand festgestellt werden, müssen dokumentiert werden. ",
+        "broader": "F52262",
+        "Verpflichtungsgrad": "Pflicht",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "G79CA9",
+            "prefLabel": "Umgebungsbedingungen",
+            "definition": "Aufzeichnung der Bedingungen, unter denen das Objekt bis zum Zeitpunkt der Zustandserfassung gehalten wurde. Insbesondere sofern Auswirkungen der Umgebung auf das Objekt erkannt werden, sollten diese in der Zustandsbeschreibung gemeinsam mit der vermuteten Ursache festgehalten werden.",
+            "broader": "AC1786",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja"
+          },
+          {
+            "notation": "BC5B57",
+            "prefLabel": "Physischer Objektzustand",
+            "definition": "Beschreibung der physischen Merkmale und Eigenschaften des Objektes wie Vollständigkeit, Stabilität, Festigkeit, Maße, Feuchtigkeitsgehalt, etc. ",
+            "broader": "AC1786",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja"
+          },
+          {
+            "notation": "AA6941",
+            "prefLabel": "Schadensphänomene",
+            "altLabel": "Schadensbild| Beschädigung| Schaden",
+            "definition": "Beschreibung der beobachteten negativen Veränderungen am Objekt im Vergleich zu seinem als ursprünglich angenommenen Zustandes. \r\n\r\nIdealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, indem z.B. die Art der Untersuchung/Feststellung dieser Veränderung dokumentiert wird.",
+            "broader": "AC1786",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja",
+            "narrower": [
+              {
+                "notation": "C2488A",
+                "prefLabel": "Schadensgrad",
+                "altLabel": "Grad des Schadensphänomens",
+                "definition": "Bewertungsskala zur Quantifizierung des Ausmaßes der Beschädigung eines Objektes.\r\n\r\nIdealerweise sollte auch eine kurze Erklärung zur Bewertungsskala erfasst werden, da diese unter Umständen relativ subjektiv ausfallen kann. \r\n\r\nz.B. \"mittel\", \"gering\", \"stark\" ",
+                "broader": "AA6941",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text",
+                "Wiederholbar": "Nein"
+              },
+              {
+                "notation": "D4A13D",
+                "prefLabel": "Schadensfaktor",
+                "altLabel": "Schadensursache",
+                "definition": "Beschreibung der ermittelten oder vermuteten Ursachen für die Beschädigung des Objektes. \r\n\r\nIdealerweise sollte auch die Belastbarkeit dieser Angabe erfasst werden, d.h. in wie weit es sich um eine interpretative/subjektive Aussage handelt.   ",
+                "broader": "AA6941",
+                "Verpflichtungsgrad": "optional",
+                "Feldwert": "Text",
+                "Wiederholbar": "Nein"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "notation": "A4G52F",
+        "prefLabel": "konservatorische Vorgeschichte",
+        "altLabel": "Spuren früherer Konservierungs- /Restaurierunseingriffe",
+        "definition": "Beschreibung von Spuren früherer, nicht dokumentierter konservatorisch-restauratorischer Eingriffe am Objekt sowie der vermuteten Behandlungsmaßnahmen, die diese Spuren verursacht haben könnten.",
+        "broader": "F52262",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      }
+    ]
+  },
+  {
+    "notation": "B3FCA1",
+    "prefLabel": "Untersuchung",
+    "definition": "Oberbegriff für Informationen im Kontext der systematischen Begutachtung und Analyse eines Objekte zur Ermittlung von Materialzusammensetzungen, Objektaufbau, Herstellungstechnik, Erhaltungszuständen und/oder weitere Fragestellungen",
+    "broader": "top",
+    "Verpflichtungsgrad": "bedingte Pflicht",
+    "Wiederholbar": "Ja",
+    "narrower": [
+      {
+        "notation": "G7F25F",
+        "prefLabel": "Zuständige Person (Untersuchung)",
+        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \r\n\r\nFür die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! ",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "G76B7G",
+        "prefLabel": "Durchführende Einrichtung (Untersuchung)",
+        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \r\n\r\nBesonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "A2AG55",
+        "prefLabel": "Untersuchungskennung",
+        "altLabel": "Kennung der Untersuchung",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. Der genaue Aufbau der Kennung kann individuell gestaltet werden. Wichtig ist, dass eindeutig zugeordnet werden kann, auf welche konkrete Untersuchung sich die Angaben beziehen. \r\n\r\nBeispiel: 2025-05-13_RFA_1 oder XY_24601",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "G73958",
+        "prefLabel": "Untersuchungsdatum",
+        "altLabel": "Datum der Untersuchung",
+        "definition": "Datum, an dem die jeweilige Untersuchung durchgeführt wurde.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "CF3C22",
+        "prefLabel": "Untersuchungsanlass",
+        "altLabel": "Grund der Untersuchung| Fragestellung| Untersuchungsgrund",
+        "definition": "Hintergrundinformationen, warum diese Untersuchung durchgeführt wurde. Angabe der Fragestellung, die mit der Untersuchung bearbeitet werden soll.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "F8F594",
+        "prefLabel": "Untersuchungsart",
+        "altLabel": "Art der Untersuchung",
+        "definition": "Möglichkeit der Spezifikation, ob es sich um eine naturwissenschaftliche, technologische, materialtechnische oder sonstige Untersuchung handelt.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "optionale",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "A15F83",
+        "prefLabel": "Lokalisation",
+        "altLabel": "Untersuchungsstelle",
+        "definition": "Angabe, an welcher Stelle auf dem Objekt die Untersuchung durchgeführt wurde. Nur bei Untersuchungen direkt auf dem Originalenobjekt nötig, entfällt bei Untersuchungen von Proben ",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "DAB4B7",
+        "prefLabel": "Untersuchungsverfahren",
+        "altLabel": "Untersuchungsmethode| Untersuchungstechnik| praktische Vorgehensweise",
+        "definition": "Angabe, auf welche Art und Weise die Untersuchung durchgeführt wurde.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "D1CFD5",
+            "prefLabel": "verwendetes Material (Untersuchung)",
+            "definition": "Angaben zum Material, welches für die Untersuchung des Objektes verwendet wurde. Diese Angabe ist besonders dann wichtig, wenn die Materialien Spuren bzw. Rückstände auf dem Objekt hinterlassen haben könnten. ",
+            "broader": "DAB4B7",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja"
+          },
+          {
+            "notation": "D949G6",
+            "prefLabel": "Untersuchungsgerät",
+            "definition": "Angaben, welches Gerät für die Untersuchung verwendet wurde.",
+            "broader": "DAB4B7",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja",
+            "narrower": [
+              {
+                "notation": "D6A11G",
+                "prefLabel": "Geräteeinstellungen (Untersuchungsgerät)",
+                "altLabel": "Metadaten| Parameter",
+                "definition": "Angaben zu den Einstellungen bzw. Metadaten des Gerätes, welches für die Untersuchung verwendet wurde.",
+                "broader": "D949G6",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text",
+                "Wiederholbar": "Nein"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "notation": "BGG5A6",
+        "prefLabel": "Untersuchungsergebnis ",
+        "altLabel": "Befund",
+        "definition": "Angabe, der bei der Untersuchung festgestellten Beobachtungen und Ergebnisse.",
+        "broader": "B3FCA1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      }
+    ]
+  },
+  {
+    "notation": "CD5C3F",
+    "prefLabel": "Probeentnahme",
+    "altLabel": "Beprobung",
+    "definition": "Oberbegriff für Informationen, die die systematische Entnahme von Materialproben aus einem Objekt für Analyse- und Untersuchungszwecke dokumentieren.",
+    "broader": "top",
+    "Verpflichtungsgrad": "bedingte Pflicht",
+    "Wiederholbar": "Ja",
+    "narrower": [
+      {
+        "notation": "C8CG15",
+        "prefLabel": "Zuständige Person (Probeentnahme)",
+        "definition": "Benennung der Person, die die Entnahme der Probe durchgeführt hat bzw. für diese verantwortlich ist. \r\n\r\nFür die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! ",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "F72743",
+        "prefLabel": "Durchführende Einrichtung (Probeentnahme)",
+        "definition": "Benennung der Einrichtung, die die Probenentnahme durchgeführt hat. \r\n\r\nBesonders wenn dies von einer externen Einrichtung durchgeführt wird, sollte die Erfassung verpflichtend angesehen werden. \r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "D3AF3A",
+        "prefLabel": "Datum der Probenentnahme",
+        "altLabel": "Datum der Beprobung",
+        "definition": "Datum, an dem die Probe aus dem Objekt entnommen wurde.",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "CB7747",
+        "prefLabel": "Kennung der Probe",
+        "altLabel": "Name der Probe| Nummer der Probe",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. Der genaue Aufbau der Kennung kann individuell gestaltet werden. Wichtig ist, dass eindeutig zugeordnet werden kann, auf welche konkrete Probe sich die Angaben beziehen. \r\n\r\nBeispiel: Metall-Probe_24601",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "FD2B2B",
+        "prefLabel": "Probenbeschreibung",
+        "definition": "Kurze Definition der wichtigsten Eigenschaften und Beschaffenheit der Probe. Möglichkeit, weitere Hintergrundinformationen zur Probe bzw. dem Befund, aus dem die Probe entstammt, zu erfassen.\r\n\r\nBeispiel: \"Erdreste mit roten Verfärbungen\" , \"Textilfasern von rechter Skelettrippe\"",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "C33D85",
+        "prefLabel": "Anlass der Probenentnahme",
+        "altLabel": "Grund der Beprobung",
+        "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\r\n\r\nBeispiel: Materialbestimmung, Altersdatierung",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "F58F6D",
+        "prefLabel": "Stelle der Probenentnahme",
+        "altLabel": "Lokalisation der Probenentnahme",
+        "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\r\n\r\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "D9A6FA",
+        "prefLabel": "Entnahmemethode",
+        "altLabel": "Beprobungsmethode| Entnahmeverfahren",
+        "definition": "Beschreibung, mit welcher Methode die Probe entnommen wurde. Angaben zur Vorgehensweise und zum eingesetzten Werkzeug.\r\n\r\nBeispiel: Skalpellentnahme, Bohrkernentnahme, Abstrich mit Wattestäbchen",
+        "broader": "CD5C3F",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Nein"
+      }
+    ]
+  },
+  {
+    "notation": "BAA258",
+    "prefLabel": "Konservierungskonzept",
+    "altLabel": "Restaurierungskonzept| Konservierungsplanung| Konservierungs-Restaurierungsplanung",
+    "definition": "Oberbegriff für Informationen, die im Vorfeld des Eingriffs zur Entscheidung und Koordination der durchgeführte(n) Maßnahmen(n) erfasst werden. ",
+    "broader": "top",
+    "Verpflichtungsgrad": "Pflicht",
+    "Wiederholbar": "Ja",
+    "narrower": [
+      {
+        "notation": "C6A532",
+        "prefLabel": "Anlass der Maßnahme",
+        "definition": "Hintergrundinformationen, aus welchem Grund das Objekt konservatorisch-restauratorisch behandelt werden soll. I.d.R. beziehen sich diese Angaben darauf, was im Anschluss mit dem Objekt geschehen soll oder zuvor bereits geschehen ist. \r\n\r\nBeispiel: Ausstellungsvorbereitung, Rückkehr aus Leihverkehr",
+        "broader": "BAA258",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "FGF575",
+        "prefLabel": "konservatorische Zielsetzung",
+        "altLabel": "Konservierungsziel| konservatorische Zielsetzung| Erhaltungsziel",
+        "definition": "Beschreibung der angestrebten Ergebnisse, die mit der durchgeführten Maßnahme erreicht werden sollen.\r\n\r\nBeispiel: Sicherung der Malschichten, Volle Rekonstruktion der ursprünglichen Form ",
+        "broader": "BAA258",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "DA9CGG",
+        "prefLabel": "Durchgeführte Maßnahme",
+        "altLabel": "Konservierung| Restaurierung| Konservierung-Restaurierung| Bestandserhaltung",
+        "definition": "Oberbegriff für die Sammlung an Angaben, die zur konkreten Maßnahme erfasst werden.",
+        "broader": "BAA258",
+        "Wiederholbar": "Ja",
+        "narrower": [
+          {
+            "notation": "GF41DG",
+            "prefLabel": "Zuständige Restaurierungseinrichtung ",
+            "altLabel": "Werkstatt, Labor, Atelier, Restaurierungswerkstatt",
+            "definition": "Benennung der Einrichtung, in der die jeweilige Maßnahme durchgeführt würde. Der Begriff \"Einrichtung\" wurde dabei als generischer Überbegriff verwendet, um individuelle Bezeichnungen wie \"Werkstatt\", \"Atelier\", \"Labor\", etc. unter einem Begriff zu vereinen. Institutionen können den jeweils in ihrem Arbeitsalltag verwendeten Begriff auf diesen Überbegriff mappen, ohne ihre eigene hausinterne Terminologie verändern zu müssen.\r\n\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.\"",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "AF1F5C",
+            "prefLabel": "Maßnahmenkennnummer ",
+            "definition": "Nummer, die die jeweilige Maßnahme eindeutig identifiziert. Wie genau diese Nummer in den jeweiligen Einrichtungen bezeichnet wird, bleibt individuell und wird auf diesen generischen Oberbegriff gemappt.\r\n\r\nBeipspiel: Labornummer, Dokumentationsnummern, Werkblattnummer, etc. ",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Bedingte Pflicht",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "C79561",
+            "prefLabel": "Zuständige Person (Durchgeführte Maßnahme)",
+            "altLabel": "Restaurator*in| Konservator*in",
+            "definition": "Benennung der Person, die die jeweilige Maßnahme durchgeführt hat bzw. für diese verantwortlich ist. \r\n\r\nFür die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. \r\nBei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \"",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "CDD613",
+            "prefLabel": "Beginn der Maßnahme",
+            "definition": "kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme begonnen wurde. ",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text (Datum)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "CDF685",
+            "prefLabel": "Ende der Maßnahme",
+            "definition": "kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme beendet wurde. ",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text (Datum)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "G814D2",
+            "prefLabel": "Zeitaufwand ",
+            "definition": "Summe der tatsächlich am Objekt geleisteten Arbeitsstunden währen der Maßnahme, ohne passive Zeiten wie Trocknungsphasen oder parallele Wartezeiten. ",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "(optional)",
+            "Feldwert": "Text (Stunden)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "A13CD1",
+            "prefLabel": "Eingriff",
+            "altLabel": "Behandlung | Applikationstechnik|Methode| Vorgehensweise",
+            "definition": "Beschreibung der konkreten Vorgehensweise und Techniken mit denen das Objekt zur Erreichung der festgelegten konservatorischen Zielsetzung behandelt wurde.",
+            "broader": "DA9CGG",
+            "Verpflichtungsgrad": "Pflicht",
+            "Feldwert": "Text/URI",
+            "Wiederholbar": "Ja",
+            "narrower": [
+              {
+                "notation": "CGC619",
+                "prefLabel": "Verwendetes Material ",
+                "definition": "Benennung des bzw. der Materialien, die für die jeweilige konservatorische und/oder restauratorische Maßnahme verwendet wurden.",
+                "broader": "A13CD1",
+                "Verpflichtungsgrad": "Pflicht",
+                "Feldwert": "Text/URI",
+                "Wiederholbar": "Ja",
+                "narrower": [
+                  {
+                    "notation": "D865C3",
+                    "prefLabel": "Bezugsquelle",
+                    "altLabel": "Hersteller",
+                    "definition": "Angabe des Herstellers, Lieferanten oder der sonstigen Herkunft des verwendeten Materials zur Rückverfolgbarkeit und Qualitätssicherung. Diese Angaben liefern für spätere erneute Objektuntersuchungen und/oder Maßnahmen Hintergrundinformationen zu den Eigenschaften des Materials.  ",
+                    "broader": "CGC619",
+                    "Verpflichtungsgrad": "optional",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein"
+                  },
+                  {
+                    "notation": "C364G1",
+                    "prefLabel": "Konzentration",
+                    "altLabel": "Mischungsverhältnis",
+                    "definition": "Beschreibung der genauen Konzentration oder Zusammensetzung des Materials zur Sicherstellung der Reproduzierbarkeit und Beurteilung der Langzeitwirkung bzw.-stabilität.",
+                    "broader": "CGC619",
+                    "Verpflichtungsgrad": "optional",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein"
+                  },
+                  {
+                    "notation": "C421BF",
+                    "prefLabel": "Herstellungsdatum",
+                    "definition": "Erfassung des Produktions- oder Abfülldatums industrieller Produkte zur Nachvollziehbarkeit von Rezepturänderungen und Qualitätsschwankungen. Dient der Rückverfolgung von Chargen bei ungewöhnlichen Vorkommnissen und ermöglicht das Einholen relevanter Hintergrundinformationen zur Langzeitstabilität",
+                    "broader": "CGC619",
+                    "Verpflichtungsgrad": "optional",
+                    "Feldwert": "Text (Datum)",
+                    "Wiederholbar": "Nein"
+                  }
+                ]
+              },
+              {
+                "notation": "F87124",
+                "prefLabel": "Werkzeug",
+                "altLabel": "Gerät",
+                "definition": "Benennung des bzw. der Werkzeuge und Geräte, die für die jeweilige konservatorische und/oder restauratorische Maßnahme verwendet wurden. Diese Angabe empfiehlt sich besonders dann, wenn durch die verwendeten Werkzeuge Spuren auf dem Objekt hinterlassen wurden. ",
+                "broader": "A13CD1",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text/URI",
+                "Wiederholbar": "Ja"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "notation": "B7B8B6",
+    "prefLabel": "Sicherheit & Arbeitsschutz",
+    "definition": "Übergeordneter Begriff zur Strukturierung aller Angaben, die dem Schutz der Gesundheit, der Unfallverhütung und der Einhaltung sicherheitsrelevanter Vorschriften bei Konservierungs-Restaurierungsarbeiten oder dem Umgang mit den jeweiligen behandelten Objekten dienen. ",
+    "broader": "top",
+    "Verpflichtungsgrad": "bedingte Pflicht",
+    "Wiederholbar": "Nein",
+    "narrower": [
+      {
+        "notation": "FBFFF5",
+        "prefLabel": "Gefährdungshinweise",
+        "definition": "Hinweise auf potenzielle Gefahrenquellen und Risiken im Zusammenhang mit dem Objekt oder den bei der konservatorisch-restauratorischen Maßnahme (oder früheren Maßnahmen) verwendeten Materialien.\r\n\r\nBeispiel: Schimmelbefall, Schadstoff kontaminiert ",
+        "broader": "B7B8B6",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "BGGCA4",
+        "prefLabel": "Art der Gefährdung",
+        "definition": "Kategorisierung und Beschreibung der konkreten Gefährdungsart, z. B. chemisch, physikalisch oder biologisch",
+        "broader": "B7B8B6",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "BB78D2",
+        "prefLabel": "Getroffene Schutzmaßnahmen",
+        "definition": "Dokumentation der bereits umgesetzten und/oder während der Objektbehandlung einzuhaltenden Schutzmaßnahmen zur Minimierung der Gefährdung. Einschließlich persönlicher Schutzausrüstung (PSA), technischer und organisatorischer Maßnahmen.\r\n\r\nBeispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",
+        "broader": "B7B8B6",
+        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Ja"
+      },
+      {
+        "notation": "CCCC7G",
+        "prefLabel": "Letzte Sicherheitsbewertung",
+        "definition": "Oberbegriff zu Angaben der zuletzt durchgeführten Risikoanalyse und Beurteilung der Arbeitssicherheit",
+        "broader": "B7B8B6",
+        "Verpflichtungsgrad": "optional",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "AFD671",
+            "prefLabel": "Datum der Sicherheitsbewertung",
+            "definition": "Erfassung des Datums, an dem die letzte Sicherheitsbewertung durchgeführt wurde.",
+            "broader": "CCCC7G",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text (Datum)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "ADD53A",
+            "prefLabel": "Einschätzung (Sicherheitsbewertung)",
+            "definition": "Bewertung des aktuellen Sicherheitsstatus und der verbleibenden Risiken basierend auf der letzten Sicherheitsbewertung.",
+            "broader": "CCCC7G",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "notation": "C93638",
+    "prefLabel": "Präventive Konservierung",
+    "definition": "Übergeordneter Begriff zur Erfassung aller Angaben bezüglich vorbeugender Maßnahmen, die ohne direkten Eingriff am Objekt selbst darauf abzielen Schäden am Objekt zu vermindern.",
+    "broader": "top",
+    "Verpflichtungsgrad": "empfohlen",
+    "Wiederholbar": "Nein",
+    "narrower": [
+      {
+        "notation": "GF9C49",
+        "prefLabel": "Allgemeine Umgangsempfehlungen",
+        "definition": "Sammelbegriff zur Strukturierung von Richtlinien und Handlungsanweisungen für den sachgerechten Umgang mit dem behandelten Objekt, die zur langfristigen Erhaltung und Vermeidung von Folgeschäden generell und/oder nach abgeschlossener Konservierungs-Restaurierungsbehandlung zu beachten sind.",
+        "broader": "C93638",
+        "Verpflichtungsgrad": "empfohlen",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "D941BB",
+            "prefLabel": "Präsentationsvorgaben",
+            "definition": "Angaben zu Besonderheiten, die bei der Ausstellung/Präsentation des Objektes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich auf individuell angepasster Stützkonstruktion präsentieren\", \"Ausstellung nur in klimatisierter Vitrine\" ",
+            "broader": "GF9C49",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Ja"
+          },
+          {
+            "notation": "F2244D",
+            "prefLabel": "Verpackungs- und Transportempfehlungen",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Objektverpackung oder des Transportes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich liegend transportieren\", \"Transport nur in klimatisiertem Fahrzeug\"",
+            "broader": "GF9C49",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Ja"
+          },
+          {
+            "notation": "B14C4A",
+            "prefLabel": "Handlingsempfehlungen",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \r\n\r\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
+            "broader": "GF9C49",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Ja"
+          }
+        ]
+      },
+      {
+        "notation": "C3A182",
+        "prefLabel": "Konservatorische Bedingungen",
+        "definition": "Sammeloberbegriff für Angaben bezüglich erforderlicher Umgebungsparameter und physikalischer Rahmenbedingungen, die für die optimale Erhaltung des Objektes notwendig sind.",
+        "broader": "C93638",
+        "Verpflichtungsgrad": "empfohlen",
+        "Wiederholbar": "Nein",
+        "narrower": [
+          {
+            "notation": "A2FA1B",
+            "prefLabel": "Temperatur (konservatorische Bedingungen)",
+            "definition": "Angabe der erforderlichen Temperaturwerte und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung temperaturbedingter Schäden.",
+            "broader": "C3A182",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text (Grad Celsius und Abweichung in Grad Celsius)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "BA8198",
+            "prefLabel": "Luftfeuchte (konservatorische Bedingungen)",
+            "definition": "Angabe der einzuhaltenden relativen Luftfeuchtigkeit und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung feuchtigkeitsbedingter Schäden.",
+            "broader": "C3A182",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text (in %)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "DF7759",
+            "prefLabel": "Beleuchtungsstärke (konservatorische Bedingungen)",
+            "altLabel": "LUX (konservatorische Bedingung)",
+            "definition": "Angabe der maximal zulässigen Beleuchtungsstärke in LUX für die schonende Präsenation zur Minimierung photochemischer und photophysikalischer Schädigungsprozesse bei gleichzeitig Gewährleistung ausreichender Sichtbarkeit für Betrachtung.",
+            "broader": "C3A182",
+            "Verpflichtungsgrad": "optional",
+            "Feldwert": "Text (LUX)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "FD6617",
+            "prefLabel": "UV-Schutz (konservatorische Bedingungen)",
+            "altLabel": "UV (konservatorische Bedingungen)",
+            "definition": "Angabe der Anforderungen bezüglich ultravioletter Strahlung, einschließlich maximal zulässiger UV-Anteile im Beleuchtungsspektrum oder erforderliche UV-Filtermaßnahmen, zur Verhinderung UV-bedingter Materialschäden am Objekt.",
+            "broader": "C3A182",
+            "Verpflichtungsgrad": "optional",
+            "Feldwert": "Text(µW/lm)",
+            "Wiederholbar": "Nein"
+          }
+        ]
+      },
+      {
+        "notation": "C11192",
+        "prefLabel": "Monitoring",
+        "definition": "Sammeloberbegriff zur Dokumentation regelmäßiger Kontrollmaßnahmen des Objektzustandes und der Umgebungsbedingungen zur frühzeitigen Erkennung von Veränderungen und Einleitung entsprechender (Gegen-)Maßnahmen",
+        "broader": "C93638",
+        "Verpflichtungsgrad": "empfohlen",
+        "Wiederholbar": "Ja",
+        "narrower": [
+          {
+            "notation": "F5G576",
+            "prefLabel": "Datum des Monitoring",
+            "definition": "Zeitpunkt der durchgeführten Kontrollmaßnahme zur chronologischen Dokumentation und Nachvollziehbarkeit",
+            "broader": "C11192",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text (Datum)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "B9835A",
+            "prefLabel": "Zuständige Person (Monitoring)",
+            "definition": "Angaben zur Person (Name, ggfs. Funktion) der für die Durchführung des Monitorings verantwortlichen Person.\r\n\r\nFür die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. \r\nBei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann!",
+            "broader": "C11192",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text (Datum)",
+            "Wiederholbar": "Nein"
+          },
+          {
+            "notation": "FFFCB7",
+            "prefLabel": "Überprüfte Bedingungen",
+            "definition": "Oberbegriff der kontrollierten Parameter und Umgebungsfaktoren während des Monitorings.",
+            "broader": "C11192",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Ja",
+            "narrower": [
+              {
+                "notation": "BF6D19",
+                "prefLabel": "biologischer Befall",
+                "definition": "Angabe ob Kontrolle auf Schädlingsbefall, Schimmelbildung oder andere biologische Aktivität am Objekt oder in dessen unmittelbarer Umgebung durchgeführt wurde.",
+                "broader": "FFFCB7",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text (Ja/Nein)",
+                "Wiederholbar": "Nein"
+              },
+              {
+                "notation": "A5C668",
+                "prefLabel": "Klimawerte",
+                "definition": "Angabe ob Temperatur- und Luftfeuchtigkeitswerte im Zuge des Monitorings kontrolliert wurden.",
+                "broader": "FFFCB7",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text (Ja/Nein)",
+                "Wiederholbar": "Nein"
+              },
+              {
+                "notation": "C9C527",
+                "prefLabel": "Lichtexposition",
+                "altLabel": "LUX-Stunden",
+                "definition": "Angabe ob akkumulierte Lichtexposition in LUX-Stunden während des Monitorings gemessen wurden.",
+                "broader": "FFFCB7",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text (Ja/Nein)",
+                "Wiederholbar": "Nein"
+              },
+              {
+                "notation": "BF3639",
+                "prefLabel": "Schadstoffe",
+                "definition": "Angabe ob Vorhandensein von luftgetragenen Verunreinigungen, Ausgasungen oder andere chemische Belastungen in der Objektumgebung kontrolliert wurden.",
+                "broader": "FFFCB7",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text (Ja/Nein)",
+                "Wiederholbar": "Nein"
+              }
+            ]
+          },
+          {
+            "notation": "F396G6",
+            "prefLabel": "Ergebnis des Monitorings",
+            "definition": "Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. \r\n\r\nBeispiel: \"Alle Parameter im Normbereich\", \"Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich\", \"Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht\"",
+            "broader": "C11192",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Ja"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "notation": "AC16G1",
+    "prefLabel": "Administrative Metadaten",
+    "definition": "administrative Angaben zu dem vorliegenden Bericht und seinen Inhalten",
+    "broader": "top",
+    "Verpflichtungsgrad": "Pflicht",
+    "narrower": [
+      {
+        "notation": "D78721",
+        "prefLabel": "Erstellungsdatum des Berichts",
+        "definition": "Zeitpunkt, zu dem der Bericht erstellt wurde",
+        "broader": "AC16G1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "F285B2",
+        "prefLabel": "Bearbeiter*in des Berichts",
+        "definition": "Angaben zur Person (Name, ggfs. Funktion) der für den Bericht verantwortlichen Person.",
+        "broader": "AC16G1",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "D1F5D3",
+        "prefLabel": "Version",
+        "definition": "Angaben zur Versionierung bzw. Überarbeitung des Berichtes",
+        "broader": "AC16G1",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "G56866",
+        "prefLabel": "Zugangsrecht",
+        "definition": "Angaben zum Urheberrecht bzw. der Nutzungsrechte des Berichtes",
+        "broader": "AC16G1",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text (Datum)",
+        "Wiederholbar": "Nein"
+      }
+    ]
+  },
+  {
+    "notation": "F2AG55",
+    "prefLabel": "Verwendete Literatur",
+    "definition": "Angaben zu Literatur, die für die Erstellung des Berichtes verwendet wurde.",
+    "broader": "top",
+    "Verpflichtungsgrad": "optional",
+    "Feldwert": "Text",
+    "Wiederholbar": "Ja"
+  }
+]
