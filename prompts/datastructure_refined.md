@@ -11,7 +11,8 @@ Each term in the JSON file is represented as an object with the following proper
 ### notation
 - **Type:** String
 - The unique identifier of the term.
-- Used to generate its URI based on a namespace + notation.
+- Used to generate its URI based on namespace ("https://www.w3id.org/conservation/terms/metadata/") + notation.
+- the form title links to this URL
 - Also serves as the key for filled data output and for lookups in exemplary data or norm data.
 
 ---
@@ -27,26 +28,30 @@ Each term in the JSON file is represented as an object with the following proper
 - **Type:** String (delimited)
 - Alternative labels for the term.
 - Multiple labels are separated with the `|` character.
+- Shown as a tooltip on the form title with ", " instead of "|".
+
 
 ---
 
 ### definition
 - **Type:** String
 - A definition of the term.
-- Shown as a tooltip on the form title.
+- - Displayed as a tooltip on the form body.
 
 ---
 
 ### Verwendungshinweis
 - **Type:** String
 - Guidance on how to use or interpret the term.
-- Displayed as a tooltip on the form body.
+- - Displayed on the form input field.
+
 
 ---
 
 ### source
 - **Type:** String
 - References to literature or other sources for the definition or usage of the term.
+- Not used for the app at the moment
 
 ---
 
@@ -62,10 +67,9 @@ Each term in the JSON file is represented as an object with the following proper
 - **Type:** String
 - Defines the allowed data type(s) for the form field:
   - `"Text"` → free text input.
-  - `"Text (Datum)"` → date input (app uses date picker).
-  - `"Text/URI"` → input that can switch between text and a URI selected from a tree.
-  - `"URI"` → selection from controlled norm data (no free text).
-- Any additional annotation in brackets (e.g. `"Text (max. 250 Zeichen)"`) is to be ignored for form logic, but may be used to improve UX (e.g. hint text or counters).
+  - `"Text/URI"` → input that can be written freely in a form or picked from a tree .
+  - `"URI"` → selection from controlled norm data (URI selected from a tree).
+  - `` → No Input allowed at all. The term is just a container for other terms
 
 ---
 
@@ -80,7 +84,7 @@ Each term in the JSON file is represented as an object with the following proper
 ### Vokabulare
 - **Type:** String (optional)
 - Lists recommended controlled vocabularies for this field.
-- Can guide UI (e.g. offering dropdowns for predefined values if the vocabulary is known).
+- Not used for the app at the moment
 
 ---
 
@@ -107,4 +111,4 @@ Each term in the JSON file is represented as an object with the following proper
 - The form generation system relies entirely on this schema:
   - All UI hierarchy and form types are auto-generated from these properties.
 - Terms must have a unique `notation` to avoid conflicts in output data.
-- This structure supports dynamic use across different projects by simply swapping the JSON definition.
+- This structure supports dynamic use across different projects by simply swapping the JSON file.
