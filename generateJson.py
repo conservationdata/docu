@@ -23,10 +23,10 @@ def getChildren(notation):
     childrenArray = []
     for index, row in childrenDf.iterrows():
         if row["prefLabel"] and isinstance(row["prefLabel"], str) and row["notation"] and isinstance(row["notation"], str):
-            notation_child, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, source, Vokabulare = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["note (source)"], row["Empfohlene Vokabulare"]
+            notation_child, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"]
             # Fixed: Use notation_child to avoid variable name conflict
             narrower = getChildren(notation_child)
-            propertyTuples = [("notation", notation_child), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("broader", broader), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("narrower", narrower), ("source", source), ("Vokabulare",Vokabulare)]
+            propertyTuples = [("notation", notation_child), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("narrower", narrower), ("Verwendungshinweis", Verwendungshinweis)]
             childJSON = {}
             for key, value in propertyTuples:
                 if value and isinstance(value, str):
@@ -38,9 +38,9 @@ def getChildren(notation):
 
 for index, row in topDf.iterrows():
     if row["prefLabel"] and isinstance(row["prefLabel"], str) and row["notation"] and isinstance(row["notation"], str):
-        notation, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, source, Vokabulare = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["note (source)"], row["Empfohlene Vokabulare"]
+        notation, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"]
         narrower = getChildren(notation)
-        propertyTuples = [("notation", notation), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("broader", broader), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("narrower", narrower), ("source", source), ("Vokabulare",Vokabulare)]
+        propertyTuples = [("notation", notation), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("narrower", narrower), ("Verwendungshinweis", Verwendungshinweis)]
         topJSON = {}
         for key, value in propertyTuples:
             if value and isinstance(value, str):

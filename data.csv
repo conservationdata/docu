@@ -13,7 +13,7 @@ Beispiel: ""Urnenfelderzeit"" , ""15. Jh."" ",,B51DAF,,empfohlen,Text/URI,Ja,,,
 CD3341,Herkunft,Fundort|kulturelle Verortung|Herstellungsort,"Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. 
 
 Beispiel: ""Fundort: Italien - Numana - Grab 34"", ""kultureller Kontext: Renaissance""",,B51DAF,Begriff und Definition nach DIN EN 16095: 2012-10,empfohlen,Text/URI,Ja,,,
-F2A45F,Eingangsdatum,,"Datum, an dem das Objekt in die aktuell zuständige Sammlung aufgenommen wurde. An dieser Stelle ist (noch) nicht das Datum, an dem das Objekt in die Restaurierungseinrichtung eingeliefert wurde gemeint. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,B51DAF,,Pflicht,Text (Datum),Nein,,,
+F2A45F,Eingangsdatum,,"Datum, an dem das Objekt in die aktuell zuständige Sammlung aufgenommen wurde. An dieser Stelle ist (noch) nicht das Datum, an dem das Objekt in die Restaurierungseinrichtung eingeliefert wurde gemeint. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,B51DAF,,Pflicht,Text,Nein,,,
 F3G8D1,Ansprechpartner*in,,"Benannte Person, die für Rückfragen in Bezug auf das Objekt und den Umgang mit diesem kontaktiert werden kann. Dies kann bei Privatbesitz der Eigentümer sein oder bei Objekten aus öffentlichen Einrichtungen z.B. der/die zuständige Kurator*in.  ","Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! 
 
 - Oder Institution/Körperschaft- Nach Möglichkeit URI (z.B. ORCID)- Empfehlung für Namensformat nachschlagen",B51DAF,,optional,Text,Nein,,,
@@ -41,18 +41,18 @@ C4BCF8,Herstellungstechnik,,"Angaben zur Technik bzw. zu Techniken, die zur Hers
 Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, z.B. die Spuren/Indizien die auf dem Objekt beobachtet wurden. 
 
 Beispiel: ""Geschmiedet (Hammerspuren)""",,DA2D73,,empfohlen,Text/URI,Ja,Art & Architecture Thesaurus,Technik (Empfohlen),
-DBC278,aktuelle Maße,,"Angaben zu den räumlichen Dimensionen des Objektes, zum letzten Zeitpunkt der Begutachtung. Die Maße des Objektes können sich im Laufe der Zeit verändern (z.B. durch Beschädigung oder die Zusammensetzung eines zerscherbten Objektes).","- metrisches System; nach fachspezifischen Standards (mm, cm, m)",DA2D73,,Pflicht,Text (standartisiertes Längenmaß),Nein,,Maße (Empfohlen),
-GF856C,Länge,,,,DBC278,,Pflicht,Text (standartisiertes Längenmaß),Nein,,,
-WF436G,Breite,,,,DBC278,,Pflicht,Text (standartisiertes Längenmaß),Nein,,,
-QD45G7,Tiefe,,,,DBC278,,optional,Text (standartisiertes Längenmaß),Nein,,,
-C7C3B7,aktuelles Gewicht,,Angaben zum Gewicht des Objekts zum letzten Zeitpunkt der Objektuntersuchung,,DA2D73,,optional,Text (standartisiertes Gewichtsmaß),Nein,,Maße (Empfohlen),
+DBC278,aktuelle Maße,,"Angaben zu den räumlichen Dimensionen des Objektes, zum letzten Zeitpunkt der Begutachtung. Die Maße des Objektes können sich im Laufe der Zeit verändern (z.B. durch Beschädigung oder die Zusammensetzung eines zerscherbten Objektes).",,DA2D73,,Pflicht,,Nein,,Maße (Empfohlen),
+GF856C,Länge,,,"- metrisches System; nach fachspezifischen Standards (mm, cm, m)",DBC278,,Pflicht,Text,Nein,,,
+WF436G,Breite,,,"- metrisches System; nach fachspezifischen Standards (mm, cm, m)",DBC278,,Pflicht,Text,Nein,,,
+QD45G7,Tiefe,,,"- metrisches System; nach fachspezifischen Standards (mm, cm, m)",DBC278,,optional,Text,Nein,,,
+C7C3B7,aktuelles Gewicht,,Angaben zum Gewicht des Objekts zum letzten Zeitpunkt der Objektuntersuchung,"- metrisches System; nach fachspezifischen Standards (g, kg)",DA2D73,,optional,Text,Nein,,Maße (Empfohlen),
 FC3322,aktueller Standort,,Angaben zum letzten bekannten Standort des Objekts.,Unterscheidung zw. interner Erfassung (genauer Standort) und öffentlicher Angabe bei Veröffentlichung des Datensatzes (z.B. Institut),DA2D73,,Pflicht,Text/URI,Nein,Geonames,,
 ,,,,,,,,,,,,
 F52262,Zustandserfassung,Zustandserhebung,"Oberbegriff für Informationen, die die systematische Erfassung des Zustands eines Objektes zu einem definierten Zeitpunkt dokumentieren.",,top,,,,Ja,,,
 A8ABBA,Erfassungszeitpunkt,Zeitpunkt der Erfassung,"Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. 
 
-Der Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",,F52262,,Pflicht,"Text (vor Eingriff, nach Eingriff, zwischen Eingriff, Monitoring)",Nein,,,
-CA1BC5,Erfassungsdatum,Datum der Erfassung (Zustandserfassung) ,"Angabe des Datums, an dem die Erfassung des Zustandes durchgeführt wurde. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,F52262,,Pflicht,Text (Datum),Nein,,,
+Der Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.","Auswahl zwischen: vor Eingriff, nach Eingriff, zwischen Eingriff, Monitoring",F52262,,Pflicht,Text,Nein,,,
+CA1BC5,Erfassungsdatum,Datum der Erfassung (Zustandserfassung) ,"Angabe des Datums, an dem die Erfassung des Zustandes durchgeführt wurde. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,F52262,,Pflicht,Text,Nein,,,
 CDD6B5,Dokumentationsform,,"Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.
 
 Beispiel: ""Zustandsbericht + Fotos"" ",,F52262,,bedingte Pflicht,Text,Ja,,,
@@ -84,7 +84,7 @@ In Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige P
 A2AG55,Untersuchungskennung,Kennung der Untersuchung,"Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. Der genaue Aufbau der Kennung kann individuell gestaltet werden. Wichtig ist, dass eindeutig zugeordnet werden kann, auf welche konkrete Untersuchung sich die Angaben beziehen. 
 
 Beispiel: 2025-05-13_RFA_1 oder XY_24601",,B3FCA1,,bedingte Pflicht,Text,Nein,,,
-G73958,Untersuchungsdatum,Datum der Untersuchung,"Datum, an dem die jeweilige Untersuchung durchgeführt wurde.",,B3FCA1,,Pflicht,Text (Datum),Nein,,,
+G73958,Untersuchungsdatum,Datum der Untersuchung,"Datum, an dem die jeweilige Untersuchung durchgeführt wurde.",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,B3FCA1,,Pflicht,Text,Nein,,,
 CF3C22,Untersuchungsanlass,Grund der Untersuchung| Fragestellung| Untersuchungsgrund,"Hintergrundinformationen, warum diese Untersuchung durchgeführt wurde. Angabe der Fragestellung, die mit der Untersuchung bearbeitet werden soll.",,B3FCA1,,Pflicht,Text,Nein,,,
 F8F594,Untersuchungsart,Art der Untersuchung,"Möglichkeit der Spezifikation, ob es sich um eine naturwissenschaftliche, technologische, materialtechnische oder sonstige Untersuchung handelt.",,B3FCA1,,optionale,Text,Nein,,,
 A15F83,Lokalisation,Untersuchungsstelle,"Angabe, an welcher Stelle auf dem Objekt die Untersuchung durchgeführt wurde. Nur bei Untersuchungen direkt auf dem Originalenobjekt nötig, entfällt bei Untersuchungen von Proben ",,B3FCA1,,bedingte Pflicht,Text,Ja,,,
@@ -102,7 +102,7 @@ F72743,Durchführende Einrichtung (Probeentnahme),,"Benennung der Einrichtung, d
 
 Besonders wenn dies von einer externen Einrichtung durchgeführt wird, sollte die Erfassung verpflichtend angesehen werden. 
 In Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",,CD5C3F,,bedingte Pflicht,Text/URI,Nein,,,
-D3AF3A,Datum der Probenentnahme,Datum der Beprobung,"Datum, an dem die Probe aus dem Objekt entnommen wurde.",,CD5C3F,,Pflicht,Text (Datum),Nein,,,
+D3AF3A,Datum der Probenentnahme,Datum der Beprobung,"Datum, an dem die Probe aus dem Objekt entnommen wurde.",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,CD5C3F,,Pflicht,Text,Nein,,,
 CB7747,Kennung der Probe,Name der Probe| Nummer der Probe,"Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. Der genaue Aufbau der Kennung kann individuell gestaltet werden. Wichtig ist, dass eindeutig zugeordnet werden kann, auf welche konkrete Probe sich die Angaben beziehen. 
 
 Beispiel: Metall-Probe_24601",,CD5C3F,,Pflicht,Text,Nein,,,
@@ -137,14 +137,14 @@ C79561,Zuständige Person (Durchgeführte Maßnahme),Restaurator*in| Konservator
 
 Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. 
 Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! """,,DA9CGG,,Pflicht,Text,Nein,,,
-CDD613,Beginn der Maßnahme,,"kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme begonnen wurde. ",,DA9CGG,,Pflicht,Text (Datum),Nein,,,
-CDF685,Ende der Maßnahme,,"kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme beendet wurde. ",,DA9CGG,,Pflicht,Text (Datum),Nein,,,
-G814D2,Zeitaufwand ,,"Summe der tatsächlich am Objekt geleisteten Arbeitsstunden währen der Maßnahme, ohne passive Zeiten wie Trocknungsphasen oder parallele Wartezeiten. ",,DA9CGG,,(optional),Text (Stunden),Nein,,,
+CDD613,Beginn der Maßnahme,,"kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme begonnen wurde. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,DA9CGG,,Pflicht,Text,Nein,,,
+CDF685,Ende der Maßnahme,,"kalendermäßige Erfassung des Zeitpunktes, an dem die jeweilige Maßnahme beendet wurde. ",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,DA9CGG,,Pflicht,Text,Nein,,,
+G814D2,Zeitaufwand ,,"Summe der tatsächlich am Objekt geleisteten Arbeitsstunden währen der Maßnahme, ohne passive Zeiten wie Trocknungsphasen oder parallele Wartezeiten. ",In Stunden,DA9CGG,,(optional),Text,Nein,,,
 A13CD1,Eingriff,Behandlung | Applikationstechnik|Methode| Vorgehensweise,Beschreibung der konkreten Vorgehensweise und Techniken mit denen das Objekt zur Erreichung der festgelegten konservatorischen Zielsetzung behandelt wurde.,,DA9CGG,Begriff und Definition nach DIN EN 15898:2020-02,Pflicht,Text/URI,Ja,,,
 CGC619,Verwendetes Material ,,"Benennung des bzw. der Materialien, die für die jeweilige konservatorische und/oder restauratorische Maßnahme verwendet wurden.",,A13CD1,,Pflicht,Text/URI,Ja,Art & Architecture Thesaurus,,
 D865C3,Bezugsquelle,Hersteller,"Angabe des Herstellers, Lieferanten oder der sonstigen Herkunft des verwendeten Materials zur Rückverfolgbarkeit und Qualitätssicherung. Diese Angaben liefern für spätere erneute Objektuntersuchungen und/oder Maßnahmen Hintergrundinformationen zu den Eigenschaften des Materials.  ",,CGC619,,optional,Text,Nein,,,
 C364G1,Konzentration,Mischungsverhältnis,Beschreibung der genauen Konzentration oder Zusammensetzung des Materials zur Sicherstellung der Reproduzierbarkeit und Beurteilung der Langzeitwirkung bzw.-stabilität.,,CGC619,,optional,Text,Nein,,,
-C421BF,Herstellungsdatum,,Erfassung des Produktions- oder Abfülldatums industrieller Produkte zur Nachvollziehbarkeit von Rezepturänderungen und Qualitätsschwankungen. Dient der Rückverfolgung von Chargen bei ungewöhnlichen Vorkommnissen und ermöglicht das Einholen relevanter Hintergrundinformationen zur Langzeitstabilität,,CGC619,,optional,Text (Datum),Nein,,,
+C421BF,Herstellungsdatum,,Erfassung des Produktions- oder Abfülldatums industrieller Produkte zur Nachvollziehbarkeit von Rezepturänderungen und Qualitätsschwankungen. Dient der Rückverfolgung von Chargen bei ungewöhnlichen Vorkommnissen und ermöglicht das Einholen relevanter Hintergrundinformationen zur Langzeitstabilität,Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,CGC619,,optional,Text,Nein,,,
 F87124,Werkzeug,Gerät,"Benennung des bzw. der Werkzeuge und Geräte, die für die jeweilige konservatorische und/oder restauratorische Maßnahme verwendet wurden. Diese Angabe empfiehlt sich besonders dann, wenn durch die verwendeten Werkzeuge Spuren auf dem Objekt hinterlassen wurden. ",,A13CD1,,empfohlen,Text/URI,Ja,Art & Architecture Thesaurus,,
 ,,,,,,,,,,,,
 B7B8B6,Sicherheit & Arbeitsschutz,,"Übergeordneter Begriff zur Strukturierung aller Angaben, die dem Schutz der Gesundheit, der Unfallverhütung und der Einhaltung sicherheitsrelevanter Vorschriften bei Konservierungs-Restaurierungsarbeiten oder dem Umgang mit den jeweiligen behandelten Objekten dienen. ",,top,,bedingte Pflicht,,Nein,,,
@@ -156,7 +156,7 @@ BB78D2,Getroffene Schutzmaßnahmen,,"Dokumentation der bereits umgesetzten und/o
 
 Beispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",,B7B8B6,,bedingte Pflicht,Text,Ja,,,
 CCCC7G,Letzte Sicherheitsbewertung,,Oberbegriff zu Angaben der zuletzt durchgeführten Risikoanalyse und Beurteilung der Arbeitssicherheit,,B7B8B6,,optional,,Nein,,,
-AFD671,Datum der Sicherheitsbewertung,,"Erfassung des Datums, an dem die letzte Sicherheitsbewertung durchgeführt wurde.",,CCCC7G,,empfohlen,Text (Datum),Nein,,,
+AFD671,Datum der Sicherheitsbewertung,,"Erfassung des Datums, an dem die letzte Sicherheitsbewertung durchgeführt wurde.",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,CCCC7G,,empfohlen,Text,Nein,,,
 ADD53A,Einschätzung (Sicherheitsbewertung),,Bewertung des aktuellen Sicherheitsstatus und der verbleibenden Risiken basierend auf der letzten Sicherheitsbewertung.,,CCCC7G,,empfohlen,Text,Nein,,,
 ,,,,,,,,,,,,
 C93638,Präventive Konservierung,,"Übergeordneter Begriff zur Erfassung aller Angaben bezüglich vorbeugender Maßnahmen, die ohne direkten Eingriff am Objekt selbst darauf abzielen Schäden am Objekt zu vermindern.",,top,,empfohlen,,Nein,,,
@@ -171,28 +171,28 @@ B14C4A,Handlingsempfehlungen,,"Angaben zu Besonderheiten, die im Zuge der Handha
 
 Beispiel: ""Nicht an den Henkeln anfassen"" ",,GF9C49,,empfohlen,Text,Ja,,,
 C3A182,Konservatorische Bedingungen,,"Sammeloberbegriff für Angaben bezüglich erforderlicher Umgebungsparameter und physikalischer Rahmenbedingungen, die für die optimale Erhaltung des Objektes notwendig sind.",,C93638,D941BB,empfohlen,,Nein,,,
-A2FA1B,Temperatur (konservatorische Bedingungen),,Angabe der erforderlichen Temperaturwerte und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung temperaturbedingter Schäden.,,C3A182,D941BB,empfohlen,Text (Grad Celsius und Abweichung in Grad Celsius),Nein,,,
-BA8198,Luftfeuchte (konservatorische Bedingungen),,Angabe der einzuhaltenden relativen Luftfeuchtigkeit und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung feuchtigkeitsbedingter Schäden.,,C3A182,D941BB,empfohlen,Text (in %),Nein,,,
-DF7759,Beleuchtungsstärke (konservatorische Bedingungen),LUX (konservatorische Bedingung),Angabe der maximal zulässigen Beleuchtungsstärke in LUX für die schonende Präsenation zur Minimierung photochemischer und photophysikalischer Schädigungsprozesse bei gleichzeitig Gewährleistung ausreichender Sichtbarkeit für Betrachtung.,,C3A182,D941BB,optional,Text (LUX),Nein,,,
-FD6617,UV-Schutz (konservatorische Bedingungen),UV (konservatorische Bedingungen),"Angabe der Anforderungen bezüglich ultravioletter Strahlung, einschließlich maximal zulässiger UV-Anteile im Beleuchtungsspektrum oder erforderliche UV-Filtermaßnahmen, zur Verhinderung UV-bedingter Materialschäden am Objekt.",,C3A182,D941BB,optional,Text(µW/lm),Nein,,,
+A2FA1B,Temperatur (konservatorische Bedingungen),,Angabe der erforderlichen Temperaturwerte und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung temperaturbedingter Schäden.,In Grad Celsius und Abweichung in Grad Celsius,C3A182,D941BB,empfohlen,Text,Nein,,,
+BA8198,Luftfeuchte (konservatorische Bedingungen),,Angabe der einzuhaltenden relativen Luftfeuchtigkeit und zulässigen Schwankungsbereiche (maximal tolerierbare Abweichungen) für die sachgerechte Lagerung zur Vermeidung feuchtigkeitsbedingter Schäden.,In %,C3A182,D941BB,empfohlen,Text,Nein,,,
+DF7759,Beleuchtungsstärke (konservatorische Bedingungen),LUX (konservatorische Bedingung),Angabe der maximal zulässigen Beleuchtungsstärke in LUX für die schonende Präsenation zur Minimierung photochemischer und photophysikalischer Schädigungsprozesse bei gleichzeitig Gewährleistung ausreichender Sichtbarkeit für Betrachtung.,In LUX,C3A182,D941BB,optional,Text,Nein,,,
+FD6617,UV-Schutz (konservatorische Bedingungen),UV (konservatorische Bedingungen),"Angabe der Anforderungen bezüglich ultravioletter Strahlung, einschließlich maximal zulässiger UV-Anteile im Beleuchtungsspektrum oder erforderliche UV-Filtermaßnahmen, zur Verhinderung UV-bedingter Materialschäden am Objekt.",µW/lm,C3A182,D941BB,optional,Text,Nein,,,
 C11192,Monitoring,,Sammeloberbegriff zur Dokumentation regelmäßiger Kontrollmaßnahmen des Objektzustandes und der Umgebungsbedingungen zur frühzeitigen Erkennung von Veränderungen und Einleitung entsprechender (Gegen-)Maßnahmen,,C93638,,empfohlen,,Ja,,,
-F5G576,Datum des Monitoring,,Zeitpunkt der durchgeführten Kontrollmaßnahme zur chronologischen Dokumentation und Nachvollziehbarkeit,,C11192,,empfohlen,Text (Datum),Nein,,,
+F5G576,Datum des Monitoring,,Zeitpunkt der durchgeführten Kontrollmaßnahme zur chronologischen Dokumentation und Nachvollziehbarkeit,Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,C11192,,empfohlen,Text,Nein,,,
 B9835A,Zuständige Person (Monitoring),,"Angaben zur Person (Name, ggfs. Funktion) der für die Durchführung des Monitorings verantwortlichen Person.
 
 Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. 
-Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann!",,C11192,,empfohlen,Text (Datum),Nein,,,
+Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann!",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,C11192,,empfohlen,Text,Nein,,,
 FFFCB7,Überprüfte Bedingungen,,Oberbegriff der kontrollierten Parameter und Umgebungsfaktoren während des Monitorings.,,C11192,F396G6,empfohlen,Text,Ja,,,
-BF6D19,biologischer Befall,,"Angabe ob Kontrolle auf Schädlingsbefall, Schimmelbildung oder andere biologische Aktivität am Objekt oder in dessen unmittelbarer Umgebung durchgeführt wurde.",,FFFCB7,,empfohlen,Text (Ja/Nein),Nein,,,
-A5C668,Klimawerte,,Angabe ob Temperatur- und Luftfeuchtigkeitswerte im Zuge des Monitorings kontrolliert wurden.,,FFFCB7,,empfohlen,Text (Ja/Nein),Nein,,,
-C9C527,Lichtexposition,LUX-Stunden,Angabe ob akkumulierte Lichtexposition in LUX-Stunden während des Monitorings gemessen wurden.,,FFFCB7,,empfohlen,Text (Ja/Nein),Nein,,,
-BF3639,Schadstoffe,,"Angabe ob Vorhandensein von luftgetragenen Verunreinigungen, Ausgasungen oder andere chemische Belastungen in der Objektumgebung kontrolliert wurden.",,FFFCB7,,empfohlen,Text (Ja/Nein),Nein,,,
+BF6D19,biologischer Befall,,"Angabe ob Kontrolle auf Schädlingsbefall, Schimmelbildung oder andere biologische Aktivität am Objekt oder in dessen unmittelbarer Umgebung durchgeführt wurde.",Ja/Nein,FFFCB7,,empfohlen,Text,Nein,,,
+A5C668,Klimawerte,,Angabe ob Temperatur- und Luftfeuchtigkeitswerte im Zuge des Monitorings kontrolliert wurden.,Ja/Nein,FFFCB7,,empfohlen,Text,Nein,,,
+C9C527,Lichtexposition,LUX-Stunden,Angabe ob akkumulierte Lichtexposition in LUX-Stunden während des Monitorings gemessen wurden.,Ja/Nein,FFFCB7,,empfohlen,Text,Nein,,,
+BF3639,Schadstoffe,,"Angabe ob Vorhandensein von luftgetragenen Verunreinigungen, Ausgasungen oder andere chemische Belastungen in der Objektumgebung kontrolliert wurden.",Ja/Nein,FFFCB7,,empfohlen,Text,Nein,,,
 F396G6,Ergebnis des Monitorings,,"Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. 
 
 Beispiel: ""Alle Parameter im Normbereich"", ""Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich"", ""Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht""",,C11192,FFFCB7| BF6D19| A5C668| C9C527| BF3639,empfohlen,Text,Ja,,,
 AC16G1,Administrative Metadaten,,administrative Angaben zu dem vorliegenden Bericht und seinen Inhalten,,top,,Pflicht,,,,,
-D78721,Erstellungsdatum des Berichts,,"Zeitpunkt, zu dem der Bericht erstellt wurde",,AC16G1,,Pflicht,Text (Datum),Nein,,,
+D78721,Erstellungsdatum des Berichts,,"Zeitpunkt, zu dem der Bericht erstellt wurde",Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,AC16G1,,Pflicht,Text,Nein,,,
 F285B2,Bearbeiter*in des Berichts,,"Angaben zur Person (Name, ggfs. Funktion) der für den Bericht verantwortlichen Person.",,AC16G1,,Pflicht,Text,Nein,,,
-D1F5D3,Version,,Angaben zur Versionierung bzw. Überarbeitung des Berichtes,,AC16G1,,empfohlen,Text (Datum),Nein,,,
-G56866,Zugangsrecht,,Angaben zum Urheberrecht bzw. der Nutzungsrechte des Berichtes,,AC16G1,,empfohlen,Text (Datum),Nein,,,
+D1F5D3,Version,,Angaben zur Versionierung bzw. Überarbeitung des Berichtes,Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,AC16G1,,empfohlen,Text,Nein,,,
+G56866,Zugangsrecht,,Angaben zum Urheberrecht bzw. der Nutzungsrechte des Berichtes,Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ,AC16G1,,empfohlen,Text,Nein,,,
 ,,,,,,,,,,,,
 F2AG55,Verwendete Literatur,,"Angaben zu Literatur, die für die Erstellung des Berichtes verwendet wurde.",,top,,optional,Text,Ja,,,

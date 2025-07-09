@@ -9,7 +9,7 @@
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
           -->
-          Conservation Documentation Data
+          Conservation Documentation Data Mockup
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

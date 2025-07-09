@@ -1,0 +1,351 @@
+{
+    "F9GB13": {
+      "label": "Datierung",
+      "uri": "https://www.conservation-science.org/ontology/dating/F9GB13",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Urnenfelderzeit (Bronze Age)",
+          "uri": "https://www.conservation-science.org/ontology/dating/urnfield-period"
+        },
+        {
+          "label": "15. Jh. (15th Century)",
+          "uri": "https://www.conservation-science.org/ontology/dating/15th-century"
+        },
+        {
+          "label": "Römische Kaiserzeit (Roman Imperial Period)",
+          "uri": "https://www.conservation-science.org/ontology/dating/roman-imperial-period"
+        }
+      ]
+    },
+    "CD3341": {
+      "label": "Herkunft",
+      "uri": "https://www.conservation-science.org/ontology/provenance/CD3341",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Fundort (Findspot)",
+          "uri": "https://www.conservation-science.org/ontology/provenance/findspot",
+          "children": [
+            {
+              "label": "Italien - Numana - Grab 34 (Italy - Numana - Grave 34)",
+              "uri": "https://www.conservation-science.org/ontology/provenance/it-numana-grave34"
+            }
+          ]
+        },
+        {
+          "label": "Kulturelle Verortung (Cultural Context)",
+          "uri": "https://www.conservation-science.org/ontology/provenance/cultural-context",
+          "children": [
+            {
+              "label": "Renaissance",
+              "uri": "https://www.conservation-science.org/ontology/provenance/renaissance"
+            }
+          ]
+        },
+        {
+          "label": "Herstellungsort (Place of Manufacture)",
+          "uri": "https://www.conservation-science.org/ontology/provenance/place-of-manufacture"
+        }
+      ]
+    },
+    "G76A78": {
+      "label": "Schöpfer*in",
+      "uri": "https://www.conservation-science.org/ontology/creator/G76A78",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Leonardo da Vinci",
+          "uri": "https://www.wikidata.org/wiki/Q762"
+        },
+        {
+          "label": "Unbekannter Künstler (Unknown Artist)",
+          "uri": "https://www.conservation-science.org/ontology/creator/unknown-artist"
+        }
+      ]
+    },
+    "F1BA31": {
+      "label": "Objekttyp",
+      "uri": "https://www.conservation-science.org/ontology/object-type/F1BA31",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Gemälde (Painting)",
+          "uri": "https://www.conservation-science.org/ontology/object-type/painting"
+        },
+        {
+          "label": "Skulptur (Sculpture)",
+          "uri": "https://www.conservation-science.org/ontology/object-type/sculpture"
+        },
+        {
+          "label": "Münze (Coin)",
+          "uri": "https://www.conservation-science.org/ontology/object-type/coin"
+        },
+        {
+          "label": "Keramik (Ceramics)",
+          "uri": "https://www.conservation-science.org/ontology/object-type/ceramics"
+        }
+      ]
+    },
+    "D866AD": {
+      "label": "Objektmaterial",
+      "uri": "https://www.conservation-science.org/ontology/material/D866AD",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Bronze",
+          "uri": "https://www.conservation-science.org/ontology/material/bronze"
+        },
+        {
+          "label": "Buntmetall (Non-ferrous Metal)",
+          "uri": "https://www.conservation-science.org/ontology/material/non-ferrous-metal"
+        },
+        {
+          "label": "Holz (Wood)",
+          "uri": "https://www.conservation-science.org/ontology/material/wood"
+        },
+        {
+          "label": "Leinwand (Canvas)",
+          "uri": "https://www.conservation-science.org/ontology/material/canvas"
+        }
+      ]
+    },
+    "C4BCF8": {
+      "label": "Herstellungstechnik",
+      "uri": "https://www.conservation-science.org/ontology/technique/C4BCF8",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Geschmiedet (Forged)",
+          "uri": "https://www.conservation-science.org/ontology/technique/forged"
+        },
+        {
+          "label": "Gegossen (Cast)",
+          "uri": "https://www.conservation-science.org/ontology/technique/cast"
+        },
+        {
+          "label": "Bemalt (Painted)",
+          "uri": "https://www.conservation-science.org/ontology/technique/painted"
+        }
+      ]
+    },
+    "FC3322": {
+      "label": "aktueller Standort",
+      "uri": "https://www.conservation-science.org/ontology/location/FC3322",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Depot A (Storage A)",
+          "uri": "https://www.conservation-science.org/ontology/location/depot-a"
+        },
+        {
+          "label": "Ausstellungshalle 2 (Exhibition Hall 2)",
+          "uri": "https://www.conservation-science.org/ontology/location/exhibition-hall-2"
+        }
+      ]
+    },
+    "G79CA9": {
+      "label": "Umgebungsbedingungen",
+      "uri": "https://www.conservation-science.org/ontology/environment/G79CA9",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Temperatur (Temperature)",
+          "uri": "https://www.conservation-science.org/ontology/environment/temperature"
+        },
+        {
+          "label": "Relative Luftfeuchtigkeit (Relative Humidity)",
+          "uri": "https://www.conservation-science.org/ontology/environment/relative-humidity"
+        },
+        {
+          "label": "Lichtexposition (Light Exposure)",
+          "uri": "https://www.conservation-science.org/ontology/environment/light-exposure"
+        }
+      ]
+    },
+    "BC5B57": {
+      "label": "Physischer Objektzustand",
+      "uri": "https://www.conservation-science.org/ontology/physical-condition/BC5B57",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Vollständigkeit (Completeness)",
+          "uri": "https://www.conservation-science.org/ontology/physical-condition/completeness"
+        },
+        {
+          "label": "Stabilität (Stability)",
+          "uri": "https://www.conservation-science.org/ontology/physical-condition/stability"
+        },
+        {
+          "label": "Festigkeit (Firmness)",
+          "uri": "https://www.conservation-science.org/ontology/physical-condition/firmness"
+        }
+      ]
+    },
+    "AA6941": {
+      "label": "Schadensphänomene",
+      "uri": "https://www.conservation-science.org/ontology/damage-phenomena/AA6941",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Korrosion (Corrosion)",
+          "uri": "https://www.conservation-science.org/ontology/damage-phenomena/corrosion"
+        },
+        {
+          "label": "Risse (Cracks)",
+          "uri": "https://www.conservation-science.org/ontology/damage-phenomena/cracks"
+        },
+        {
+          "label": "Abplatzungen (Flaking)",
+          "uri": "https://www.conservation-science.org/ontology/damage-phenomena/flaking"
+        }
+      ]
+    },
+    "G76B7G": {
+      "label": "Durchführende Einrichtung (Untersuchung)",
+      "uri": "https://www.conservation-science.org/ontology/institution/G76B7G",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Römisch-Germanisches Zentralmuseum (RGZM)",
+          "uri": "https://www.wikidata.org/wiki/Q321946"
+        },
+        {
+          "label": "Deutsches Archäologisches Institut (DAI)",
+          "uri": "https://www.wikidata.org/wiki/Q567303"
+        }
+      ]
+    },
+    "DAB4B7": {
+      "label": "Untersuchungsverfahren",
+      "uri": "https://www.conservation-science.org/ontology/investigation-method/DAB4B7",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Röntgenfluoreszenzanalyse (XRF)",
+          "uri": "https://www.conservation-science.org/ontology/investigation-method/xrf"
+        },
+        {
+          "label": "Rasterelektronenmikroskopie (SEM)",
+          "uri": "https://www.conservation-science.org/ontology/investigation-method/sem"
+        },
+        {
+          "label": "Infrarotspektroskopie (FTIR)",
+          "uri": "https://www.conservation-science.org/ontology/investigation-method/ftir"
+        }
+      ]
+    },
+    "D1CFD5": {
+      "label": "verwendetes Material (Untersuchung)",
+      "uri": "https://www.conservation-science.org/ontology/investigation-material/D1CFD5",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Aceton",
+          "uri": "https://pubchem.ncbi.nlm.nih.gov/compound/180"
+        },
+        {
+          "label": "Ethanol",
+          "uri": "https://pubchem.ncbi.nlm.nih.gov/compound/702"
+        }
+      ]
+    },
+    "D949G6": {
+      "label": "Untersuchungsgerät",
+      "uri": "https://www.conservation-science.org/ontology/investigation-device/D949G6",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Niton XL3t GOLDD+",
+          "uri": "https://assets.thermofisher.com/TFS-Assets/CMD/Technical-Notes/TN51779-Handheld-XRF-Analysis-Niton-XL3t-GOLDD.pdf"
+        },
+        {
+          "label": "Jeol JSM-6610LV",
+          "uri": "https://www.jeol.com/products/electron-optics/scanning-electron-microscopes-sem/JSM-6610LV/"
+        }
+      ]
+    },
+    "F72743": {
+      "label": "Durchführende Einrichtung (Probeentnahme)",
+      "uri": "https://www.conservation-science.org/ontology/institution/F72743",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Römisch-Germanisches Zentralmuseum (RGZM)",
+          "uri": "https://www.wikidata.org/wiki/Q321946"
+        }
+      ]
+    },
+    "D9A6FA": {
+      "label": "Entnahmemethode",
+      "uri": "https://www.conservation-science.org/ontology/sampling-method/D9A6FA",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Skalpellentnahme (Scalpel Sampling)",
+          "uri": "https://www.conservation-science.org/ontology/sampling-method/scalpel-sampling"
+        },
+        {
+          "label": "Bohrkernentnahme (Core Sampling)",
+          "uri": "https://www.conservation-science.org/ontology/sampling-method/core-sampling"
+        },
+        {
+          "label": "Abstrich mit Wattestäbchen (Cotton Swab Swab)",
+          "uri": "https://www.conservation-science.org/ontology/sampling-method/cotton-swab-swab"
+        }
+      ]
+    },
+    "A13CD1": {
+      "label": "Eingriff",
+      "uri": "https://www.conservation-science.org/ontology/intervention/A13CD1",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Reinigung (Cleaning)",
+          "uri": "https://www.conservation-science.org/ontology/intervention/cleaning"
+        },
+        {
+          "label": "Konsolidierung (Consolidation)",
+          "uri": "https://www.conservation-science.org/ontology/intervention/consolidation"
+        },
+        {
+          "label": "Retusche (Retouching)",
+          "uri": "https://www.conservation-science.org/ontology/intervention/retouching"
+        }
+      ]
+    },
+    "CGC619": {
+      "label": "Verwendetes Material",
+      "uri": "https://www.conservation-science.org/ontology/conservation-material/CGC619",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Paraloid B-72",
+          "uri": "https://www.conservation-wiki.com/wiki/Paraloid_B-72"
+        },
+        {
+          "label": "Primal AC-33",
+          "uri": "https://www.conservation-wiki.com/wiki/Primal_AC-33"
+        }
+      ]
+    },
+    "F87124": {
+      "label": "Werkzeug",
+      "uri": "https://www.conservation-science.org/ontology/tool/F87124",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Skalpell (Scalpel)",
+          "uri": "https://www.conservation-science.org/ontology/tool/scalpel"
+        },
+        {
+          "label": "Pinsel (Brush)",
+          "uri": "https://www.conservation-science.org/ontology/tool/brush"
+        },
+        {
+          "label": "Luftpistole (Airbrush)",
+          "uri": "https://www.conservation-science.org/ontology/tool/airbrush"
+        }
+      ]
+    }
+  }
