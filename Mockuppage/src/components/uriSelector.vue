@@ -22,7 +22,6 @@
     function handleSelection(targetKey) {
         console.log('Selection changed:', targetKey);
         selected.value = targetKey;
-        
         if (targetKey) {
             emit('uri-selected', targetKey);
         }

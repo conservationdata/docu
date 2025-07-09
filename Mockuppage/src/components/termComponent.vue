@@ -4,24 +4,31 @@
       <a :href="link" target="_blank">{{ term.prefLabel }}</a>
     </h6>
     <div v-if="term.Wiederholbar === 'Ja' && term.Feldwert">
-      <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index" class="row items-center q-mb-sm">
-        <q-input
-          v-model="formManager.formData.value[term.notation][index]"
-          filled
-          dense
-          class="col"
-          :hint="term.Verwendungshinweis || ''"
+      <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index">
+        <UriSelector
+        v-if="term.Feldwert.includes('URI')"
+        :notation="term.notation"
+        @uri-selected="(uri) => (formManager.formData.value[term.notation][index] = uri)"
         />
-        <q-btn
-          flat
-          round
-          dense
-          icon="delete"
-          color="negative"
-          class="q-ml-sm"
-          @click="formManager.removeField(term.notation, index)"
-          :disable="formManager.formData.value[term.notation].length <= 1"
-        />
+        <div class="row items-center q-mb-sm"> 
+          <q-input
+            v-model="formManager.formData.value[term.notation][index]"
+            filled
+            dense
+            class="col"
+            :hint="term.Verwendungshinweis || ''"
+          />
+          <q-btn
+            flat
+            round
+            dense
+            icon="delete"
+            color="negative"
+            class="q-ml-sm"
+            @click="formManager.removeField(term.notation, index)"
+            :disable="formManager.formData.value[term.notation].length <= 1"
+          />
+        </div>
       </div>
        <q-btn
           label="Add"
