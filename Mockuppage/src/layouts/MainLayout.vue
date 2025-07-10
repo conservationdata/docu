@@ -3,13 +3,8 @@
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-toolbar-title>
-          <!-- 
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          -->
-          Conservation Documentation Data Mockup
+        <q-toolbar-title class="text-center text-bold text-h4">
+          Conservation Documentation Metadata Mockup
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -18,18 +13,20 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-grey-8 text-white">
+    <!-- 
+    <q-footer elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <!-- 
+          
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          -->
-          <div>Title</div>
+          
+          <div></div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
+    -->
 
   </q-layout>
 </template>
