@@ -2,9 +2,10 @@
     <q-tree
       :nodes="tree"
       node-key="uri"
-      dense
-      selected="selected"
+      :selected="selected"
+      selected-color="primary"
       @update:selected="handleSelection"
+      default-expand-all
     />
 </template>
 
@@ -16,9 +17,7 @@
     const { notation } = defineProps(['notation'])
     const tree = [uriData[notation]];
     const selected = ref(null);
-
     const emit = defineEmits(['uri-selected']);
-
     function handleSelection(targetKey) {
         console.log('Selection changed:', targetKey);
         selected.value = targetKey;

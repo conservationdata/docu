@@ -1,5 +1,5 @@
 {
-    "F9GB13": {
+    "A4G52F": {
       "label": "Datierung",
       "uri": "https://www.conservation-science.org/ontology/dating/F9GB13",
       "selectable": false,
@@ -18,7 +18,7 @@
         }
       ]
     },
-    "CD3341": {
+    "A5C668": {
       "label": "Herkunft",
       "uri": "https://www.conservation-science.org/ontology/provenance/CD3341",
       "selectable": false,
@@ -49,7 +49,7 @@
         }
       ]
     },
-    "G76A78": {
+    "AC16G1": {
       "label": "Schöpfer*in",
       "uri": "https://www.conservation-science.org/ontology/creator/G76A78",
       "selectable": false,
@@ -64,7 +64,7 @@
         }
       ]
     },
-    "F1BA31": {
+    "AF1F5C": {
       "label": "Objekttyp",
       "uri": "https://www.conservation-science.org/ontology/object-type/F1BA31",
       "selectable": false,
@@ -87,7 +87,7 @@
         }
       ]
     },
-    "D866AD": {
+    "B14C4A": {
       "label": "Objektmaterial",
       "uri": "https://www.conservation-science.org/ontology/material/D866AD",
       "selectable": false,
@@ -110,7 +110,7 @@
         }
       ]
     },
-    "C4BCF8": {
+    "B3FCA1": {
       "label": "Herstellungstechnik",
       "uri": "https://www.conservation-science.org/ontology/technique/C4BCF8",
       "selectable": false,
@@ -129,7 +129,7 @@
         }
       ]
     },
-    "FC3322": {
+    "BAA258": {
       "label": "aktueller Standort",
       "uri": "https://www.conservation-science.org/ontology/location/FC3322",
       "selectable": false,
@@ -144,7 +144,7 @@
         }
       ]
     },
-    "G79CA9": {
+    "BGGCA4": {
       "label": "Umgebungsbedingungen",
       "uri": "https://www.conservation-science.org/ontology/environment/G79CA9",
       "selectable": false,
@@ -163,7 +163,7 @@
         }
       ]
     },
-    "BC5B57": {
+    "C11192": {
       "label": "Physischer Objektzustand",
       "uri": "https://www.conservation-science.org/ontology/physical-condition/BC5B57",
       "selectable": false,
@@ -182,7 +182,7 @@
         }
       ]
     },
-    "AA6941": {
+    "C2488A": {
       "label": "Schadensphänomene",
       "uri": "https://www.conservation-science.org/ontology/damage-phenomena/AA6941",
       "selectable": false,
@@ -201,7 +201,7 @@
         }
       ]
     },
-    "G76B7G": {
+    "C6A532": {
       "label": "Durchführende Einrichtung (Untersuchung)",
       "uri": "https://www.conservation-science.org/ontology/institution/G76B7G",
       "selectable": false,
@@ -216,7 +216,7 @@
         }
       ]
     },
-    "DAB4B7": {
+    "CA1BC5": {
       "label": "Untersuchungsverfahren",
       "uri": "https://www.conservation-science.org/ontology/investigation-method/DAB4B7",
       "selectable": false,
@@ -235,7 +235,7 @@
         }
       ]
     },
-    "D1CFD5": {
+    "CB7747": {
       "label": "verwendetes Material (Untersuchung)",
       "uri": "https://www.conservation-science.org/ontology/investigation-material/D1CFD5",
       "selectable": false,
@@ -250,7 +250,7 @@
         }
       ]
     },
-    "D949G6": {
+    "CCCC7G": {
       "label": "Untersuchungsgerät",
       "uri": "https://www.conservation-science.org/ontology/investigation-device/D949G6",
       "selectable": false,
@@ -265,7 +265,7 @@
         }
       ]
     },
-    "F72743": {
+    "CDF685": {
       "label": "Durchführende Einrichtung (Probeentnahme)",
       "uri": "https://www.conservation-science.org/ontology/institution/F72743",
       "selectable": false,
@@ -276,7 +276,7 @@
         }
       ]
     },
-    "D9A6FA": {
+    "D4A13D": {
       "label": "Entnahmemethode",
       "uri": "https://www.conservation-science.org/ontology/sampling-method/D9A6FA",
       "selectable": false,
@@ -295,7 +295,7 @@
         }
       ]
     },
-    "A13CD1": {
+    "DBC278": {
       "label": "Eingriff",
       "uri": "https://www.conservation-science.org/ontology/intervention/A13CD1",
       "selectable": false,
@@ -314,7 +314,7 @@
         }
       ]
     },
-    "CGC619": {
+    "DF7759": {
       "label": "Verwendetes Material",
       "uri": "https://www.conservation-science.org/ontology/conservation-material/CGC619",
       "selectable": false,
@@ -329,7 +329,7 @@
         }
       ]
     },
-    "F87124": {
+    "F2A45F": {
       "label": "Werkzeug",
       "uri": "https://www.conservation-science.org/ontology/tool/F87124",
       "selectable": false,
@@ -348,4 +348,4 @@
         }
       ]
     }
-  }
+}
