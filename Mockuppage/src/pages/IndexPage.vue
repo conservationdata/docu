@@ -4,9 +4,9 @@
       <TermComponent v-for="term in dataDefinition" :key="term.notation" :term="term" />
       <q-btn label="Submit" type="submit" color="primary" />
       <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      <!-- 
+       
       <pre>{{ formData }}</pre>
-      -->
+      
     </q-form>
   </q-page>
 </template>

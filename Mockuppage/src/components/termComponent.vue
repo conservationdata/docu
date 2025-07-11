@@ -3,56 +3,38 @@
     <h6 :title="term.definition">
       <a :href="link" target="_blank">{{ term.prefLabel }}</a>
     </h6>
+
     <div v-if="term.Wiederholbar === 'Ja' && term.Feldwert">
-      <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index">
-        <UriSelector
-        v-if="term.Feldwert.includes('URI')"
-        :notation="term.notation"
-        @uri-selected="(uri) => (formManager.formData.value[term.notation][index] = uri)"
+      <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index" class="row items-center q-mb-sm">
+        <InputComponent
+          v-model="formManager.formData.value[term.notation][index]"
+          :term="term"
+          class="col"
         />
-        <div class="row items-center q-mb-sm"> 
-          <q-input
-            v-model="formManager.formData.value[term.notation][index]"
-            filled
-            dense
-            class="col"
-            :hint="term.Verwendungshinweis || ''"
-          />
-          <q-btn
-            flat
-            round
-            dense
-            icon="delete"
-            color="negative"
-            class="q-ml-sm"
-            @click="formManager.removeField(term.notation, index)"
-            :disable="formManager.formData.value[term.notation].length <= 1"
-          />
-        </div>
+        <q-btn
+          flat
+          round
+          dense
+          icon="delete"
+          color="negative"
+          class="q-ml-sm"
+          @click="formManager.removeField(term.notation, index)"
+          :disable="formManager.formData.value[term.notation].length <= 1"
+        />
       </div>
-       <q-btn
-          label="Add"
-          icon="add"
-          size="sm"
-          color="positive"
-          @click="formManager.addField(term.notation)"
-        />
+      <q-btn
+        label="Add"
+        icon="add"
+        size="sm"
+        color="positive"
+        @click="formManager.addField(term.notation)"
+      />
     </div>
 
     <div v-else-if="term.Feldwert">
-      <UriSelector
-        v-if="term.Feldwert.includes('URI')"
-        :notation="term.notation"
-        @uri-selected="(uri) => (formManager.formData.value[term.notation] = uri)"
-      />
-      <q-input
-        v-if="term.Feldwert.includes('Text') || term.Feldwert.includes('URI')"
+      <InputComponent
         v-model="formManager.formData.value[term.notation]"
-        filled
-        dense
-        :readonly="!term.Feldwert.includes('Text')"
-        :hint="term.Verwendungshinweis || ''"
-        @click="handleInputClick"
+        :term="term"
       />
     </div>
 
@@ -68,18 +50,11 @@
 
 <script setup>
 import { inject } from 'vue';
-import UriSelector from 'src/components/uriSelector.vue';
+import InputComponent from './inputComponent.vue';
 
-// No local state needed for the input value anymore!
 const props = defineProps(['term']);
-const link = "https://www.w3id.org/conservation/terms/metadata/" + props.term.notation;
+const link = `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`;
 
-// Inject the central form manager
+// Inject the central form manager for state management
 const formManager = inject('formManager');
-
-function handleInputClick() {
-  if (!props.term.Feldwert.includes('Text')) {
-    alert('Please select a value from the normdata URI tree below');
-  }
-}
 </script>
