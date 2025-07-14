@@ -69,7 +69,7 @@
 <script setup>
 import { computed } from 'vue';
 import UriSelector from 'src/components/uriSelector.vue';
-import inputTypes from 'src/data/inputType.json'; // Import the configuration
+import inputTypes from 'src/data/inputType.json';
 
 const props = defineProps(['modelValue', 'term']);
 const emit = defineEmits(['update:modelValue']);
@@ -85,6 +85,6 @@ const inputConfig = computed(() => {
   width: 100%;
   border: 1px solid #eee;
   border-radius: 4px;
-  margin-bottom: 8px; /* Adds space between fields */
+  margin-bottom: 8px;
 }
 </style>

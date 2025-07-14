@@ -4,7 +4,6 @@
       <h6 :title="term.definition" class="q-ma-none">
         <a :href="link" target="_blank">{{ term.prefLabel }}</a>
       </h6>
-
       <q-btn
         v-if="term.narrower"
         flat
@@ -16,7 +15,6 @@
         aria-label="Toggle expansion"
       />
     </div>
-
     <div v-if="term.Wiederholbar === 'Ja' && term.Feldwert">
       <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index" class="row items-center q-mb-sm">
         <InputComponent
