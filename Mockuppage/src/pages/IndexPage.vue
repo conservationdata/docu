@@ -1,17 +1,19 @@
 <template>
-  <q-page>
-    <q-form @submit="onSubmit" @reset="onReset">
+  <q-page class="q-pa-md form-page">
+    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
       <TermComponent 
       v-for="term in terms" 
       :key="term.path.join('-')" 
       :term="term" 
       />
-      <q-btn label="Submit" type="submit" color="primary" />
-      <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      <!-- 
-      <pre>{{ exportTerms }}</pre>
-      -->
-    </q-form>
+      <div class="q-mt-lg button-group">
+        <q-btn label="Submit" type="submit" color="primary" class="q-mr-sm"/>
+        <q-btn label="Reset" type="reset" color="grey" flat class="q-ml-sm" />
+      </div>
+      </q-form>
+      <div v-if="jsonOutput">
+        <pre>{{ exportTerms}}</pre>
+      </div>
   </q-page>
 </template>
 
@@ -22,6 +24,8 @@ import docuData from 'src/data/docu.json';
 
 const dataDefinition = ref(docuData);
 const terms = ref([]);
+
+const jsonOutput = ref(false)
 
 function createInitialTerms(terms, path = []) {
   const formTerms = [];
@@ -52,12 +56,13 @@ console.log("Initial form data:", terms.value)
 
 const onReset = () => {
   terms.value = createInitialTerms(dataDefinition.value);
+  jsonOutput.value = false;
   console.log('Form has been reset!');
 };
 
 const onSubmit = () => {
   console.log('Final Form Data:', exportTerms.value);
-  alert('Form submitted! Check the console for the data.');
+  jsonOutput.value = true;
 };
 
 provide('formManager', {
@@ -144,6 +149,22 @@ function exportFormData (terms) {
 }
 
 const exportTerms = computed(() => exportFormData(terms.value));
-
-
 </script>
+
+<style scoped>
+.form-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+</style>

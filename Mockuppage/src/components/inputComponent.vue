@@ -24,8 +24,8 @@
       </q-input>
     </div>
 
-    <div v-else-if="inputConfig.type === 'radio'" class="q-gutter-y-sm">
-      <div class="text-caption" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
+    <div v-else-if="inputConfig.type === 'radio'" class="q-gutter-y-sm radio-group">
+      <div class="text-caption radio-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
       <q-radio
         v-for="option in inputConfig.options"
         :key="option"
@@ -36,7 +36,7 @@
       />
     </div>
 
-    <div v-else-if="inputConfig.type === 'checkbox'">
+    <div v-else-if="inputConfig.type === 'checkbox'" class="checkbox-group">
       <q-checkbox
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
@@ -44,7 +44,7 @@
         :true-value="inputConfig['true-value']"
         :false-value="inputConfig['false-value']"
       />
-      <div class="text-caption" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
+      <div class="text-caption checkbox-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
     </div>
 
     <div v-else>
@@ -52,6 +52,7 @@
         v-if="term.Feldwert.includes('URI')"
         :notation="term.notation"
         @uri-selected="(uri) => emit('update:modelValue', uri)"
+        class="uri-selector"
       />
       <q-input
         v-if="term.Feldwert.includes('Text')"
@@ -59,7 +60,7 @@
         @update:model-value="(value) => emit('update:modelValue', value)"
         filled
         dense
-        class="col"
+        class="col text-input"
         :hint="term.Verwendungshinweis || ''"
       />
     </div>
@@ -83,8 +84,27 @@ const inputConfig = computed(() => {
 <style scoped>
 .input-wrapper {
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
   margin-bottom: 8px;
+  padding: 12px; /* Increased padding */
+  background-color: #ffffff;
+}
+
+.q-input, .q-radio, .q-checkbox {
+  margin-bottom: 8px; /* Spacing between input elements */
+}
+
+.radio-group, .checkbox-group {
+  padding-top: 8px;
+}
+
+.radio-hint, .checkbox-hint {
+  color: #757575; /* Softer color for hints */
+  margin-bottom: 8px;
+}
+
+.uri-selector, .text-input {
+  margin-top: 8px;
 }
 </style>

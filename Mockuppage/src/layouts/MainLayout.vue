@@ -5,15 +5,14 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
-          <div class="text-center text-bold text-h4">Conservation Documentation</div>
-          <div class="text-center text-bold text-subtitle4">Metadata Mockup</div>
+          <div class="text-center text-bold text-h4 header-title">Conservation Documentation</div>
+          <div class="text-center text-bold text-subtitle4 header-subtitle">Metadata Mockup</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
-    </q-drawer>
+      </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -45,3 +44,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.header-title {
+  font-size: 2.5rem; /* Larger font size for the main title */
+  letter-spacing: 0.05em; /* Slightly more spaced letters */
+}
+
+.header-subtitle {
+  font-size: 1rem; /* Appropriate size for a subtitle */
+  opacity: 0.8; /* Slightly less prominent */
+}
+</style>

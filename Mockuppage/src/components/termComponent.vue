@@ -1,18 +1,19 @@
 <template>
-  <div class="q-pa-sm">
-    <!-- Header with label, definition tooltip and expand button -->
-    <div class="row items-center">
-      <h6 class="q-ma-none">
+  <div class="q-pa-sm term-container">
+    <div class="row items-center term-header">
+      <h6 class="q-ma-none term-label">
         <a 
         :href="link" 
         :title="term.definition"
-        target="_blank">
+        target="_blank"
+        class="text-primary text-bold"
+        >
         {{ term.prefLabel }}
         </a>
         <span 
         v-if="term.Verpflichtungsgrad === 'Pflicht'" 
         :title="'Verpflichtend'"
-        class="text-red q-ml-sm"
+        class="text-red q-ml-sm required-indicator"
         >*</span>
       </h6>
       <q-btn
@@ -20,12 +21,12 @@
         flat
         round
         dense
-        :icon="isExpanded ? 'expand_more' : 'expand_less'" 
+        :icon="isExpanded ? 'expand_less' : 'expand_more'" 
         @click="toggleExpansion"
-        class="q-ml-sm"
+        class="q-ml-sm expand-btn"
         aria-label="Toggle expansion"
       />
-      <!--- '' --->
+      <q-space />
       <q-btn
         v-if="term.Wiederholbar === 'Ja'"
         icon="delete"
@@ -36,6 +37,7 @@
         aria-label="Delete"
         @click="formManager.removeFieldAtPath(term.path)"
         :disable="isOnlyInstance"
+        class="delete-btn"
       />
     </div>
 
@@ -44,6 +46,7 @@
     :modelValue="term.value" 
     @update:modelValue="updateValue" 
     :term="term" 
+    class="q-mt-sm"
     />
 
     <q-btn
@@ -53,10 +56,10 @@
       size="sm"
       color="positive"
       @click="formManager.addFieldAtPath(term.path)"
-      class="q-mr-sm"
+      class="q-mt-sm add-btn"
     />
 
-    <div v-if="term.narrower && term.narrower.length && isExpanded" class="q-ml-md">
+    <div v-if="term.narrower && term.narrower.length && isExpanded" class="q-ml-md narrower-terms">
       <TermComponent
         v-for="child in term.narrower"
         :key="child.path.join('-')"
@@ -103,8 +106,61 @@ function updateValue(newVal) {
 </script>
 
 <style scoped>
+.term-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background-color: #fcfcfc;
+  padding: 1rem !important;
+}
+
+.term-header {
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.term-label {
+  font-size: 1.25rem; /* Larger font size for term labels */
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.term-label a {
+  text-decoration: none;
+  color: #1976d2; /* Quasar primary color */
+}
+
+.term-label a:hover {
+  text-decoration: underline;
+}
+
+.required-indicator {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.expand-btn {
+  color: #555;
+}
+
+.delete-btn {
+  margin-left: 0.5rem;
+}
+
+.add-btn {
+  margin-top: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.narrower-terms {
+  border-left: 2px solid #e0e0e0;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
 h6 {
+  margin-top: 0;
   margin-bottom: 0;
-  margin-top: 0.5rem;
 }
 </style>
