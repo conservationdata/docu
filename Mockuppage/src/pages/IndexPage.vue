@@ -130,7 +130,7 @@ function exportFormData (terms) {
   for (const term of terms) {
     const exportTerm = {
       Name: term.prefLabel,
-      Identifikator: term.notation,
+      Identifikator: `https://www.w3id.org/conservation/terms/metadata/${term.notation}`,
     }
     if (term.Feldwert) {
       exportTerm.value = term.value;

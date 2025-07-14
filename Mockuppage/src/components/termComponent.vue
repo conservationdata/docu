@@ -2,8 +2,18 @@
   <div class="q-pa-sm">
     <!-- Header with label, definition tooltip and expand button -->
     <div class="row items-center">
-      <h6 :title="term.definition" class="q-ma-none">
-        <a :href="link" target="_blank">{{ term.prefLabel }}</a>
+      <h6 class="q-ma-none">
+        <a 
+        :href="link" 
+        :title="term.definition"
+        target="_blank">
+        {{ term.prefLabel }}
+        </a>
+        <span 
+        v-if="term.Verpflichtungsgrad === 'Pflicht'" 
+        :title="'Verpflichtend'"
+        class="text-red q-ml-sm"
+        >*</span>
       </h6>
       <q-btn
         v-if="term.narrower && term.narrower.length"
