@@ -1,9 +1,10 @@
 <template>
   <q-layout view="hHh lpR fFf">
-
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
+        <!-- 
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        -->
         <q-toolbar-title>
           <div class="text-center text-bold text-h4 header-title">Conservation Documentation</div>
           <div class="text-center text-bold text-subtitle4 header-subtitle">Metadata Mockup</div>
@@ -11,10 +12,12 @@
       </q-toolbar>
     </q-header>
 
+    <!-- 
     <q-drawer v-model="leftDrawerOpen" side="left" bordered>
       </q-drawer>
+    -->
 
-    <q-page-container>
+    <q-page-container class="bg-grey-2">
       <router-view />
     </q-page-container>
 
@@ -47,7 +50,7 @@ export default {
 
 <style scoped>
 .header-title {
-  font-size: 2.5rem; /* Larger font size for the main title */
+  font-size: 2.0rem; /* Larger font size for the main title */
   letter-spacing: 0.05em; /* Slightly more spaced letters */
 }
 

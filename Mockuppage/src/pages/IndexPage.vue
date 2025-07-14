@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md form-page">
+  <q-page class="q-pa-md form-page" >
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
       <TermComponent 
       v-for="term in terms" 
