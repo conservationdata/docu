@@ -1,28 +1,33 @@
 <template>
   <q-page>
     <q-form @submit="onSubmit" @reset="onReset">
-      <TermComponent v-for="term in dataDefinition" :key="term.notation" :term="term" />
+      <TermComponent 
+      v-for="term in terms" 
+      :key="term.path.join('-')" 
+      :term="term" 
+      />
       <q-btn label="Submit" type="submit" color="primary" />
       <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      <pre>{{ formData }}</pre>
+      <pre>{{ terms }}</pre>
     </q-form>
   </q-page>
 </template>
 
 <script setup>
-import { ref, provide } from 'vue';
+import { ref, provide, toRaw } from 'vue';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
 
 const dataDefinition = ref(docuData);
-const formData = ref([]);
+const terms = ref([]);
 
-function createInitialFormData(terms, path = []) {
+function createInitialTerms(terms, path = []) {
   const formTerms = [];
   for (const [index, term] of terms.entries()) {
     const currentPath = [...path, index];
     const formTerm = {
       path: currentPath,
+      prefLabel: term.prefLabel,
       notation: term.notation,
       definition:term.definition,
       Wiederholbar:term.Wiederholbar,
@@ -33,47 +38,46 @@ function createInitialFormData(terms, path = []) {
       formTerm.value = "";
     }
     if (term.narrower) {
-      formTerm.narrower = createInitialFormData(term.narrower, currentPath);
+      formTerm.narrower = createInitialTerms(term.narrower, currentPath);
     }
     formTerms.push(formTerm);
   }
   return formTerms;
 }
 
-formData.value = createInitialFormData(dataDefinition.value);
-console.log("Initial form data:", formData.value)
+terms.value = createInitialTerms(dataDefinition.value);
+console.log("Initial form data:", terms.value)
 
 const onReset = () => {
-  formData.value = createInitialFormData(dataDefinition.value);
+  terms.value = createInitialTerms(dataDefinition.value);
   console.log('Form has been reset!');
 };
 
 const onSubmit = () => {
-  console.log('Final Form Data:', formData.value);
+  console.log('Final Form Data:', terms.value);
   alert('Form submitted! Check the console for the data.');
 };
 
 provide('formManager', {
-  formData,
-  
+  terms,
   addFieldAtPath(path) {
-    let parentArray = formData.value;
+    let parentArray = terms.value;
     for (let i = 0; i < path.length - 1; i++) {
       parentArray = parentArray[path[i]].narrower;
     }
     const index = path[path.length - 1];
     const node = parentArray[index];
 
-    if (node['Wiederholbar:'] === 'Ja') {
-      const clone = structuredClone(node);
+    if (node['Wiederholbar'] === 'Ja') {
+      const clone = structuredClone(toRaw(node));
       resetValues(clone);
       parentArray.splice(index + 1, 0, clone);
-      recalculatePaths(formData.value);
+      recalculatePaths(terms.value);
     }
   },
 
   removeFieldAtPath(path) {
-    let parentArray = formData.value;
+    let parentArray = terms.value;
     for (let i = 0; i < path.length - 1; i++) {
       parentArray = parentArray[path[i]].narrower;
     }
@@ -83,9 +87,21 @@ provide('formManager', {
     const sameNotationCount = parentArray.filter(n => n.notation === notation).length;
     if (sameNotationCount > 1) {
       parentArray.splice(index, 1);
-      recalculatePaths(formData.value);
+      recalculatePaths(terms.value);
+    }
+  },
+
+  updateValueAtPath(path, value) {
+  let target = terms.value;
+  for (let i = 0; i < path.length; i++) {
+    target = target[path[i]];
+    if (i < path.length - 1) {
+      target = target.narrower;
     }
   }
+  target.value = value;
+}
+
 });
 
 function resetValues(node) {
@@ -106,6 +122,5 @@ function recalculatePaths(nodes, path = []) {
     }
   });
 }
-
 
 </script>

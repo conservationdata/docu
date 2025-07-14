@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="q-pa-sm">
+    <!-- Header with label, definition tooltip and expand button -->
     <div class="row items-center">
       <h6 :title="term.definition" class="q-ma-none">
         <a :href="link" target="_blank">{{ term.prefLabel }}</a>
       </h6>
       <q-btn
-        v-if="term.narrower"
+        v-if="term.narrower && term.narrower.length"
         flat
         round
         dense
@@ -15,44 +16,43 @@
         aria-label="Toggle expansion"
       />
     </div>
-    <div v-if="term.Wiederholbar === 'Ja' && term.Feldwert">
-      <div v-for="(value, index) in formManager.formData.value[term.notation]" :key="index" class="row items-center q-mb-sm">
-        <InputComponent
-          v-model="formManager.formData.value[term.notation][index]"
-          :term="term"
-          class="col"
-        />
-        <q-btn
-          flat
-          round
-          dense
-          icon="delete"
-          color="negative"
-          class="q-ml-sm"
-          @click="formManager.removeField(term.notation, index)"
-          :disable="formManager.formData.value[term.notation].length <= 1"
-        />
-      </div>
+
+    <!-- Input for term with Feldwert -->
+    <div v-if="term.Feldwert" class="q-mb-sm">
+      <InputComponent 
+      :modelValue="term.value" 
+      @update:modelValue="updateValue" 
+      :term="term" 
+      />
+    </div>
+
+    <!-- Add/Remove buttons if Wiederholbar === 'Ja' -->
+    <div v-if="term.Wiederholbar === 'Ja'" class="q-mb-sm">
       <q-btn
         label="Add"
         icon="add"
         size="sm"
         color="positive"
-        @click="formManager.addField(term.notation)"
+        @click="formManager.addFieldAtPath(term.path)"
+        class="q-mr-sm"
+      />
+      <q-btn
+        icon="delete"
+        color="negative"
+        round
+        dense
+        flat
+        aria-label="Delete"
+        @click="formManager.removeFieldAtPath(term.path)"
+        :disable="isOnlyInstance"
       />
     </div>
 
-    <div v-else-if="term.Feldwert">
-      <InputComponent
-        v-model="formManager.formData.value[term.notation]"
-        :term="term"
-      />
-    </div>
-
-    <div v-if="term.narrower && isExpanded" class="q-ml-md">
+    <!-- Children terms (narrower) -->
+    <div v-if="term.narrower && term.narrower.length && isExpanded" class="q-ml-md">
       <TermComponent
         v-for="child in term.narrower"
-        :key="child.notation"
+        :key="child.path.join('-')"
         :term="child"
       />
     </div>
@@ -60,26 +60,42 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue'; // Import ref
+import { inject, ref, computed } from 'vue';
 import InputComponent from './inputComponent.vue';
 
-const props = defineProps(['term']);
+const props = defineProps({
+  term: {
+    type: Object,
+    required: true
+  }
+});
+
 const link = `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`;
 
-// Inject the central form manager for state management
 const formManager = inject('formManager');
 
-// 1. Add a local reactive state to track the expansion state. Default to true (expanded).
 const isExpanded = ref(false);
-
-// 2. Create a function to toggle the state.
 function toggleExpansion() {
   isExpanded.value = !isExpanded.value;
 }
+
+const isOnlyInstance = computed(() => {
+  const parentPath = props.term.path.slice(0, -1);
+  let parentArray = formManager.terms.value;
+  for (let i = 0; i < parentPath.length; i++) {
+    parentArray = parentArray[parentPath[i]].narrower;
+  }
+  const count = parentArray.filter(t => t.notation === props.term.notation).length;
+  return count <= 1;
+});
+
+function updateValue(newVal) {
+  formManager.updateValueAtPath(props.term.path, newVal);
+}
+
 </script>
 
 <style scoped>
-/* Optional: Add a cursor pointer to the title to indicate it's clickable */
 h6 {
   margin-bottom: 0;
   margin-top: 0.5rem;
