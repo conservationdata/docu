@@ -8,13 +8,15 @@
       />
       <q-btn label="Submit" type="submit" color="primary" />
       <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      <pre>{{ terms }}</pre>
+      <!-- 
+      <pre>{{ exportTerms }}</pre>
+      -->
     </q-form>
   </q-page>
 </template>
 
 <script setup>
-import { ref, provide, toRaw } from 'vue';
+import { ref, provide, toRaw, computed } from 'vue';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
 
@@ -54,7 +56,7 @@ const onReset = () => {
 };
 
 const onSubmit = () => {
-  console.log('Final Form Data:', terms.value);
+  console.log('Final Form Data:', exportTerms.value);
   alert('Form submitted! Check the console for the data.');
 };
 
@@ -122,5 +124,26 @@ function recalculatePaths(nodes, path = []) {
     }
   });
 }
+
+function exportFormData (terms) {
+  const exportTerms = [];
+  for (const term of terms) {
+    const exportTerm = {
+      Name: term.prefLabel,
+      Identifikator: term.notation,
+    }
+    if (term.Feldwert) {
+      exportTerm.value = term.value;
+    }
+    if (term.narrower) {
+      exportTerm.Untereinträge = exportFormData(term.narrower);
+    }
+    exportTerms.push(exportTerm);
+  }
+  return exportTerms;
+}
+
+const exportTerms = computed(() => exportFormData(terms.value));
+
 
 </script>

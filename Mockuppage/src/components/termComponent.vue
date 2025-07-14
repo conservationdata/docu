@@ -10,33 +10,14 @@
         flat
         round
         dense
-        :icon="isExpanded ? 'expand_more' : 'chevron_right'"
+        :icon="isExpanded ? 'expand_more' : 'expand_less'" 
         @click="toggleExpansion"
         class="q-ml-sm"
         aria-label="Toggle expansion"
       />
-    </div>
-
-    <!-- Input for term with Feldwert -->
-    <div v-if="term.Feldwert" class="q-mb-sm">
-      <InputComponent 
-      :modelValue="term.value" 
-      @update:modelValue="updateValue" 
-      :term="term" 
-      />
-    </div>
-
-    <!-- Add/Remove buttons if Wiederholbar === 'Ja' -->
-    <div v-if="term.Wiederholbar === 'Ja'" class="q-mb-sm">
+      <!--- '' --->
       <q-btn
-        label="Add"
-        icon="add"
-        size="sm"
-        color="positive"
-        @click="formManager.addFieldAtPath(term.path)"
-        class="q-mr-sm"
-      />
-      <q-btn
+        v-if="term.Wiederholbar === 'Ja'"
         icon="delete"
         color="negative"
         round
@@ -48,7 +29,23 @@
       />
     </div>
 
-    <!-- Children terms (narrower) -->
+    <InputComponent 
+    v-if="term.Feldwert"
+    :modelValue="term.value" 
+    @update:modelValue="updateValue" 
+    :term="term" 
+    />
+
+    <q-btn
+      v-if="term.Wiederholbar === 'Ja'"
+      label="Add"
+      icon="add"
+      size="sm"
+      color="positive"
+      @click="formManager.addFieldAtPath(term.path)"
+      class="q-mr-sm"
+    />
+
     <div v-if="term.narrower && term.narrower.length && isExpanded" class="q-ml-md">
       <TermComponent
         v-for="child in term.narrower"
