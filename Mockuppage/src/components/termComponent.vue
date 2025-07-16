@@ -59,8 +59,9 @@
       class="q-mt-sm add-btn"
     />
 
-    <div v-if="term.narrower && term.narrower.length && isExpanded" class="q-ml-md narrower-terms">
+    <div v-if="term.narrower && term.narrower.length" class="q-ml-md narrower-terms">
       <TermComponent
+        v-show="isExpanded"
         v-for="child in term.narrower"
         :key="child.path.join('-')"
         :term="child"
