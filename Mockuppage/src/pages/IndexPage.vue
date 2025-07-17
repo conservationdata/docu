@@ -7,12 +7,17 @@
       :term="term" 
       />
       <div class="q-mt-lg button-group">
-        <q-btn label="Submit" type="submit" color="primary" class="q-mr-sm"/>
+        <q-btn 
+          label="Submit" 
+          type="submit" 
+          color="primary" 
+          class="q-mr-sm"
+        />
         <q-btn label="Reset" type="reset" color="grey" flat class="q-ml-sm" />
       </div>
       </q-form>
       <div v-if="jsonOutput">
-        <pre>{{ exportTerms}}</pre>
+        <pre>{{ exportTerms}} </pre>
       </div>
   </q-page>
 </template>
@@ -24,7 +29,6 @@ import docuData from 'src/data/docu.json';
 
 const dataDefinition = ref(docuData);
 const terms = ref([]);
-
 const jsonOutput = ref(false)
 
 function createInitialTerms(terms, path = []) {
@@ -55,14 +59,16 @@ terms.value = createInitialTerms(dataDefinition.value);
 console.log("Initial form data:", terms.value)
 
 const onReset = () => {
+  console.log('Reset button clicked');
   terms.value = createInitialTerms(dataDefinition.value);
   jsonOutput.value = false;
   console.log('Form has been reset!');
 };
 
 const onSubmit = () => {
-  console.log('Final Form Data:', exportTerms.value);
+  console.log('Submit button clicked');
   jsonOutput.value = true;
+  console.log('Form has been submitted!');
 };
 
 provide('formManager', {
@@ -99,16 +105,15 @@ provide('formManager', {
   },
 
   updateValueAtPath(path, value) {
-  let target = terms.value;
-  for (let i = 0; i < path.length; i++) {
-    target = target[path[i]];
-    if (i < path.length - 1) {
-      target = target.narrower;
+    let target = terms.value;
+    for (let i = 0; i < path.length; i++) {
+      target = target[path[i]];
+      if (i < path.length - 1) {
+        target = target.narrower;
+      }
     }
+    target.value = value;
   }
-  target.value = value;
-}
-
 });
 
 function resetValues(node) {

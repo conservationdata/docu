@@ -1,29 +1,15 @@
 <template>
   <div class="input-wrapper q-pa-sm">
     <div v-if="inputConfig.type === 'date'">
-      <q-input
+      <q-date
         filled
         dense
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
-        mask="date"
-        :rules="['date']"
         :hint="term.Verwendungshinweis || 'Please select a date'"
-      >
-        <template v-slot:append>
-          <q-icon name="event" class="cursor-pointer">
-            <q-popup-proxy cover transition-show="scale" transition-hide="scale">
-              <q-date :model-value="modelValue" @update:model-value="(value) => emit('update:modelValue', value)">
-                <div class="row items-center justify-end">
-                  <q-btn v-close-popup label="Close" color="primary" flat />
-                </div>
-              </q-date>
-            </q-popup-proxy>
-          </q-icon>
-        </template>
-      </q-input>
+      />
     </div>
-
+    
     <div v-else-if="inputConfig.type === 'radio'" class="q-gutter-y-sm radio-group">
       <div class="text-caption radio-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
       <q-radio
@@ -35,7 +21,7 @@
         :label="option"
       />
     </div>
-
+    
     <div v-else-if="inputConfig.type === 'checkbox'" class="checkbox-group">
       <q-checkbox
         :model-value="modelValue"
@@ -46,7 +32,7 @@
       />
       <div class="text-caption checkbox-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
     </div>
-
+    
     <div v-else>
       <UriSelector
         v-if="term.Feldwert.includes('URI')"
@@ -55,13 +41,13 @@
         class="uri-selector"
       />
       <q-input
-        v-if="term.Feldwert.includes('Text')"
+        :readonly="!term.Feldwert.includes('Text')"
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
         filled
         dense
         class="col text-input"
-        :hint="term.Verwendungshinweis || ''"
+        :hint="inputHint"
       />
     </div>
   </div>
@@ -75,10 +61,22 @@ import inputTypes from 'src/data/inputType.json';
 const props = defineProps(['modelValue', 'term']);
 const emit = defineEmits(['update:modelValue']);
 
+const isInputReadonly = computed(() => {
+  return !props.term.Feldwert.includes('Text');
+});
+
+const inputHint = computed(() => {
+  if (isInputReadonly.value) {
+    return 'This field is read-only. Please use the URI tree to select a value.';
+  }
+  return props.term.Verwendungshinweis || '';
+});
+
 const inputConfig = computed(() => {
   const config = inputTypes[props.term.notation];
   return config ? config : { type: 'default' };
 });
+
 </script>
 
 <style scoped>
