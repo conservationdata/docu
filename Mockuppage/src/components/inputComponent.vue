@@ -86,7 +86,7 @@
 import { ref, computed, watch } from 'vue';
 import UriSelector from 'src/components/uriSelector.vue';
 
-const props = defineProps(['modelValue', 'term']);
+const props = defineProps(['modelValue', 'term', 'path']);
 const emit = defineEmits(['update:modelValue']);
 
 const localValue = ref(props.modelValue);

@@ -41,6 +41,14 @@
       />
     </div>
 
+    <!-- Unsicher Checkbox -->
+    <q-checkbox
+      v-if="term.Unsicher === 'Ja'"
+      v-model="unsicherValue"
+      label="Unsicher"
+      class="q-mt-sm"
+    />
+
     <InputComponent 
       v-if="term.Feldwert"
       :modelValue="term.value" 
@@ -58,6 +66,7 @@
       @click="formManager.addFieldAtPath(term.path)"
       class="q-mt-sm add-btn"
     />
+
     <div v-show="term.narrower && term.narrower.length && term.isExpanded" class="q-ml-md narrower-terms">
       <TermComponent
         v-for="child in term.narrower"
@@ -82,7 +91,7 @@ const props = defineProps({
 const formManager = inject('formManager');
 
 const termId = computed(() => `term-${props.term.path.join('-')}`);
-const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`);
+const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/ ${props.term.notation}`);
 
 function toggleExpansion() {
   formManager.toggleExpansionAtPath(props.term.path);
@@ -90,14 +99,15 @@ function toggleExpansion() {
 
 const isOnlyInstance = computed(() => {
   if (props.term.path.length === 1) {
-      return formManager.terms.value.filter(t => t.notation === props.term.notation).length <= 1;
+    return formManager.terms.value.filter(t => t.notation === props.term.notation).length <= 1;
   }
-  
+
   const parentPath = props.term.path.slice(0, -1);
   let parentArray = formManager.terms.value;
   for (let i = 0; i < parentPath.length; i++) {
     parentArray = parentArray[parentPath[i]].narrower;
   }
+
   const count = parentArray.filter(t => t.notation === props.term.notation).length;
   return count <= 1;
 });
@@ -105,6 +115,14 @@ const isOnlyInstance = computed(() => {
 function updateValue(newVal) {
   formManager.updateValueAtPath(props.term.path, newVal);
 }
+
+// Handle Unsicher checkbox
+const unsicherValue = computed({
+  get: () => props.term.UnsicherValue === 'Ja',
+  set: (isChecked) => {
+    formManager.updateValueAtPath(props.term.path, isChecked ? 'Ja' : '', 'UnsicherValue');
+  }
+});
 </script>
 
 <style scoped>

@@ -105,6 +105,7 @@ function createInitialTerms(terms, path = []) {
       Einheit: term.Einheit,
       Unsicher: term.Unsicher,
       isExpanded: false,
+      UnsicherValue: '',
     };
     if (term.Feldwert) {
       formTerm.value = '';
@@ -221,11 +222,17 @@ function transformFormData(currentTerms) {
     if (term.value || (term.narrower && term.narrower.length > 0)) {
       const exportTerm = {
         Name: term.prefLabel,
-        Identifikator: `https://www.w3id.org/conservation/terms/metadata/${term.notation}`,
+        Identifikator: `https://www.w3id.org/conservation/terms/metadata/ ${term.notation}`,
       };
       if (term.Feldwert) {
         exportTerm.value = term.value;
       }
+
+      // ✅ Only export Unsicher if it's set to 'Ja'
+      if (term.Unsicher === 'Ja' && term.UnsicherValue === 'Ja') {
+        exportTerm.Unsicher = 'Ja';
+      }
+
       if (term.narrower) {
         const narrowerExport = transformFormData(term.narrower);
         if (narrowerExport.length > 0) {
@@ -237,6 +244,7 @@ function transformFormData(currentTerms) {
   }
   return transformedTerms;
 }
+
 
 function toggleAll(expand) {
   const recursiveToggle = (nodes) => {
@@ -291,13 +299,13 @@ provide('formManager', {
       recalculatePaths(terms.value);
     }
   },
-  updateValueAtPath(path, value) {
-    let target = terms.value;
-    path.forEach((index, i) => {
-      target = (i < path.length - 1) ? target[index].narrower : target[index];
-    });
-    target.value = value;
-  },
+updateValueAtPath(path, value, field = 'value') {
+  let target = terms.value;
+  path.forEach((index, i) => {
+    target = (i < path.length - 1) ? target[index].narrower : target[index];
+  });
+  target[field] = value;
+},
 
   toggleExpansionAtPath(path) {
     let target = terms.value;
@@ -310,6 +318,7 @@ provide('formManager', {
 
 function resetValues(node) {
   if ('value' in node) node.value = '';
+  if ('UnsicherValue' in node) node.UnsicherValue = '';
   if ('isExpanded' in node) node.isExpanded = false;
   if (Array.isArray(node.narrower)) {
     node.narrower.forEach(child => resetValues(child));
