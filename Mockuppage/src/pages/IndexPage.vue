@@ -42,6 +42,14 @@
           />
           <q-separator vertical class="q-mx-md" />
           <q-btn
+            label="Fill all fields"
+            color="accent"
+            icon="mdi-auto-fix"
+            @click="fillAllFields"
+            flat
+          />
+          <q-separator vertical class="q-mx-md" />
+          <q-btn
             label="Expand All"
             color="secondary"
             icon="mdi-unfold-more-vertical"
@@ -68,6 +76,7 @@ import { ref, provide, toRaw, nextTick } from 'vue';
 import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
+import exampleData from 'src/data/example.json';
 
 const $q = useQuasar();
 const dataDefinition = ref(docuData);
@@ -117,6 +126,46 @@ const onReset = () => {
     color: 'info',
     icon: 'mdi-reload',
   });
+};
+
+const fillAllFields = () => {
+  try {
+    let fieldsFilledCount = 0;
+    
+    const fillTermsRecursively = (currentTerms) => {
+      currentTerms.forEach(term => {
+        // Check if this term has a valid Feldwert and matching notation in example data
+        if (term.Feldwert && term.notation && exampleData[term.notation]) {
+          const exampleValue = exampleData[term.notation];
+          // Only fill if the example value is not empty
+          if (exampleValue && exampleValue.trim() !== '') {
+            term.value = exampleValue;
+            fieldsFilledCount++;
+          }
+        }
+        
+        // Recursively process narrower terms
+        if (term.narrower && term.narrower.length > 0) {
+          fillTermsRecursively(term.narrower);
+        }
+      });
+    };
+    
+    fillTermsRecursively(terms.value);
+    
+    $q.notify({
+      type: 'positive',
+      message: `Successfully filled ${fieldsFilledCount} fields with example data.`,
+      icon: 'mdi-auto-fix',
+    });
+  } catch (error) {
+    console.error('Error filling fields:', error);
+    $q.notify({
+      type: 'negative',
+      message: 'Error loading example data. Please check if example.json exists.',
+      icon: 'mdi-alert-circle-outline',
+    });
+  }
 };
 
 const onSubmit = async () => {
@@ -257,7 +306,7 @@ provide('formManager', {
     });
     target.value = value;
   },
-  // ✅ Provide a function to toggle expansion state cleanly
+
   toggleExpansionAtPath(path) {
     let target = terms.value;
     path.forEach((index, i) => {
@@ -272,7 +321,7 @@ provide('formManager', {
 
 function resetValues(node) {
   if ('value' in node) node.value = '';
-  if ('isExpanded' in node) node.isExpanded = false; // Also reset expansion
+  if ('isExpanded' in node) node.isExpanded = false;
   if (Array.isArray(node.narrower)) {
     node.narrower.forEach(child => resetValues(child));
   }

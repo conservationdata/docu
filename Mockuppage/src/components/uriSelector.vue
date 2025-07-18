@@ -29,7 +29,7 @@ const tree = computed(() => {
     // The q-tree component expects an array of nodes
     return [treeData];
   } catch (error) {
-    console.log('Error parsing "term.Baum" JSON. Please ensure it is valid JSON.', );
+    console.log(props.term.prefLabel,'Error parsing "term.Baum" JSON. Please ensure it is valid JSON.');
     const errorArray =[error]
     errorArray.pop();
     return [];

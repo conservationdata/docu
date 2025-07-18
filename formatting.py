@@ -1,23 +1,18 @@
 import json
 
-jsonString = """
-{
-  "label": "Ansprechpartner*in",
-  "uri": "https://www.conservation-science.org/ontology/contact-person",
-  "selectable": false,
-  "children": [
-    {
-      "label": "Max Mustermann",
-      "uri": "https://www.example.org/contact-person/max-mustermann"
-    },
-    {
-      "label": "Unbekannte*r Ansprechpartner*in (Unknown Contact Person)",
-      "uri": "https://www.conservation-science.org/ontology/contact-person/unknown"
-    }
-  ]
-}
+jsonString2 = """
+{'label': 'Werkzeug', 'uri': 'https://www.conservation-science.org/ontology/tool/F87124', 'selectable': False, 'children': [{'label': 'Skalpell (Scalpel)', 'uri': 'https://www.conservation-science.org/ontology/tool/scalpel'}, {'label': 'Pinsel (Brush)', 'uri': 'https://www.conservation-science.org/ontology/tool/brush'}, {'label': 'Luftpistole (Airbrush)', 'uri': 'https://www.conservation-science.org/ontology/tool/airbrush'}]}
+
     """
 
+
+
 # read JSON from jsonString
-JSON = json.loads(jsonString)
-print(JSON)
+stringer = jsonString2
+stringer = stringer.replace("'",'"')
+stringer = stringer.replace("False","false")
+stringer = stringer.replace("True","true")
+#print(stringer)
+
+JSON = json.loads(stringer)
+print(json.dumps(JSON))

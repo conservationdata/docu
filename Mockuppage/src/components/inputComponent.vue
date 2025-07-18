@@ -76,7 +76,7 @@ const inputConfig = computed(() => {
   const defaultConfig = { type: 'default' };
 
   if (!props.term || !props.term.Typ) {
-    console.log('Error: term.Typ is missing. Falling back to default input.');
+    //console.log(props.term.prefLabel, 'Error: term.Typ is missing. Falling back to default input.');
     return defaultConfig;
   }
 
