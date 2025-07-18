@@ -20,13 +20,11 @@ const selected = ref(null);
 const tree = computed(() => {
   if (!props.term || !props.term.Baum) {
     console.error('Error: "term.Baum" property is missing. Cannot render tree.');
-    return []; // Return an empty array to prevent crashing q-tree
+    return [];
   }
 
   try {
-    // The string in term.Baum must be valid JSON (double quotes, lowercase booleans)
     const treeData = JSON.parse(props.term.Baum);
-    // The q-tree component expects an array of nodes
     return [treeData];
   } catch (error) {
     console.log(props.term.prefLabel,'Error parsing "term.Baum" JSON. Please ensure it is valid JSON.');

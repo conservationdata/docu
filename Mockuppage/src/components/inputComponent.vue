@@ -6,7 +6,7 @@
         dense
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
-        :hint="term.Verwendungshinweis || 'Please select a date'"
+        :hint="term.Verwendungshinweis || 'Bitte Datum eintragen'"
       />
     </div>
 
@@ -19,6 +19,7 @@
         @update:model-value="(value) => emit('update:modelValue', value)"
         :val="option"
         :label="option"
+        :hint="term.Verwendungshinweis || 'Bitte Wert eintragen'"
       />
     </div>
 
@@ -29,6 +30,7 @@
         :label="inputConfig.label"
         :true-value="inputConfig['true-value']"
         :false-value="inputConfig['false-value']"
+        :hint="term.Verwendungshinweis || 'Bitte Wert eintragen'"
       />
       <div class="text-caption checkbox-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
     </div>
@@ -40,14 +42,17 @@
         @uri-selected="(uri) => emit('update:modelValue', uri)"
         class="uri-selector"
       />
+      <div class="text-caption text-grey-7 q-mt-sm" v-if="!term.Feldwert.includes('Text')">
+      {{ props.term.Verwendungshinweis || 'Bitte Wert eintragen' }}
+    </div>
       <q-input
-        :readonly="isInputReadonly"
+        v-show="term.Feldwert.includes('Text')"
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
         filled
         dense
         class="col text-input"
-        :hint="inputHint"
+        :hint="props.term.Verwendungshinweis || 'Bitte Wert eintragen'" 
       />
     </div>
   </div>
@@ -60,29 +65,15 @@ import UriSelector from 'src/components/uriSelector.vue';
 const props = defineProps(['modelValue', 'term']);
 const emit = defineEmits(['update:modelValue']);
 
-const isInputReadonly = computed(() => {
-  return !props.term.Feldwert.includes('Text');
-});
-
-const inputHint = computed(() => {
-  if (isInputReadonly.value) {
-    return 'This field is read-only. Please use the URI tree to select a value.';
-  }
-  return props.term.Verwendungshinweis || 'Please enter a value';
-});
-
 const inputConfig = computed(() => {
-  // Fallback configuration
   const defaultConfig = { type: 'default' };
 
   if (!props.term || !props.term.Typ) {
-    //console.log(props.term.prefLabel, 'Error: term.Typ is missing. Falling back to default input.');
     return defaultConfig;
   }
 
   try {
     const config = JSON.parse(props.term.Typ);
-    // Validate that the parsed object has a 'type' property
     if (config && typeof config === 'object' && config.type) {
       return config;
     }

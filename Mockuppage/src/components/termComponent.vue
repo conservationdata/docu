@@ -1,5 +1,4 @@
 <template>
-  <!-- ✅ Add a unique, computed ID for scrolling -->
   <div class="q-pa-sm term-container" :id="termId">
     <div class="row items-center term-header">
       <h6 class="q-ma-none term-label">
@@ -17,7 +16,6 @@
           class="text-red q-ml-sm required-indicator"
         >*</span>
       </h6>
-      <!-- ✅ Icon and action now bound to the prop -->
       <q-btn
         v-if="term.narrower && term.narrower.length"
         flat
@@ -60,7 +58,6 @@
       @click="formManager.addFieldAtPath(term.path)"
       class="q-mt-sm add-btn"
     />
-    <!-- ✅ v-show is also bound to the prop -->
     <div v-show="term.narrower && term.narrower.length && term.isExpanded" class="q-ml-md narrower-terms">
       <TermComponent
         v-for="child in term.narrower"
@@ -84,17 +81,15 @@ const props = defineProps({
 
 const formManager = inject('formManager');
 
-// ✅ Create a unique ID from the term's path
 const termId = computed(() => `term-${props.term.path.join('-')}`);
 const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`);
 
-// ✅ Call the central function to toggle state, avoiding prop mutation
 function toggleExpansion() {
   formManager.toggleExpansionAtPath(props.term.path);
 }
 
 const isOnlyInstance = computed(() => {
-  if (props.term.path.length === 1) { // Root level term
+  if (props.term.path.length === 1) {
       return formManager.terms.value.filter(t => t.notation === props.term.notation).length <= 1;
   }
   
@@ -119,7 +114,6 @@ function updateValue(newVal) {
   margin-bottom: 1rem;
   background-color: #fcfcfc;
   padding: 1rem !important;
-  /* Added for smooth scrolling */
   scroll-margin-top: 20px; 
 }
 

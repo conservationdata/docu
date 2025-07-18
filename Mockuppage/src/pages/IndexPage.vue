@@ -98,6 +98,7 @@ function createInitialTerms(terms, path = []) {
       definition: term.definition,
       Wiederholbar: term.Wiederholbar,
       Verpflichtungsgrad: term.Verpflichtungsgrad,
+      Verwendungshinweis: term.Verwendungshinweis,
       Feldwert: term.Feldwert,
       Typ: term.Typ,
       Baum: term.Baum,
@@ -134,17 +135,13 @@ const fillAllFields = () => {
     
     const fillTermsRecursively = (currentTerms) => {
       currentTerms.forEach(term => {
-        // Check if this term has a valid Feldwert and matching notation in example data
         if (term.Feldwert && term.notation && exampleData[term.notation]) {
           const exampleValue = exampleData[term.notation];
-          // Only fill if the example value is not empty
           if (exampleValue && exampleValue.trim() !== '') {
             term.value = exampleValue;
             fieldsFilledCount++;
           }
         }
-        
-        // Recursively process narrower terms
         if (term.narrower && term.narrower.length > 0) {
           fillTermsRecursively(term.narrower);
         }
@@ -241,8 +238,6 @@ function transformFormData(currentTerms) {
   return transformedTerms;
 }
 
-// --- NEW: Expansion and Path Logic ---
-
 function toggleAll(expand) {
   const recursiveToggle = (nodes) => {
     nodes.forEach(node => {
@@ -257,7 +252,6 @@ function toggleAll(expand) {
 
 function expandToPath(path) {
   let currentLevel = terms.value;
-  // Expand each parent in the path, except for the last element (the term itself)
   for (let i = 0; i < path.length - 1; i++) {
     const index = path[i];
     if (currentLevel[index]) {
@@ -266,8 +260,6 @@ function expandToPath(path) {
     }
   }
 }
-
-// --- Provided Functions for Child Components ---
 
 provide('formManager', {
   terms,
@@ -281,7 +273,7 @@ provide('formManager', {
 
     if (node['Wiederholbar'] === 'Ja') {
       const clone = structuredClone(toRaw(node));
-      resetValues(clone); // Reset values for the new clone
+      resetValues(clone);
       parentArray.splice(index + 1, 0, clone);
       recalculatePaths(terms.value);
     }
@@ -316,9 +308,6 @@ provide('formManager', {
   }
 });
 
-
-// --- Utility Functions ---
-
 function resetValues(node) {
   if ('value' in node) node.value = '';
   if ('isExpanded' in node) node.isExpanded = false;
@@ -341,11 +330,10 @@ function recalculatePaths(nodes, path = []) {
 <style scoped>
 .form-page {
   max-width: 900px;
-  margin: 0 auto; /* Centered */
+  margin: 0 auto;
   background-color: #ffffff;
 }
 
-/* Add some styling to the pre tag for better readability */
 pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
