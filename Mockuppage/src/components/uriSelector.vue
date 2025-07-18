@@ -15,8 +15,21 @@ import { ref, computed, watch } from 'vue';
 const props = defineProps(['term', 'modelValue']);
 const emit = defineEmits(['update:modelValue']);
 
-// Ref to store current valid selection
-const selected = ref(null);
+// Build the tree
+const tree = computed(() => {
+  if (!props.term || !props.term.Baum) {
+    console.error('Error: "term.Baum" property is missing. Cannot render tree.');
+    return [];
+  }
+
+  try {
+    const treeData = JSON.parse(props.term.Baum);
+    return [treeData];
+  } catch (error) {
+    console.error('Error parsing "term.Baum" JSON:', error);
+    return [];
+  }
+});
 
 // Flatten the tree to check if a value is a valid URI
 const allUrisInTree = computed(() => {
@@ -34,6 +47,9 @@ const allUrisInTree = computed(() => {
   return uris;
 });
 
+// Ref to store current valid selection
+const selected = ref(null);
+
 // Update selection only if the value is a valid URI in the tree
 watch(() => props.modelValue, (newVal) => {
   if (newVal && allUrisInTree.value.includes(newVal)) {
@@ -42,22 +58,6 @@ watch(() => props.modelValue, (newVal) => {
     selected.value = null;
   }
 }, { immediate: true });
-
-// Build the tree
-const tree = computed(() => {
-  if (!props.term || !props.term.Baum) {
-    console.error('Error: "term.Baum" property is missing. Cannot render tree.');
-    return [];
-  }
-
-  try {
-    const treeData = JSON.parse(props.term.Baum);
-    return [treeData];
-  } catch (error) {
-    console.error('Error parsing "term.Baum" JSON:', error);
-    return [];
-  }
-});
 
 function handleSelection(targetKey) {
   selected.value = targetKey;
