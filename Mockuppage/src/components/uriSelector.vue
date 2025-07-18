@@ -10,40 +10,36 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue';
-  import uriData from 'src/data/uri.json';
+import { ref, computed } from 'vue';
 
-  const props = defineProps(['notation']);
-  const selected = ref(null);
-  const emit = defineEmits(['uri-selected']);
+const props = defineProps(['term']);
+const emit = defineEmits(['uri-selected']);
 
-  // Your provided dummy tree
-  const dummyTree = {
-    "label": "Verwendetes Material",
-    "uri": "https://www.conservation-science.org/ontology/conservation-material/CGC619",
-    "selectable": false,
-    "children": [
-      {
-        "label": "Paraloid B-72",
-        "uri": "https://www.conservation-wiki.com/wiki/Paraloid_B-72"
-      },
-      {
-        "label": "Primal AC-33",
-        "uri": "https://www.conservation-wiki.com/wiki/Primal_AC-33"
-      }
-    ]
-  };
+const selected = ref(null);
 
-  const tree = computed(() => {
-    const data = uriData[props.notation];
-    return data ? [data] : [dummyTree];
-  });
-
-  function handleSelection(targetKey) {
-    console.log('Selection changed:', targetKey);
-    selected.value = targetKey;
-    if (targetKey) {
-      emit('uri-selected', targetKey);
-    }
+const tree = computed(() => {
+  if (!props.term || !props.term.Baum) {
+    console.error('Error: "term.Baum" property is missing. Cannot render tree.');
+    return []; // Return an empty array to prevent crashing q-tree
   }
+
+  try {
+    // The string in term.Baum must be valid JSON (double quotes, lowercase booleans)
+    const treeData = JSON.parse(props.term.Baum);
+    // The q-tree component expects an array of nodes
+    return [treeData];
+  } catch (error) {
+    console.log('Error parsing "term.Baum" JSON. Please ensure it is valid JSON.', );
+    const errorArray =[error]
+    errorArray.pop();
+    return [];
+  }
+});
+
+function handleSelection(targetKey) {
+  selected.value = targetKey;
+  if (targetKey) {
+    emit('uri-selected', targetKey);
+  }
+}
 </script>

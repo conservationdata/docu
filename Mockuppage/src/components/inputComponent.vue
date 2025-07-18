@@ -9,7 +9,7 @@
         :hint="term.Verwendungshinweis || 'Please select a date'"
       />
     </div>
-    
+
     <div v-else-if="inputConfig.type === 'radio'" class="q-gutter-y-sm radio-group">
       <div class="text-caption radio-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
       <q-radio
@@ -21,7 +21,7 @@
         :label="option"
       />
     </div>
-    
+
     <div v-else-if="inputConfig.type === 'checkbox'" class="checkbox-group">
       <q-checkbox
         :model-value="modelValue"
@@ -32,16 +32,16 @@
       />
       <div class="text-caption checkbox-hint" v-if="term.Verwendungshinweis">{{ term.Verwendungshinweis }}</div>
     </div>
-    
+
     <div v-else>
       <UriSelector
         v-if="term.Feldwert.includes('URI')"
-        :notation="term.notation"
+        :term="term"
         @uri-selected="(uri) => emit('update:modelValue', uri)"
         class="uri-selector"
       />
       <q-input
-        :readonly="!term.Feldwert.includes('Text')"
+        :readonly="isInputReadonly"
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
         filled
@@ -56,7 +56,6 @@
 <script setup>
 import { computed } from 'vue';
 import UriSelector from 'src/components/uriSelector.vue';
-import inputTypes from 'src/data/inputType.json';
 
 const props = defineProps(['modelValue', 'term']);
 const emit = defineEmits(['update:modelValue']);
@@ -69,14 +68,33 @@ const inputHint = computed(() => {
   if (isInputReadonly.value) {
     return 'This field is read-only. Please use the URI tree to select a value.';
   }
-  return props.term.Verwendungshinweis || '';
+  return props.term.Verwendungshinweis || 'Please enter a value';
 });
 
 const inputConfig = computed(() => {
-  const config = inputTypes[props.term.notation];
-  return config ? config : { type: 'default' };
-});
+  // Fallback configuration
+  const defaultConfig = { type: 'default' };
 
+  if (!props.term || !props.term.Typ) {
+    console.log('Error: term.Typ is missing. Falling back to default input.');
+    return defaultConfig;
+  }
+
+  try {
+    const config = JSON.parse(props.term.Typ);
+    // Validate that the parsed object has a 'type' property
+    if (config && typeof config === 'object' && config.type) {
+      return config;
+    }
+    console.log('Error: Parsed term.Typ is invalid or missing a "type" property.');
+    return defaultConfig;
+  } catch (error) {
+    console.log('Error parsing term.Typ JSON string:');
+    const errorArray =[error]
+    errorArray.pop();
+    return defaultConfig;
+  }
+});
 </script>
 
 <style scoped>
@@ -85,12 +103,12 @@ const inputConfig = computed(() => {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   margin-bottom: 8px;
-  padding: 12px; /* Increased padding */
+  padding: 12px;
   background-color: #ffffff;
 }
 
 .q-input, .q-radio, .q-checkbox {
-  margin-bottom: 8px; /* Spacing between input elements */
+  margin-bottom: 8px;
 }
 
 .radio-group, .checkbox-group {
@@ -98,7 +116,7 @@ const inputConfig = computed(() => {
 }
 
 .radio-hint, .checkbox-hint {
-  color: #757575; /* Softer color for hints */
+  color: #757575;
   margin-bottom: 8px;
 }
 
