@@ -10,13 +10,40 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
-const props = defineProps(['term']);
-const emit = defineEmits(['uri-selected']);
+const props = defineProps(['term', 'modelValue']);
+const emit = defineEmits(['update:modelValue']);
 
+// Ref to store current valid selection
 const selected = ref(null);
 
+// Flatten the tree to check if a value is a valid URI
+const allUrisInTree = computed(() => {
+  const uris = [];
+
+  function traverse(node) {
+    if (node.uri) uris.push(node.uri);
+    if (node.children) node.children.forEach(child => traverse(child));
+  }
+
+  if (tree.value.length > 0) {
+    tree.value.forEach(rootNode => traverse(rootNode));
+  }
+
+  return uris;
+});
+
+// Update selection only if the value is a valid URI in the tree
+watch(() => props.modelValue, (newVal) => {
+  if (newVal && allUrisInTree.value.includes(newVal)) {
+    selected.value = newVal;
+  } else {
+    selected.value = null;
+  }
+}, { immediate: true });
+
+// Build the tree
 const tree = computed(() => {
   if (!props.term || !props.term.Baum) {
     console.error('Error: "term.Baum" property is missing. Cannot render tree.');
@@ -27,17 +54,13 @@ const tree = computed(() => {
     const treeData = JSON.parse(props.term.Baum);
     return [treeData];
   } catch (error) {
-    console.log(props.term.prefLabel,'Error parsing "term.Baum" JSON. Please ensure it is valid JSON.');
-    const errorArray =[error]
-    errorArray.pop();
+    console.error('Error parsing "term.Baum" JSON:', error);
     return [];
   }
 });
 
 function handleSelection(targetKey) {
   selected.value = targetKey;
-  if (targetKey) {
-    emit('uri-selected', targetKey);
-  }
+  emit('update:modelValue', targetKey);
 }
 </script>
