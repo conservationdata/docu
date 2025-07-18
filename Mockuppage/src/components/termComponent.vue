@@ -1,27 +1,29 @@
 <template>
-  <div class="q-pa-sm term-container">
+  <!-- ✅ Add a unique, computed ID for scrolling -->
+  <div class="q-pa-sm term-container" :id="termId">
     <div class="row items-center term-header">
       <h6 class="q-ma-none term-label">
         <a 
-        :href="link" 
-        :title="term.definition"
-        target="_blank"
-        class="text-primary text-bold"
+          :href="link" 
+          :title="term.definition"
+          target="_blank"
+          class="text-primary text-bold"
         >
-        {{ term.prefLabel }}
+          {{ term.prefLabel }}
         </a>
         <span 
-        v-if="term.Verpflichtungsgrad === 'Pflicht'" 
-        :title="'Verpflichtend'"
-        class="text-red q-ml-sm required-indicator"
+          v-if="term.Verpflichtungsgrad === 'Pflicht'" 
+          :title="'Verpflichtend'"
+          class="text-red q-ml-sm required-indicator"
         >*</span>
       </h6>
+      <!-- ✅ Icon and action now bound to the prop -->
       <q-btn
         v-if="term.narrower && term.narrower.length"
         flat
         round
         dense
-        :icon="isExpanded ? 'expand_less' : 'expand_more'" 
+        :icon="term.isExpanded ? 'expand_less' : 'expand_more'" 
         @click="toggleExpansion"
         class="q-ml-sm expand-btn"
         aria-label="Toggle expansion"
@@ -42,11 +44,11 @@
     </div>
 
     <InputComponent 
-    v-if="term.Feldwert"
-    :modelValue="term.value" 
-    @update:modelValue="updateValue" 
-    :term="term" 
-    class="q-mt-sm"
+      v-if="term.Feldwert"
+      :modelValue="term.value" 
+      @update:modelValue="updateValue" 
+      :term="term" 
+      class="q-mt-sm"
     />
 
     <q-btn
@@ -58,7 +60,8 @@
       @click="formManager.addFieldAtPath(term.path)"
       class="q-mt-sm add-btn"
     />
-    <div v-show="term.narrower && term.narrower.length && isExpanded" class="q-ml-md narrower-terms">
+    <!-- ✅ v-show is also bound to the prop -->
+    <div v-show="term.narrower && term.narrower.length && term.isExpanded" class="q-ml-md narrower-terms">
       <TermComponent
         v-for="child in term.narrower"
         :key="child.path.join('-')"
@@ -69,7 +72,7 @@
 </template>
 
 <script setup>
-import { inject, ref, computed } from 'vue';
+import { inject, computed } from 'vue';
 import InputComponent from './inputComponent.vue';
 
 const props = defineProps({
@@ -79,16 +82,22 @@ const props = defineProps({
   }
 });
 
-const link = `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`;
-
 const formManager = inject('formManager');
 
-const isExpanded = ref(false);
+// ✅ Create a unique ID from the term's path
+const termId = computed(() => `term-${props.term.path.join('-')}`);
+const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`);
+
+// ✅ Call the central function to toggle state, avoiding prop mutation
 function toggleExpansion() {
-  isExpanded.value = !isExpanded.value;
+  formManager.toggleExpansionAtPath(props.term.path);
 }
 
 const isOnlyInstance = computed(() => {
+  if (props.term.path.length === 1) { // Root level term
+      return formManager.terms.value.filter(t => t.notation === props.term.notation).length <= 1;
+  }
+  
   const parentPath = props.term.path.slice(0, -1);
   let parentArray = formManager.terms.value;
   for (let i = 0; i < parentPath.length; i++) {
@@ -101,7 +110,6 @@ const isOnlyInstance = computed(() => {
 function updateValue(newVal) {
   formManager.updateValueAtPath(props.term.path, newVal);
 }
-
 </script>
 
 <style scoped>
@@ -111,6 +119,8 @@ function updateValue(newVal) {
   margin-bottom: 1rem;
   background-color: #fcfcfc;
   padding: 1rem !important;
+  /* Added for smooth scrolling */
+  scroll-margin-top: 20px; 
 }
 
 .term-header {
@@ -119,7 +129,7 @@ function updateValue(newVal) {
 }
 
 .term-label {
-  font-size: 1.25rem; /* Larger font size for term labels */
+  font-size: 1.25rem;
   color: #333;
   display: flex;
   align-items: center;
@@ -127,7 +137,7 @@ function updateValue(newVal) {
 
 .term-label a {
   text-decoration: none;
-  color: #1976d2; /* Quasar primary color */
+  color: #1976d2;
 }
 
 .term-label a:hover {

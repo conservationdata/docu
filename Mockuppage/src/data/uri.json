@@ -329,6 +329,21 @@
         }
       ]
     },
+    "AA6941": {
+      "label": "Verwendetes Material",
+      "uri": "https://www.conservation-science.org/ontology/conservation-material/CGC619",
+      "selectable": false,
+      "children": [
+        {
+          "label": "Paraloid B-72",
+          "uri": "https://www.conservation-wiki.com/wiki/Paraloid_B-72"
+        },
+        {
+          "label": "Primal AC-33",
+          "uri": "https://www.conservation-wiki.com/wiki/Primal_AC-33"
+        }
+      ]
+    },
     "F2A45F": {
       "label": "Werkzeug",
       "uri": "https://www.conservation-science.org/ontology/tool/F87124",
