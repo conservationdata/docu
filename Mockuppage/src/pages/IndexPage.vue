@@ -1,35 +1,49 @@
 <template>
-  <q-page class="q-pa-md form-page" >
-    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-      <TermComponent 
-      v-for="term in terms" 
-      :key="term.path.join('-')" 
-      :term="term" 
+  <q-page class="q-pa-md form-page">
+    <q-form class="q-gutter-md">
+      <TermComponent
+        v-for="term in terms"
+        :key="term.path.join('-')"
+        :term="term"
       />
-      <div class="q-mt-lg button-group">
-        <q-btn 
-          label="Submit" 
-          type="submit" 
-          color="primary" 
-          class="q-mr-sm"
-        />
-        <q-btn label="Reset" type="reset" color="grey" flat class="q-ml-sm" />
-      </div>
-      </q-form>
-      <div v-if="jsonOutput">
-        <pre>{{ exportTerms}} </pre>
-      </div>
+    </q-form>
+
+    <div class="q-mt-lg button-group">
+      <q-btn
+        label="Submit"
+        type="submit"
+        color="primary"
+        class="q-mr-sm"
+        @click="onSubmit"
+      />
+      <q-btn
+        label="Reset"
+        type="reset"
+        color="grey"
+        flat
+        class="q-ml-sm"
+        @click="onReset"
+      />
+    </div>
+
+    <div v-if="exportTerms.length > 0">
+      <pre>{{ exportTerms }}</pre>
+    </div>
   </q-page>
 </template>
 
 <script setup>
-import { ref, provide, toRaw, computed } from 'vue';
+import { ref, provide, toRaw } from 'vue';
+import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
 
+const $q = useQuasar();
 const dataDefinition = ref(docuData);
 const terms = ref([]);
-const jsonOutput = ref(false)
+
+const exportTerms = ref([]);
+const validationError = ref(null);
 
 function createInitialTerms(terms, path = []) {
   const formTerms = [];
@@ -39,13 +53,13 @@ function createInitialTerms(terms, path = []) {
       path: currentPath,
       prefLabel: term.prefLabel,
       notation: term.notation,
-      definition:term.definition,
-      Wiederholbar:term.Wiederholbar,
-      Verpflichtungsgrad:term.Verpflichtungsgrad,
-      Feldwert:term.Feldwert,
-    }
+      definition: term.definition,
+      Wiederholbar: term.Wiederholbar,
+      Verpflichtungsgrad: term.Verpflichtungsgrad,
+      Feldwert: term.Feldwert,
+    };
     if (term.Feldwert) {
-      formTerm.value = "";
+      formTerm.value = '';
     }
     if (term.narrower) {
       formTerm.narrower = createInitialTerms(term.narrower, currentPath);
@@ -56,20 +70,78 @@ function createInitialTerms(terms, path = []) {
 }
 
 terms.value = createInitialTerms(dataDefinition.value);
-console.log("Initial form data:", terms.value)
 
 const onReset = () => {
-  console.log('Reset button clicked');
   terms.value = createInitialTerms(dataDefinition.value);
-  jsonOutput.value = false;
-  console.log('Form has been reset!');
+  exportTerms.value = [];
+  validationError.value = null;
+  $q.notify({
+    message: 'Form has been reset.',
+    color: 'grey',
+    icon: 'mdi-reload',
+  });
 };
 
 const onSubmit = () => {
-  console.log('Submit button clicked');
-  jsonOutput.value = true;
-  console.log('Form has been submitted!');
+  exportTerms.value = [];
+  validationError.value = null;
+  const error = validateForm(terms.value);
+
+  if (error) {
+    validationError.value = error;
+    $q.notify({
+      type: 'negative',
+      message: error,
+      icon: 'mdi-alert-circle-outline',
+    });
+  } else {
+    exportTerms.value = transformFormData(terms.value);
+    $q.notify({
+      type: 'positive',
+      message: 'Form submitted successfully!',
+      icon: 'mdi-check-circle-outline',
+    });
+    console.log('Exported Data:', toRaw(exportTerms.value));
+  }
 };
+
+function validateForm(terms) {
+  for (const term of terms) {
+    if (term.Verpflichtungsgrad === 'Pflicht' && term.Feldwert && !term.value) {
+      return `Error: '${term.prefLabel}' is a required field.`;
+    }
+    if (term.narrower) {
+      const nestedError = validateForm(term.narrower);
+      if (nestedError) {
+        return nestedError;
+      }
+    }
+  }
+  return null;
+}
+
+function transformFormData(terms) {
+  const transformedTerms = [];
+  for (const term of terms) {
+    if (term.value || (term.narrower && term.narrower.length > 0)) {
+       const exportTerm = {
+        Name: term.prefLabel,
+        Identifikator: `https://www.w3id.org/conservation/terms/metadata/${term.notation}`,
+      };
+      if (term.Feldwert) {
+        exportTerm.value = term.value;
+      }
+      if (term.narrower) {
+        const narrowerExport = transformFormData(term.narrower);
+        if (narrowerExport.length > 0) {
+           exportTerm.Untereinträge = narrowerExport;
+        }
+      }
+      transformedTerms.push(exportTerm);
+    }
+  }
+  return transformedTerms;
+}
 
 provide('formManager', {
   terms,
@@ -95,7 +167,6 @@ provide('formManager', {
       parentArray = parentArray[path[i]].narrower;
     }
     const index = path[path.length - 1];
-
     const notation = parentArray[index].notation;
     const sameNotationCount = parentArray.filter(n => n.notation === notation).length;
     if (sameNotationCount > 1) {
@@ -107,13 +178,10 @@ provide('formManager', {
   updateValueAtPath(path, value) {
     let target = terms.value;
     for (let i = 0; i < path.length; i++) {
-      target = target[path[i]];
-      if (i < path.length - 1) {
-        target = target.narrower;
-      }
+      target = i < path.length - 1 ? target[path[i]].narrower : target[path[i]];
     }
     target.value = value;
-  }
+  },
 });
 
 function resetValues(node) {
@@ -135,25 +203,6 @@ function recalculatePaths(nodes, path = []) {
   });
 }
 
-function exportFormData (terms) {
-  const exportTerms = [];
-  for (const term of terms) {
-    const exportTerm = {
-      Name: term.prefLabel,
-      Identifikator: `https://www.w3id.org/conservation/terms/metadata/${term.notation}`,
-    }
-    if (term.Feldwert) {
-      exportTerm.value = term.value;
-    }
-    if (term.narrower) {
-      exportTerm.Untereinträge = exportFormData(term.narrower);
-    }
-    exportTerms.push(exportTerm);
-  }
-  return exportTerms;
-}
-
-const exportTerms = computed(() => exportFormData(terms.value));
 </script>
 
 <style scoped>
