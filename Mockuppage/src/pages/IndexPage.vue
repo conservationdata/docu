@@ -132,15 +132,12 @@ const onReset = () => {
 
 const fillAllFields = () => {
   try {
-    let fieldsFilledCount = 0;
-    
     const fillTermsRecursively = (currentTerms) => {
       currentTerms.forEach(term => {
         if (term.Feldwert && term.notation && exampleData[term.notation]) {
           const exampleValue = exampleData[term.notation];
           if (exampleValue && exampleValue.trim() !== '') {
             term.value = exampleValue;
-            fieldsFilledCount++;
           }
         }
         if (term.narrower && term.narrower.length > 0) {
@@ -153,7 +150,7 @@ const fillAllFields = () => {
     
     $q.notify({
       type: 'positive',
-      message: `Successfully filled ${fieldsFilledCount} fields with example data.`,
+      message: `Successfully filled all fields with example data.`,
       icon: 'mdi-auto-fix',
     });
   } catch (error) {
@@ -228,7 +225,6 @@ function transformFormData(currentTerms) {
         exportTerm.value = term.value;
       }
 
-      // ✅ Only export Unsicher if it's set to 'Ja'
       if (term.Unsicher === 'Ja' && term.UnsicherValue === 'Ja') {
         exportTerm.Unsicher = 'Ja';
       }

@@ -91,7 +91,7 @@ const props = defineProps({
 const formManager = inject('formManager');
 
 const termId = computed(() => `term-${props.term.path.join('-')}`);
-const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/ ${props.term.notation}`);
+const link = computed(() => `https://www.w3id.org/conservation/terms/metadata/${props.term.notation}`);
 
 function toggleExpansion() {
   formManager.toggleExpansionAtPath(props.term.path);
