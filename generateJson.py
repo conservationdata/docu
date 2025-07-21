@@ -36,7 +36,7 @@ df.rename(columns=propertyMatchDict, inplace=True) # rename columns according to
 
 # delete column "source" from df
 df = df.drop(columns=["source", "MMS", "Empfohlene Vokabulare"])
-df = sortNotation(df)
+# df = sortNotation(df)
 
 topDf = df[df["broader"] == "top"]
 docuArray = []
