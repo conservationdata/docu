@@ -69,7 +69,7 @@
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI ",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \n",
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Personennamen sollten in der Form \"Vorname Nachname\" erfasst werden.\n\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \n",
         "Baum": "{\"label\": \"Ansprechpartner*in\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person\", \"selectable\": false, \"children\": [{\"label\": \"Max Mustermann\", \"uri\": \"https://www.example.org/contact-person/max-mustermann\"}, {\"label\": \"Unbekannte*r Ansprechpartner*in (Unknown Contact Person)\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/unknown\"}]}"
       },
       {
@@ -185,7 +185,7 @@
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
+        "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (g oder kg) enthalten",
         "Einheit": "g,kg,t"
       },
       {
@@ -226,7 +226,8 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. "
+        "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
+        "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
         "notation": "HRO94F",
@@ -344,7 +345,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\n\n"
       },
       {
         "notation": "G76B7G",
@@ -471,7 +472,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\n\n"
       },
       {
         "notation": "F72743",
@@ -601,7 +602,7 @@
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
+            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\""
           },
           {
             "notation": "CDD613",
@@ -790,7 +791,8 @@
           },
           {
             "notation": "B14C4A",
-            "prefLabel": "Handlingsempfehlungen",
+            "prefLabel": "Empfehlungen zur Handhabung",
+            "altLabel": "Handlingsempfehlungen",
             "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \n\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
@@ -829,12 +831,11 @@
             "notation": "DF7759",
             "prefLabel": "Beleuchtungsstärke (konservatorische Bedingungen)",
             "altLabel": "LUX (konservatorische Bedingung)",
-            "definition": "Angabe der maximal zulässigen Beleuchtungsstärke in LUX für die schonende Präsenation zur Minimierung photochemischer und photophysikalischer Schädigungsprozesse bei gleichzeitig Gewährleistung ausreichender Sichtbarkeit für Betrachtung.",
+            "definition": "Angabe der maximal zulässigen Beleuchtungsstärke in LUX bzw. Expositionszeit für die schonende Präsenation zur Minimierung photochemischer und photophysikalischer Schädigungsprozesse bei gleichzeitig Gewährleistung ausreichender Sichtbarkeit für Betrachtung.",
             "Verpflichtungsgrad": "optional",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Die einzuhaltende Beleuchtungsstärke soll in LUX erfasst werden.",
-            "Einheit": "LUX"
+            "Verwendungshinweis": "Die einzuhaltende Beleuchtungsstärke soll in LUX erfasst werden, die maximal zulässige Expositionszeit in Stunden"
           },
           {
             "notation": "FD6617",
@@ -960,7 +961,8 @@
         "definition": "Angaben zur Person (Name, ggfs. Funktion) der für den Bericht verantwortlichen Person.",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
-        "Wiederholbar": "Nein"
+        "Wiederholbar": "Nein",
+        "Verwendungshinweis": "Der Name sollte im Format \"Vorname Nachname\" erfasst werden."
       },
       {
         "notation": "D1F5D3",
@@ -968,7 +970,27 @@
         "definition": "Angaben zur Versionierung bzw. Überarbeitung des Berichtes",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
-        "Wiederholbar": "Nein"
+        "Wiederholbar": "Ja",
+        "narrower": [
+          {
+            "notation": "B43DK5",
+            "prefLabel": "Änderungsdatum",
+            "definition": "Zeitpunkt, zu dem der Bericht geändert wurde",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein",
+            "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. "
+          },
+          {
+            "notation": "98ZG32",
+            "prefLabel": "Bearbeiter*in der Änderung",
+            "definition": "Angaben zur Person, die die Änderung durchgeführt hat.",
+            "Verpflichtungsgrad": "empfohlen",
+            "Feldwert": "Text",
+            "Wiederholbar": "Nein",
+            "Verwendungshinweis": "Der Name sollte im Format \"Vorname Nachname\" erfasst werden."
+          }
+        ]
       },
       {
         "notation": "G56866",

@@ -45,7 +45,7 @@
             label="Fill all fields"
             color="accent"
             icon="mdi-auto-fix"
-            @click="fillAllFields"
+            @click="() => fillAllFields(excludeNotations.value)"
             flat
           />
           <q-separator vertical class="q-mx-md" />
@@ -83,14 +83,25 @@ const dataDefinition = ref(docuData);
 const terms = ref([]);
 const exportTerms = ref([]);
 const validationError = ref(null);
+const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
+const excludeNotations = ref(["F52262", "BAA258"]);
 
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
 };
 
-function createInitialTerms(terms, path = []) {
-  return terms.map((term, index) => {
+function createInitialTerms(termsList, path = [], expandNotations = expandNotationsOnStartup.value) {
+  return termsList.map((term, index) => {
     const currentPath = [...path, index];
+
+    // Check if this term should be expanded
+    const shouldExpand = expandNotations.includes(term.notation);
+    if (shouldExpand && term.narrower && term.narrower.length > 0) {
+      // add all notations of term.nattower to expandNotations
+      expandNotations.push(...term.narrower.map(t => t.notation));
+    }
+
+
     const formTerm = {
       path: currentPath,
       prefLabel: term.prefLabel,
@@ -104,15 +115,19 @@ function createInitialTerms(terms, path = []) {
       Baum: term.Baum,
       Einheit: term.Einheit,
       Unsicher: term.Unsicher,
-      isExpanded: false,
+      isExpanded: shouldExpand,
       UnsicherValue: '',
     };
+
     if (term.Feldwert) {
       formTerm.value = '';
     }
+
     if (term.narrower) {
-      formTerm.narrower = createInitialTerms(term.narrower, currentPath);
+      // Recursively create narrower terms, and pass the same expand list
+      formTerm.narrower = createInitialTerms(term.narrower, currentPath, expandNotations);
     }
+
     return formTerm;
   });
 }
@@ -130,29 +145,37 @@ const onReset = () => {
   });
 };
 
-const fillAllFields = () => {
+const fillAllFields = (exclude = []) => {
   try {
-    const fillTermsRecursively = (currentTerms) => {
+    const fillTermsRecursively = (currentTerms, exclude = []) => {
       currentTerms.forEach(term => {
-        if (term.Feldwert && term.notation && exampleData[term.notation]) {
-          const exampleValue = exampleData[term.notation];
-          if (exampleValue && exampleValue.trim() !== '') {
-            term.value = exampleValue;
+        // Only fill if this term's notation is NOT in the exclude list
+        if (!(exclude.includes(term.notation))) {
+          if (term.Feldwert && term.notation && exampleData[term.notation]) {
+            const exampleValue = exampleData[term.notation];
+            if (exampleValue && exampleValue.trim() !== '') {
+              term.value = exampleValue;
+            }
           }
-        }
-        if (term.narrower && term.narrower.length > 0) {
-          fillTermsRecursively(term.narrower);
+
+          // Recurse into children only if current term is not excluded
+          if (term.narrower && term.narrower.length > 0) {
+            fillTermsRecursively(term.narrower, exclude);
+          }
         }
       });
     };
-    
-    fillTermsRecursively(terms.value);
-    
+
+    fillTermsRecursively(terms.value, exclude);
+
     $q.notify({
       type: 'positive',
-      message: `Successfully filled all fields with example data.`,
+      message: exclude.length === 0
+        ? "All fields have been filled."
+        : "Curatory fields have been prefilled. Ready to start with conservation specific data.",
       icon: 'mdi-auto-fix',
     });
+
   } catch (error) {
     console.error('Error filling fields:', error);
     $q.notify({
@@ -162,6 +185,8 @@ const fillAllFields = () => {
     });
   }
 };
+
+fillAllFields(excludeNotations.value);
 
 const onSubmit = async () => {
   exportTerms.value = [];
@@ -192,6 +217,13 @@ const onSubmit = async () => {
       message: 'Form submitted successfully!',
       icon: 'mdi-check-circle-outline',
     });
+    
+    // Scroll to the export results section
+    await nextTick();
+    const resultsElement = document.querySelector('.q-mt-xl');
+    if (resultsElement) {
+      resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 };
 
@@ -219,7 +251,7 @@ function transformFormData(currentTerms) {
     if (term.value || (term.narrower && term.narrower.length > 0)) {
       const exportTerm = {
         Name: term.prefLabel,
-        Identifikator: `https://www.w3id.org/conservation/terms/metadata/ ${term.notation}`,
+        Identifikator: `https://conservationdata.github.io/terms/metadata/${term.notation}`,
       };
       if (term.Feldwert) {
         exportTerm.value = term.value;
