@@ -9,7 +9,7 @@
         "notation": "A15F83",
         "prefLabel": "Objektansprache",
         "altLabel": "Objekttitel",
-        "definition": "Benennung des konkreten Objektes. \r\n\r\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
+        "definition": "Benennung des konkreten Objektes. \n\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja",
@@ -18,7 +18,7 @@
       {
         "notation": "A2AG55",
         "prefLabel": "Kennzeichnungsnummer",
-        "definition": "Nummer, die das Objekt eindeutig identifiziert. \r\n\r\nBeispiel: \"O.3649\", \"2025-05-21\" ",
+        "definition": "Nummer, die das Objekt eindeutig identifiziert. \n\nBeispiel: \"O.3649\", \"2025-05-21\" ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text ",
         "Wiederholbar": "Nein",
@@ -36,7 +36,7 @@
       {
         "notation": "A4G52F",
         "prefLabel": "Datierung",
-        "definition": "zeitliche Einordnung des Objektes.\r\n\r\nBeispiel: \"Urnenfelderzeit\" , \"15. Jh.\" ",
+        "definition": "zeitliche Einordnung des Objektes.\n\nBeispiel: \"Urnenfelderzeit\" , \"15. Jh.\" ",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
@@ -46,7 +46,7 @@
         "notation": "A5C668",
         "prefLabel": "Herkunft",
         "altLabel": "Fundort|kulturelle Verortung|Herstellungsort",
-        "definition": "Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. \r\n\r\nBeispiel: \"Fundort: Italien - Numana - Grab 34\", \"kultureller Kontext: Renaissance\"",
+        "definition": "Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. \n\nBeispiel: \"Fundort: Italien - Numana - Grab 34\", \"kultureller Kontext: Renaissance\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
@@ -60,7 +60,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+        "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
         "notation": "AA6941",
@@ -69,13 +69,13 @@
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI ",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \r\n",
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \n",
         "Baum": "{\"label\": \"Ansprechpartner*in\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person\", \"selectable\": false, \"children\": [{\"label\": \"Max Mustermann\", \"uri\": \"https://www.example.org/contact-person/max-mustermann\"}, {\"label\": \"Unbekannte*r Ansprechpartner*in (Unknown Contact Person)\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/unknown\"}]}"
       },
       {
         "notation": "AC16G1",
         "prefLabel": "Schöpfer*in",
-        "definition": "Angaben zur Person, die das Objekt hergestellt hat - sofern bekannt. \r\n\r\nBeispiel: \"Leonardo da Vinci\" ",
+        "definition": "Angaben zur Person, die das Objekt hergestellt hat - sofern bekannt. \n\nBeispiel: \"Leonardo da Vinci\" ",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
@@ -84,7 +84,7 @@
       {
         "notation": "AC1786",
         "prefLabel": "Objektbeziehung",
-        "definition": "Sofern das Objekt Teil eines Ensemble, einer definierten Sammlung ist oder anderweitig besondere Beziehungen zu anderen Objekten aufweist, sollten diese erfasst werden. \r\n\r\nBeispiel: \"Teil der Sammlung Becker\" ",
+        "definition": "Sofern das Objekt Teil eines Ensemble, einer definierten Sammlung ist oder anderweitig besondere Beziehungen zu anderen Objekten aufweist, sollten diese erfasst werden. \n\nBeispiel: \"Teil der Sammlung Becker\" ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -100,7 +100,7 @@
       {
         "notation": "AF1F5C",
         "prefLabel": "Objekttyp",
-        "definition": "grundlegende formale Kategorie, in die das Objekt eingeordnet wird. \r\n\r\nBeispiel: \"Gemälde\" , \"Skulptur\", \"Münze\" ",
+        "definition": "grundlegende formale Kategorie, in die das Objekt eingeordnet wird. \n\nBeispiel: \"Gemälde\" , \"Skulptur\", \"Münze\" ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "URI",
         "Wiederholbar": "Nein",
@@ -109,7 +109,7 @@
       {
         "notation": "AFD671",
         "prefLabel": "Weitere Objekteigenschaften",
-        "definition": "Möglichkeit weitere charakteristische Eigenschaften des Objektes zu beschreiben, die sich nicht eindeutig zum Objekttyp oder einer der anderen definierten Beschreibungselemente zuordnen lassen. \r\n\r\nBeispiel: Farbe, Form, Besonderheit beim Aussehen",
+        "definition": "Möglichkeit weitere charakteristische Eigenschaften des Objektes zu beschreiben, die sich nicht eindeutig zum Objekttyp oder einer der anderen definierten Beschreibungselemente zuordnen lassen. \n\nBeispiel: Farbe, Form, Besonderheit beim Aussehen",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -119,7 +119,7 @@
         "notation": "B14C4A",
         "prefLabel": "Objektmaterial",
         "altLabel": "Objektwerkstoff",
-        "definition": "Angaben zum Material bzw. den Materialien aus dem/aus denen das Objekt besteht. \r\n\r\n\r\nBeispiel: \"Bronze (Ergebnis RFA)\", \"Buntmetall (Ergebnis visuelle Begutachtung) \"",
+        "definition": "Angaben zum Material bzw. den Materialien aus dem/aus denen das Objekt besteht. \n\n\nBeispiel: \"Bronze (Ergebnis RFA)\", \"Buntmetall (Ergebnis visuelle Begutachtung) \"",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "URI",
         "Wiederholbar": "Ja",
@@ -130,7 +130,7 @@
       {
         "notation": "B3FCA1",
         "prefLabel": "Herstellungstechnik",
-        "definition": "Angaben zur Technik bzw. zu Techniken, die zur Herstellung des Objektes verwendet wurden. \r\n\r\n\r\nBeispiel: \"Geschmiedet (Hammerspuren)\"",
+        "definition": "Angaben zur Technik bzw. zu Techniken, die zur Herstellung des Objektes verwendet wurden. \n\n\nBeispiel: \"Geschmiedet (Hammerspuren)\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
@@ -211,12 +211,12 @@
         "notation": "BF3639",
         "prefLabel": "Erfassungszeitpunkt",
         "altLabel": "Zeitpunkt der Erfassung",
-        "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \r\n\r\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
+        "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \n\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Auswahl zwischen: vor Eingriff, nach Eingriff, zwischen Eingriff, Monitoring",
-        "Typ": "{\r\n    \"type\": \"radio\",\r\n    \"options\": [\"vor Eingriff\", \"nach Eingriff\", \"zwischen Eingriff\", \"Monitoring\"]\r\n}"
+        "Typ": "{\n    \"type\": \"radio\",\n    \"options\": [\"vor Eingriff\", \"nach Eingriff\", \"zwischen Eingriff\", \"Monitoring\"]\n}"
       },
       {
         "notation": "BF6D19",
@@ -235,15 +235,16 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
       },
       {
         "notation": "BGG5A6",
         "prefLabel": "Dokumentationsform",
-        "definition": "Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.\r\n\r\nBeispiel: \"Zustandsbericht + Fotos\" ",
+        "definition": "Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.\n\nBeispiel: \"Zustandsbericht + Fotos\" ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja",
+        "Verwendungshinweis": "Diese Information kann entweder als Freitext eingegeben oder aus einer zuvor individuell definierten internen Liste gängiger Dokumentationsformen ausgewählt werden (z. B. aus einem Drop-down-Menü oder Checkboxen)",
         "narrower": [
           {
             "notation": "BGGCA4",
@@ -255,8 +256,7 @@
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Der Verweis kann je nach Medium unterschiedlich ausfallen. Als URI/URL zu einem digitalen Datensatz oder, im Fall analoger Materialien, als Identifikationsnummer oder Standortangabe der Dokumentenablage"
           }
-        ],
-        "Verwendungshinweis": "Diese Information kann entweder als Freitext eingegeben oder aus einer zuvor individuell definierten internen Liste gängiger Dokumentationsformen ausgewählt werden (z. B. aus einem Drop-down-Menü oder Checkboxen)"
+        ]
       },
       {
         "notation": "C11192",
@@ -288,16 +288,18 @@
             "notation": "C364G1",
             "prefLabel": "Schadensphänomene",
             "altLabel": "Schadensbild| Beschädigung| Schaden",
-            "definition": "Beschreibung der beobachteten negativen Veränderungen am Objekt im Vergleich zu seinem als ursprünglich angenommenen Zustandes. \r\n",
+            "definition": "Beschreibung der beobachteten negativen Veränderungen am Objekt im Vergleich zu seinem als ursprünglich angenommenen Zustandes. \n",
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
+            "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, indem z.B. die Art der Untersuchung/Feststellung dieser Veränderung dokumentiert wird. ",
+            "Baum": "{\"label\": \"Schadensph\\u00e4nomene\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/AA6941\", \"selectable\": false, \"children\": [{\"label\": \"Korrosion (Corrosion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/corrosion\"}, {\"label\": \"Risse (Cracks)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/cracks\"}, {\"label\": \"Abplatzungen (Flaking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/flaking\"}]}",
             "narrower": [
               {
                 "notation": "C3A182",
                 "prefLabel": "Schadensgrad",
                 "altLabel": "Grad des Schadensphänomens",
-                "definition": "Bewertung des Ausmaßes der Beschädigung eines Objektes.\r\n\r\nz.B. Abnutzung - leicht, Korrosion - stark",
+                "definition": "Bewertung des Ausmaßes der Beschädigung eines Objektes.\n\nz.B. Abnutzung - leicht, Korrosion - stark",
                 "Verpflichtungsgrad": "empfohlen",
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
@@ -313,9 +315,7 @@
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angabe erfasst werden, d.h. ob die Ursache des Schadens gesichert bekannt ist (z.B. dokumentierter Wasserschaden) oder lediglich vermutet wird."
               }
-            ],
-            "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, indem z.B. die Art der Untersuchung/Feststellung dieser Veränderung dokumentiert wird. ",
-            "Baum": "{\"label\": \"Schadensph\\u00e4nomene\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/AA6941\", \"selectable\": false, \"children\": [{\"label\": \"Korrosion (Corrosion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/corrosion\"}, {\"label\": \"Risse (Cracks)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/cracks\"}, {\"label\": \"Abplatzungen (Flaking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/flaking\"}]}"
+            ]
           }
         ]
       },
@@ -340,27 +340,27 @@
       {
         "notation": "C79561",
         "prefLabel": "Zuständige Person (Untersuchung)",
-        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \r\n",
+        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \n",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
       },
       {
         "notation": "C7C3B7",
         "prefLabel": "Durchführende Einrichtung (Untersuchung)",
-        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \r\n\r\n",
+        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \n\n",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\r\n\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\n\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
         "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Untersuchung)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/G76B7G\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6misch-Germanisches Zentralmuseum (RGZM)\", \"uri\": \"https://www.wikidata.org/wiki/Q321946\"}, {\"label\": \"Deutsches Arch\\u00e4ologisches Institut (DAI)\", \"uri\": \"https://www.wikidata.org/wiki/Q567303\"}]}"
       },
       {
         "notation": "C8CG15",
         "prefLabel": "Untersuchungskennung",
         "altLabel": "Kennung der Untersuchung",
-        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. \r\nBeispiel: 2025-05-13_RFA_1 oder XY_24601",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. \nBeispiel: 2025-05-13_RFA_1 oder XY_24601",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -375,7 +375,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+        "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
         "notation": "C9C527",
@@ -412,6 +412,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
+        "Baum": "{\"label\": \"Untersuchungsverfahren\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/DAB4B7\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6ntgenfluoreszenzanalyse (XRF)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/xrf\"}, {\"label\": \"Rasterelektronenmikroskopie (SEM)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/sem\"}, {\"label\": \"Infrarotspektroskopie (FTIR)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ftir\"}]}",
         "narrower": [
           {
             "notation": "CD3341",
@@ -429,6 +430,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
+            "Baum": "{\"label\": \"Untersuchungsger\\u00e4t\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/D949G6\", \"selectable\": false, \"children\": [{\"label\": \"Niton XL3t GOLDD+\", \"uri\": \"https://assets.thermofisher.com/TFS-Assets/CMD/Technical-Notes/TN51779-Handheld-XRF-Analysis-Niton-XL3t-GOLDD.pdf\"}, {\"label\": \"Jeol JSM-6610LV\", \"uri\": \"https://www.jeol.com/products/electron-optics/scanning-electron-microscopes-sem/JSM-6610LV/\"}]}",
             "narrower": [
               {
                 "notation": "CDD613",
@@ -439,11 +441,9 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein"
               }
-            ],
-            "Baum": "{\"label\": \"Untersuchungsger\\u00e4t\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/D949G6\", \"selectable\": false, \"children\": [{\"label\": \"Niton XL3t GOLDD+\", \"uri\": \"https://assets.thermofisher.com/TFS-Assets/CMD/Technical-Notes/TN51779-Handheld-XRF-Analysis-Niton-XL3t-GOLDD.pdf\"}, {\"label\": \"Jeol JSM-6610LV\", \"uri\": \"https://www.jeol.com/products/electron-optics/scanning-electron-microscopes-sem/JSM-6610LV/\"}]}"
+            ]
           }
-        ],
-        "Baum": "{\"label\": \"Untersuchungsverfahren\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/DAB4B7\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6ntgenfluoreszenzanalyse (XRF)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/xrf\"}, {\"label\": \"Rasterelektronenmikroskopie (SEM)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/sem\"}, {\"label\": \"Infrarotspektroskopie (FTIR)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ftir\"}]}"
+        ]
       },
       {
         "notation": "CDD6B5",
@@ -471,7 +471,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
       },
       {
         "notation": "CGC619",
@@ -480,7 +480,7 @@
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\r\n\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\n\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
         "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Probeentnahme)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/F72743\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6misch-Germanisches Zentralmuseum (RGZM)\", \"uri\": \"https://www.wikidata.org/wiki/Q321946\"}]}"
       },
       {
@@ -492,13 +492,13 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+        "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
         "notation": "D1F5D3",
         "prefLabel": "Kennung der Probe",
         "altLabel": "Name der Probe| Nummer der Probe",
-        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. \r\n\r\nBeispiel: Metall-Probe_24601",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. \n\nBeispiel: Metall-Probe_24601",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -507,7 +507,7 @@
       {
         "notation": "D3AF3A",
         "prefLabel": "Probenbeschreibung",
-        "definition": "Kurze Definition der wichtigsten Eigenschaften und Beschaffenheit der Probe. Möglichkeit, weitere Hintergrundinformationen zur Probe bzw. dem Befund, aus dem die Probe entstammt, zu erfassen.\r\n\r\nBeispiel: \"Erdreste mit roten Verfärbungen\" , \"Textilfasern von rechter Skelettrippe\"",
+        "definition": "Kurze Definition der wichtigsten Eigenschaften und Beschaffenheit der Probe. Möglichkeit, weitere Hintergrundinformationen zur Probe bzw. dem Befund, aus dem die Probe entstammt, zu erfassen.\n\nBeispiel: \"Erdreste mit roten Verfärbungen\" , \"Textilfasern von rechter Skelettrippe\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -516,7 +516,7 @@
         "notation": "D4A13D",
         "prefLabel": "Anlass der Probenentnahme",
         "altLabel": "Grund der Beprobung",
-        "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\r\n\r\nBeispiel: Materialbestimmung, Altersdatierung",
+        "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\n\nBeispiel: Materialbestimmung, Altersdatierung",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -525,7 +525,7 @@
         "notation": "D6A11G",
         "prefLabel": "Stelle der Probenentnahme",
         "altLabel": "Lokalisation der Probenentnahme",
-        "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\r\n\r\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
+        "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\n\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -534,7 +534,7 @@
         "notation": "D78721",
         "prefLabel": "Entnahmemethode",
         "altLabel": "Beprobungsmethode| Entnahmeverfahren",
-        "definition": "Beschreibung, mit welcher Methode die Probe entnommen wurde. Angaben zur Vorgehensweise und zum eingesetzten Werkzeug.\r\n\r\nBeispiel: Skalpellentnahme, Bohrkernentnahme, Abstrich mit Wattestäbchen",
+        "definition": "Beschreibung, mit welcher Methode die Probe entnommen wurde. Angaben zur Vorgehensweise und zum eingesetzten Werkzeug.\n\nBeispiel: Skalpellentnahme, Bohrkernentnahme, Abstrich mit Wattestäbchen",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
@@ -553,7 +553,7 @@
       {
         "notation": "D866AD",
         "prefLabel": "Anlass der Maßnahme",
-        "definition": "Hintergrundinformationen, aus welchem Grund das Objekt konservatorisch-restauratorisch behandelt werden soll. I.d.R. beziehen sich diese Angaben darauf, was im Anschluss mit dem Objekt geschehen soll oder zuvor bereits geschehen ist. \r\n\r\nBeispiel: Ausstellungsvorbereitung, Rückkehr aus Leihverkehr",
+        "definition": "Hintergrundinformationen, aus welchem Grund das Objekt konservatorisch-restauratorisch behandelt werden soll. I.d.R. beziehen sich diese Angaben darauf, was im Anschluss mit dem Objekt geschehen soll oder zuvor bereits geschehen ist. \n\nBeispiel: Ausstellungsvorbereitung, Rückkehr aus Leihverkehr",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -562,7 +562,7 @@
         "notation": "D941BB",
         "prefLabel": "konservatorische Zielsetzung",
         "altLabel": "Konservierungsziel| konservatorische Zielsetzung| Erhaltungsziel",
-        "definition": "Beschreibung der angestrebten Ergebnisse, die mit der durchgeführten Maßnahme erreicht werden sollen.\r\n\r\nBeispiel: Sicherung der Malschichten, Volle Rekonstruktion der ursprünglichen Form ",
+        "definition": "Beschreibung der angestrebten Ergebnisse, die mit der durchgeführten Maßnahme erreicht werden sollen.\n\nBeispiel: Sicherung der Malschichten, Volle Rekonstruktion der ursprünglichen Form ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -587,7 +587,7 @@
           {
             "notation": "DA2D73",
             "prefLabel": "Maßnahmenkennnummer ",
-            "definition": "Nummer, die die jeweilige Maßnahme eindeutig identifiziert. \r\n\r\nBeipspiel: Labornummer, Dokumentationsnummern, Werkblattnummer, etc. ",
+            "definition": "Nummer, die die jeweilige Maßnahme eindeutig identifiziert. \n\nBeipspiel: Labornummer, Dokumentationsnummern, Werkblattnummer, etc. ",
             "Verpflichtungsgrad": "Bedingte Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
@@ -601,7 +601,7 @@
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
+            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
           },
           {
             "notation": "DAB4B7",
@@ -611,7 +611,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+            "Typ": "{\n    \"type\": \"date\"\n}"
           },
           {
             "notation": "DBC278",
@@ -621,7 +621,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+            "Typ": "{\n    \"type\": \"date\"\n}"
           },
           {
             "notation": "DF7759",
@@ -641,6 +641,7 @@
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
+            "Baum": "{\"label\": \"Eingriff\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/A13CD1\", \"selectable\": false, \"children\": [{\"label\": \"Reinigung (Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/cleaning\"}, {\"label\": \"Konsolidierung (Consolidation)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/consolidation\"}, {\"label\": \"Retusche (Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/retouching\"}]}",
             "narrower": [
               {
                 "notation": "F2244D",
@@ -649,6 +650,7 @@
                 "Verpflichtungsgrad": "Pflicht",
                 "Feldwert": "Text/URI",
                 "Wiederholbar": "Ja",
+                "Baum": "{\"label\": \"Verwendetes Material\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/CGC619\", \"selectable\": false, \"children\": [{\"label\": \"Paraloid B-72\", \"uri\": \"https://www.conservation-wiki.com/wiki/Paraloid_B-72\"}, {\"label\": \"Primal AC-33\", \"uri\": \"https://www.conservation-wiki.com/wiki/Primal_AC-33\"}]}",
                 "narrower": [
                   {
                     "notation": "F285B2",
@@ -676,10 +678,9 @@
                     "Feldwert": "Text",
                     "Wiederholbar": "Nein",
                     "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-                    "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+                    "Typ": "{\n    \"type\": \"date\"\n}"
                   }
-                ],
-                "Baum": "{\"label\": \"Verwendetes Material\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/CGC619\", \"selectable\": false, \"children\": [{\"label\": \"Paraloid B-72\", \"uri\": \"https://www.conservation-wiki.com/wiki/Paraloid_B-72\"}, {\"label\": \"Primal AC-33\", \"uri\": \"https://www.conservation-wiki.com/wiki/Primal_AC-33\"}]}"
+                ]
               },
               {
                 "notation": "F396G6",
@@ -691,8 +692,7 @@
                 "Wiederholbar": "Ja",
                 "Baum": "{\"label\": \"Werkzeug\", \"uri\": \"https://www.conservation-science.org/ontology/tool/F87124\", \"selectable\": false, \"children\": [{\"label\": \"Skalpell (Scalpel)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/scalpel\"}, {\"label\": \"Pinsel (Brush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/brush\"}, {\"label\": \"Luftpistole (Airbrush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/airbrush\"}]}"
               }
-            ],
-            "Baum": "{\"label\": \"Eingriff\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/A13CD1\", \"selectable\": false, \"children\": [{\"label\": \"Reinigung (Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/cleaning\"}, {\"label\": \"Konsolidierung (Consolidation)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/consolidation\"}, {\"label\": \"Retusche (Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/retouching\"}]}"
+            ]
           }
         ]
       }
@@ -708,7 +708,7 @@
       {
         "notation": "F52262",
         "prefLabel": "Gefährdungshinweise",
-        "definition": "Hinweise auf potenzielle Gefahrenquellen und Risiken im Zusammenhang mit dem Objekt oder den bei der konservatorisch-restauratorischen Maßnahme (oder früheren Maßnahmen) verwendeten Materialien.\r\n\r\nBeispiel: Schimmelbefall, Schadstoff kontaminiert ",
+        "definition": "Hinweise auf potenzielle Gefahrenquellen und Risiken im Zusammenhang mit dem Objekt oder den bei der konservatorisch-restauratorischen Maßnahme (oder früheren Maßnahmen) verwendeten Materialien.\n\nBeispiel: Schimmelbefall, Schadstoff kontaminiert ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -724,7 +724,7 @@
       {
         "notation": "F5G576",
         "prefLabel": "Getroffene Schutzmaßnahmen",
-        "definition": "Dokumentation der bereits umgesetzten und/oder während der Objektbehandlung einzuhaltenden Schutzmaßnahmen zur Minimierung der Gefährdung. Einschließlich persönlicher Schutzausrüstung (PSA), technischer und organisatorischer Maßnahmen.\r\n\r\nBeispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",
+        "definition": "Dokumentation der bereits umgesetzten und/oder während der Objektbehandlung einzuhaltenden Schutzmaßnahmen zur Minimierung der Gefährdung. Einschließlich persönlicher Schutzausrüstung (PSA), technischer und organisatorischer Maßnahmen.\n\nBeispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -744,7 +744,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+            "Typ": "{\n    \"type\": \"date\"\n}"
           },
           {
             "notation": "F87124",
@@ -775,7 +775,7 @@
           {
             "notation": "FBFFF5",
             "prefLabel": "Präsentationsvorgaben",
-            "definition": "Angaben zu Besonderheiten, die bei der Ausstellung/Präsentation des Objektes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich auf individuell angepasster Stützkonstruktion präsentieren\", \"Ausstellung nur in klimatisierter Vitrine\" ",
+            "definition": "Angaben zu Besonderheiten, die bei der Ausstellung/Präsentation des Objektes zu beachten sind. \n\nBeispiel: \"Objekt ausschließlich auf individuell angepasster Stützkonstruktion präsentieren\", \"Ausstellung nur in klimatisierter Vitrine\" ",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -783,7 +783,7 @@
           {
             "notation": "FC3322",
             "prefLabel": "Verpackungs- und Transportempfehlungen",
-            "definition": "Angaben zu Besonderheiten, die im Zuge der Objektverpackung oder des Transportes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich liegend transportieren\", \"Transport nur in klimatisiertem Fahrzeug\"",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Objektverpackung oder des Transportes zu beachten sind. \n\nBeispiel: \"Objekt ausschließlich liegend transportieren\", \"Transport nur in klimatisiertem Fahrzeug\"",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -791,7 +791,7 @@
           {
             "notation": "FD2B2B",
             "prefLabel": "Handlingsempfehlungen",
-            "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \r\n\r\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \n\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -864,7 +864,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+            "Typ": "{\n    \"type\": \"date\"\n}"
           },
           {
             "notation": "G76B7G",
@@ -873,7 +873,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
+            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
           },
           {
             "notation": "G79CA9",
@@ -891,7 +891,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
+                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
               },
               {
                 "notation": "G814D2",
@@ -901,7 +901,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
+                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
               },
               {
                 "notation": "GB6DF3",
@@ -912,7 +912,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
+                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
               },
               {
                 "notation": "GDF23F",
@@ -922,14 +922,14 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
+                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
               }
             ]
           },
           {
             "notation": "GF41DG",
             "prefLabel": "Ergebnis des Monitorings",
-            "definition": "Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. \r\n\r\nBeispiel: \"Alle Parameter im Normbereich\", \"Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich\", \"Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht\"",
+            "definition": "Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. \n\nBeispiel: \"Alle Parameter im Normbereich\", \"Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich\", \"Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht\"",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -952,7 +952,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
+        "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
         "notation": "HRO94F",
