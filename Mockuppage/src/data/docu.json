@@ -9,7 +9,7 @@
         "notation": "B5DD1A",
         "prefLabel": "Objektansprache",
         "altLabel": "Objekttitel",
-        "definition": "Benennung des konkreten Objektes. \n\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
+        "definition": "Benennung des konkreten Objektes. \r\n\r\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja",
@@ -18,7 +18,7 @@
       {
         "notation": "F7D3DB",
         "prefLabel": "Kennzeichnungsnummer",
-        "definition": "Nummer, die das Objekt eindeutig identifiziert. \n\nBeispiel: \"O.3649\", \"2025-05-21\" ",
+        "definition": "Nummer, die das Objekt eindeutig identifiziert. \r\n\r\nBeispiel: \"O.3649\", \"2025-05-21\" ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text ",
         "Wiederholbar": "Nein",
@@ -36,21 +36,21 @@
       {
         "notation": "F9GB13",
         "prefLabel": "Datierung",
-        "definition": "zeitliche Einordnung des Objektes.\n\nBeispiel: \"Urnenfelderzeit\" , \"15. Jh.\" ",
+        "definition": "zeitliche Einordnung des Objektes.\r\n\r\nBeispiel: \"Urnenfelderzeit\" , \"15. Jh.\" ",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
-        "Baum": "{      \"label\": \"Datierung\",      \"uri\": \"https://www.conservation-science.org/ontology/dating/F9GB13\",      \"selectable\": false,      \"children\": [        {          \"label\": \"Urnenfelderzeit (Bronze Age)\",          \"uri\": \"https://www.conservation-science.org/ontology/dating/urnfield-period\"        },        {          \"label\": \"15. Jh. (15th Century)\",          \"uri\": \"https://www.conservation-science.org/ontology/dating/15th-century\"        },        {          \"label\": \"Römische Kaiserzeit (Roman Imperial Period)\",          \"uri\": \"https://www.conservation-science.org/ontology/dating/roman-imperial-period\"        }      ]    }"
+        "Baum": "{\"label\": \"Datierung\", \"uri\": \"https://www.conservation-science.org/ontology/dating/F9GB13\", \"selectable\": false, \"children\": [{\"label\": \"Altes \\u00c4gypten (Ancient Egypt)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/ancient-egypt\", \"children\": [{\"label\": \"Fr\\u00fchdynastische Zeit (Early Dynastic Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/early-dynastic-egypt\"}, {\"label\": \"Altes Reich (Old Kingdom)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/old-kingdom\"}, {\"label\": \"Mittleres Reich (Middle Kingdom)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/middle-kingdom\"}, {\"label\": \"Neues Reich (New Kingdom)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/new-kingdom\"}, {\"label\": \"Sp\\u00e4tzeit (Late Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/late-period-egypt\"}]}, {\"label\": \"Antikes Griechenland (Ancient Greece)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/ancient-greece\", \"children\": [{\"label\": \"Geometrische Zeit (Geometric Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/geometric-period\"}, {\"label\": \"Archaische Zeit (Archaic Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/archaic-period\"}, {\"label\": \"Klassische Zeit (Classical Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/classical-period\"}, {\"label\": \"Hellenistische Zeit (Hellenistic Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/hellenistic-period\"}]}, {\"label\": \"R\\u00f6misches Reich (Roman Empire)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/roman-empire\", \"children\": [{\"label\": \"R\\u00f6mische Republik (Roman Republic)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/roman-republic\"}, {\"label\": \"R\\u00f6mische Kaiserzeit (Roman Imperial Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/roman-imperial-period\"}, {\"label\": \"Sp\\u00e4tantike (Late Antiquity)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/late-antiquity\"}]}, {\"label\": \"Mesopotamien (Mesopotamia)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/mesopotamia\", \"children\": [{\"label\": \"Sumerische Zeit (Sumerian Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/sumerian-period\"}, {\"label\": \"Akkadische Zeit (Akkadian Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/akkadian-period\"}, {\"label\": \"Altbabylonische Zeit (Old Babylonian Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/old-babylonian-period\"}, {\"label\": \"Assyrische Zeit (Assyrian Period)\", \"uri\": \"https://www.conservation-science.org/ontology/dating/assyrian-period\"}]}]}"
       },
       {
         "notation": "CD3341",
         "prefLabel": "Herkunft",
         "altLabel": "Fundort|kulturelle Verortung|Herstellungsort",
-        "definition": "Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. \n\nBeispiel: \"Fundort: Italien - Numana - Grab 34\", \"kultureller Kontext: Renaissance\"",
+        "definition": "Sammelbegriff für Angaben zur räumlichen oder kulturellen Verortung eines Objektes, die dessen Entstehungs- oder Auffindungskontext beschreiben. Soll als Einordnung von Objekten in ihren historischen, geografischen und kulturellen Zusammhang dienen. Die Angaben können dabei exakte Ortsangaben als auch größere geografische oder kulturelle Räume sein, je nach Überliefungslage bzw. Erkenntnisstand. \r\n\r\nBeispiel: \"Fundort: Italien - Numana - Grab 34\", \"kultureller Kontext: Renaissance\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
-        "Baum": "{\"label\": \"Herkunft\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/CD3341\", \"selectable\": false, \"children\": [{\"label\": \"Fundort (Findspot)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/findspot\", \"children\": [{\"label\": \"Italien - Numana - Grab 34 (Italy - Numana - Grave 34)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/it-numana-grave34\"}]}, {\"label\": \"Kulturelle Verortung (Cultural Context)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/cultural-context\", \"children\": [{\"label\": \"Renaissance\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/renaissance\"}]}, {\"label\": \"Herstellungsort (Place of Manufacture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/place-of-manufacture\"}]}"
+        "Baum": "{\"label\": \"Herkunft\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/CD3341\", \"selectable\": false, \"children\": [{\"label\": \"Fundort (Findspot)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/findspot\", \"children\": [{\"label\": \"\\u00c4gypten - Tal der K\\u00f6nige (Egypt - Valley of the Kings)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/eg-valley-of-kings\"}, {\"label\": \"Griechenland - Olympia (Greece - Olympia)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/gr-olympia\"}, {\"label\": \"Italien - Pompeji (Italy - Pompeii)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/it-pompeii\"}, {\"label\": \"Irak - Ur (Iraq - Ur)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/iq-ur\"}, {\"label\": \"T\\u00fcrkei - Ephesus (Turkey - Ephesus)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/tr-ephesus\"}]}, {\"label\": \"Kulturelle Verortung (Cultural Context)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/cultural-context\", \"children\": [{\"label\": \"\\u00c4gyptische Kultur (Egyptian Culture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/egyptian-culture\"}, {\"label\": \"Griechische Kultur (Greek Culture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/greek-culture\"}, {\"label\": \"R\\u00f6mische Kultur (Roman Culture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/roman-culture\"}, {\"label\": \"Mesopotamische Kultur (Mesopotamian Culture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/mesopotamian-culture\"}]}, {\"label\": \"Herstellungsort (Place of Manufacture)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/place-of-manufacture\", \"children\": [{\"label\": \"\\u00c4gypten (Egypt)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/egypt-manufacture\"}, {\"label\": \"Griechenland (Greece)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/greece-manufacture\"}, {\"label\": \"Italien (Italy)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/italy-manufacture\"}, {\"label\": \"Mesopotamien (Mesopotamia)\", \"uri\": \"https://www.conservation-science.org/ontology/provenance/mesopotamia-manufacture\"}]}]}"
       },
       {
         "notation": "F2A45F",
@@ -60,7 +60,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\n    \"type\": \"date\"\n}"
+        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
       },
       {
         "notation": "F3G8D1",
@@ -69,22 +69,22 @@
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI ",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Personennamen sollten in der Form \"Vorname Nachname\" erfasst werden.\n\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \n",
-        "Baum": "{\"label\": \"Ansprechpartner*in\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person\", \"selectable\": false, \"children\": [{\"label\": \"Max Mustermann\", \"uri\": \"https://www.example.org/contact-person/max-mustermann\"}, {\"label\": \"Unbekannte*r Ansprechpartner*in (Unknown Contact Person)\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/unknown\"}]}"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Personennamen sollten in der Form \"Vorname Nachname\" erfasst werden.\r\n\r\nSollen keine Personennamen veröffentlicht werden, ist an dieser Stelle das zuständige Institution/Körperschaft zu nennen. \r\n",
+        "Baum": "{\"label\": \"Ansprechpartner*in\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person\", \"selectable\": false, \"children\": [{\"label\": \"Dr. Anna Schmidt\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/anna-schmidt\"}, {\"label\": \"Prof. Dr. Klaus M\\u00fcller\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/klaus-mueller\"}, {\"label\": \"Dipl.-Rest. Lena Meier\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/lena-meier\"}, {\"label\": \"Dipl.-Rest. (FH) Thomas Fischer\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/thomas-fischer\"}, {\"label\": \"Unbekannte*r Ansprechpartner*in (Unknown Contact Person)\", \"uri\": \"https://www.conservation-science.org/ontology/contact-person/unknown\"}]}"
       },
       {
         "notation": "G76A78",
         "prefLabel": "Schöpfer*in",
-        "definition": "Angaben zur Person, die das Objekt hergestellt hat - sofern bekannt. \n\nBeispiel: \"Leonardo da Vinci\" ",
+        "definition": "Angaben zur Person, die das Objekt hergestellt hat - sofern bekannt. \r\n\r\nBeispiel: \"Leonardo da Vinci\" ",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
-        "Baum": "{\"label\": \"Sch\\u00f6pfer*in\", \"uri\": \"https://www.conservation-science.org/ontology/creator/G76A78\", \"selectable\": false, \"children\": [{\"label\": \"Leonardo da Vinci\", \"uri\": \"https://www.wikidata.org/wiki/Q762\"}, {\"label\": \"Unbekannter K\\u00fcnstler (Unknown Artist)\", \"uri\": \"https://www.conservation-science.org/ontology/creator/unknown-artist\"}]}"
+        "Baum": "{\"label\": \"Sch\\u00f6pfer*in\", \"uri\": \"https://www.conservation-science.org/ontology/creator/G76A78\", \"selectable\": false, \"children\": [{\"label\": \"Exekias (T\\u00f6pfer & Maler)\", \"uri\": \"https://www.wikidata.org/wiki/Q350645\"}, {\"label\": \"Andokides-Maler (Vasemaler)\", \"uri\": \"https://www.wikidata.org/wiki/Q492576\"}, {\"label\": \"Euphronios (T\\u00f6pfer & Maler)\", \"uri\": \"https://www.wikidata.org/wiki/Q552553\"}, {\"label\": \"Praxiteles (Bildhauer)\", \"uri\": \"https://www.wikidata.org/wiki/Q192292\"}, {\"label\": \"Phidias (Bildhauer)\", \"uri\": \"https://www.wikidata.org/wiki/Q183575\"}, {\"label\": \"Iktinos (Architekt)\", \"uri\": \"https://www.wikidata.org/wiki/Q310375\"}, {\"label\": \"Kallikrates (Architekt)\", \"uri\": \"https://www.wikidata.org/wiki/Q310382\"}, {\"label\": \"Polykleitos (Bildhauer)\", \"uri\": \"https://www.wikidata.org/wiki/Q311311\"}, {\"label\": \"Unbekannte*r K\\u00fcnstler*in (Unknown Artist)\", \"uri\": \"https://www.conservation-science.org/ontology/creator/unknown-artist\"}]}"
       },
       {
         "notation": "GB6DF3",
         "prefLabel": "Objektbeziehung",
-        "definition": "Sofern das Objekt Teil eines Ensemble, einer definierten Sammlung ist oder anderweitig besondere Beziehungen zu anderen Objekten aufweist, sollten diese erfasst werden. \n\nBeispiel: \"Teil der Sammlung Becker\" ",
+        "definition": "Sofern das Objekt Teil eines Ensemble, einer definierten Sammlung ist oder anderweitig besondere Beziehungen zu anderen Objekten aufweist, sollten diese erfasst werden. \r\n\r\nBeispiel: \"Teil der Sammlung Becker\" ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -100,16 +100,16 @@
       {
         "notation": "F1BA31",
         "prefLabel": "Objekttyp",
-        "definition": "grundlegende formale Kategorie, in die das Objekt eingeordnet wird. \n\nBeispiel: \"Gemälde\" , \"Skulptur\", \"Münze\" ",
+        "definition": "grundlegende formale Kategorie, in die das Objekt eingeordnet wird. \r\n\r\nBeispiel: \"Gemälde\" , \"Skulptur\", \"Münze\" ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "URI",
         "Wiederholbar": "Nein",
-        "Baum": "{\"label\": \"Objekttyp\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/F1BA31\", \"selectable\": false, \"children\": [{\"label\": \"Gem\\u00e4lde (Painting)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/painting\"}, {\"label\": \"Skulptur (Sculpture)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/sculpture\"}, {\"label\": \"M\\u00fcnze (Coin)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/coin\"}, {\"label\": \"Keramik (Ceramics)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/ceramics\"}]}"
+        "Baum": "{\"label\": \"Objekttyp\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/F1BA31\", \"selectable\": false, \"children\": [{\"label\": \"Keramik (Ceramics)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/ceramics\", \"children\": [{\"label\": \"Vase\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/vase\"}, {\"label\": \"Amphore (Amphora)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/amphora\"}, {\"label\": \"Krater (Crater)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/crater\"}, {\"label\": \"Kylix (Kylix)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/kylix\"}, {\"label\": \"Oinochoe (Oinochoe)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/oinochoe\"}]}, {\"label\": \"Skulptur (Sculpture)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/sculpture\", \"children\": [{\"label\": \"Statuette\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/statuette\"}, {\"label\": \"B\\u00fcste (Bust)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/bust\"}, {\"label\": \"Relief\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/relief\"}]}, {\"label\": \"M\\u00fcnze (Coin)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/coin\"}, {\"label\": \"Schmuck (Jewelry)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/jewelry\", \"children\": [{\"label\": \"Halskette (Necklace)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/necklace\"}, {\"label\": \"Ring\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/ring\"}, {\"label\": \"Ohrring (Earring)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/earring\"}]}, {\"label\": \"Waffe (Weapon)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/weapon\", \"children\": [{\"label\": \"Schwert (Sword)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/sword\"}, {\"label\": \"Helm (Helmet)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/helmet\"}]}, {\"label\": \"Architekturfragment (Architectural Fragment)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/architectural-fragment\", \"children\": [{\"label\": \"Kapitell (Capital)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/capital\"}, {\"label\": \"S\\u00e4ule (Column)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/column\"}]}, {\"label\": \"Grabbeigabe (Grave Good)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/grave-good\"}, {\"label\": \"Papyrusrolle (Papyrus Scroll)\", \"uri\": \"https://www.conservation-science.org/ontology/object-type/papyrus-scroll\"}]}"
       },
       {
         "notation": "BGC9F3",
         "prefLabel": "Weitere Objekteigenschaften",
-        "definition": "Möglichkeit weitere charakteristische Eigenschaften des Objektes zu beschreiben, die sich nicht eindeutig zum Objekttyp oder einer der anderen definierten Beschreibungselemente zuordnen lassen. \n\nBeispiel: Farbe, Form, Besonderheit beim Aussehen",
+        "definition": "Möglichkeit weitere charakteristische Eigenschaften des Objektes zu beschreiben, die sich nicht eindeutig zum Objekttyp oder einer der anderen definierten Beschreibungselemente zuordnen lassen. \r\n\r\nBeispiel: Farbe, Form, Besonderheit beim Aussehen",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -119,23 +119,23 @@
         "notation": "D866AD",
         "prefLabel": "Objektmaterial",
         "altLabel": "Objektwerkstoff",
-        "definition": "Angaben zum Material bzw. den Materialien aus dem/aus denen das Objekt besteht. \n\n\nBeispiel: \"Bronze (Ergebnis RFA)\", \"Buntmetall (Ergebnis visuelle Begutachtung) \"",
+        "definition": "Angaben zum Material bzw. den Materialien aus dem/aus denen das Objekt besteht. \r\n\r\n\r\nBeispiel: \"Bronze (Ergebnis RFA)\", \"Buntmetall (Ergebnis visuelle Begutachtung) \"",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "URI",
         "Wiederholbar": "Ja",
         "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, zum Beispiel ob zur Materialbestimmung eine naturwissenschaftliche Analyse verwendet wurde oder ob sie lediglich auf einer visuellen Begutachtung des Objektes beruht. ",
-        "Baum": "{\"label\": \"Objektmaterial\", \"uri\": \"https://www.conservation-science.org/ontology/material/D866AD\", \"selectable\": false, \"children\": [{\"label\": \"Bronze\", \"uri\": \"https://www.conservation-science.org/ontology/material/bronze\"}, {\"label\": \"Buntmetall (Non-ferrous Metal)\", \"uri\": \"https://www.conservation-science.org/ontology/material/non-ferrous-metal\"}, {\"label\": \"Holz (Wood)\", \"uri\": \"https://www.conservation-science.org/ontology/material/wood\"}, {\"label\": \"Leinwand (Canvas)\", \"uri\": \"https://www.conservation-science.org/ontology/material/canvas\"}]}",
+        "Baum": "{\"label\": \"Objektmaterial\", \"uri\": \"https://www.conservation-science.org/ontology/material/D866AD\", \"selectable\": false, \"children\": [{\"label\": \"Keramik (Ceramic)\", \"uri\": \"https://www.conservation-science.org/ontology/material/ceramic\", \"children\": [{\"label\": \"Irdenware (Earthenware)\", \"uri\": \"https://www.conservation-science.org/ontology/material/earthenware\"}, {\"label\": \"Steinzeug (Stoneware)\", \"uri\": \"https://www.conservation-science.org/ontology/material/stoneware\"}, {\"label\": \"Porzellan (Porcelain)\", \"uri\": \"https://www.conservation-science.org/ontology/material/porcelain\"}]}, {\"label\": \"Glas (Glass)\", \"uri\": \"https://www.conservation-science.org/ontology/material/glass\"}, {\"label\": \"Metall (Metal)\", \"uri\": \"https://www.conservation-science.org/ontology/material/metal\", \"children\": [{\"label\": \"Eisen (Iron)\", \"uri\": \"https://www.conservation-science.org/ontology/material/iron\"}, {\"label\": \"Bronze\", \"uri\": \"https://www.conservation-science.org/ontology/material/bronze\"}, {\"label\": \"Blei (Lead)\", \"uri\": \"https://www.conservation-science.org/ontology/material/lead\"}]}, {\"label\": \"Organisches Material (Organic Material)\", \"uri\": \"https://www.conservation-science.org/ontology/material/organic-material\", \"children\": [{\"label\": \"Holz (Wood)\", \"uri\": \"https://www.conservation-science.org/ontology/material/wood\"}, {\"label\": \"Leder (Leather)\", \"uri\": \"https://www.conservation-science.org/ontology/material/leather\"}, {\"label\": \"Knochen (Bone)\", \"uri\": \"https://www.conservation-science.org/ontology/material/bone\"}]}]}",
         "Unsicher": "Ja"
       },
       {
         "notation": "C4BCF8",
         "prefLabel": "Herstellungstechnik",
-        "definition": "Angaben zur Technik bzw. zu Techniken, die zur Herstellung des Objektes verwendet wurden. \n\n\nBeispiel: \"Geschmiedet (Hammerspuren)\"",
+        "definition": "Angaben zur Technik bzw. zu Techniken, die zur Herstellung des Objektes verwendet wurden. \r\n\r\n\r\nBeispiel: \"Geschmiedet (Hammerspuren)\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Ja",
         "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden. Da es sich häufig um interpretative Zuschreibungen handelt, sollte der Grad der Sicherheit bzw. die zugrundeliegende Beobachtung oder Untersuchung angegeben werden.",
-        "Baum": "{\"label\": \"Herstellungstechnik\", \"uri\": \"https://www.conservation-science.org/ontology/technique/C4BCF8\", \"selectable\": false, \"children\": [{\"label\": \"Geschmiedet (Forged)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/forged\"}, {\"label\": \"Gegossen (Cast)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/cast\"}, {\"label\": \"Bemalt (Painted)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/painted\"}]}",
+        "Baum": "{\"label\": \"Herstellungstechnik\", \"uri\": \"https://www.conservation-science.org/ontology/technique/C4BCF8\", \"selectable\": false, \"children\": [{\"label\": \"Keramikherstellung (Ceramic Production)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/ceramic-production\", \"children\": [{\"label\": \"T\\u00f6pfern auf der T\\u00f6pferscheibe (Wheel-thrown)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/wheel-thrown\"}, {\"label\": \"Handgeformt (Hand-built)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/hand-built\"}, {\"label\": \"Engobiert (Slip-coated)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/slip-coated\"}, {\"label\": \"Schwarzfigurig (Black-figure)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/black-figure\"}, {\"label\": \"Rotfigurig (Red-figure)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/red-figure\"}, {\"label\": \"Glasiert (Glazed)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/glazed\"}, {\"label\": \"Gebrannt (Fired)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/fired\"}]}, {\"label\": \"Metallbearbeitung (Metalworking)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/metalworking\", \"children\": [{\"label\": \"Geschmiedet (Forged)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/forged\"}, {\"label\": \"Gegossen (Cast)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/cast\"}, {\"label\": \"Ziselierung (Chasing)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/chasing\"}, {\"label\": \"Granulation (Granulation)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/granulation\"}]}, {\"label\": \"Steinbearbeitung (Stone Working)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/stone-working\", \"children\": [{\"label\": \"Behauen (Carved)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/carved\"}, {\"label\": \"Polieren (Polished)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/polished\"}]}, {\"label\": \"Holzbearbeitung (Woodworking)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/woodworking\", \"children\": [{\"label\": \"Geschnitzt (Carved)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/carved-wood\"}]}, {\"label\": \"Textilherstellung (Textile Production)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/textile-production\", \"children\": [{\"label\": \"Weben (Weaving)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/weaving\"}]}, {\"label\": \"Glasherstellung (Glass Production)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/glass-production\", \"children\": [{\"label\": \"Glasblasen (Glassblowing)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/glassblowing\"}, {\"label\": \"Formgepresst (Mold-pressed)\", \"uri\": \"https://www.conservation-science.org/ontology/technique/mold-pressed\"}]}]}",
         "Unsicher": "Ja"
       },
       {
@@ -196,7 +196,7 @@
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Bei diesem Feld muss zwischen der internen Erfassung des genauen Standorts und der allgemeinen Standortangabe für die Veröffentlichung des Datensatzes unterschieden werden. Der genaue Standort dient der internen Dokumentation und kann bei Bedarf vertraulich behandelt werden. Für veröffentlichte Datensätze sollte nur der übergeordnete Standort (z. B. Einrichtung,  Ausstellung, Depot) angegeben werden.",
-        "Baum": "{\"label\": \"aktueller Standort\", \"uri\": \"https://www.conservation-science.org/ontology/location/FC3322\", \"selectable\": false, \"children\": [{\"label\": \"Depot A (Storage A)\", \"uri\": \"https://www.conservation-science.org/ontology/location/depot-a\"}, {\"label\": \"Ausstellungshalle 2 (Exhibition Hall 2)\", \"uri\": \"https://www.conservation-science.org/ontology/location/exhibition-hall-2\"}]}"
+        "Baum": "{\"label\": \"aktueller Standort\", \"uri\": \"https://www.conservation-science.org/ontology/location/FC3322\", \"selectable\": false, \"children\": [{\"label\": \"LEIZA Mainz - Kurf\\u00fcrstliches Schloss (LEIZA Mainz - Electoral Palace)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-electoral-palace\", \"children\": [{\"label\": \"Ausstellungsr\\u00e4ume (Exhibition Rooms)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-exhibition-rooms\"}, {\"label\": \"Verwaltung (Administration)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-administration\"}]}, {\"label\": \"LEIZA Mainz - Gonsenheim (LEIZA Mainz - Gonsenheim)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-gonsenheim\", \"children\": [{\"label\": \"Restaurierungswerkst\\u00e4tten (Conservation Workshops)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-conservation-workshops\", \"children\": [{\"label\": \"Metallrestaurierung (Metal Conservation)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-metal-conservation\"}, {\"label\": \"Keramikrestaurierung (Ceramic Conservation)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-ceramic-conservation\"}, {\"label\": \"Textilrestaurierung (Textile Conservation)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-textile-conservation\"}]}, {\"label\": \"Depots (Storage Facilities)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-depots\", \"children\": [{\"label\": \"Depot Antike (Antiquity Storage)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-depot-antiquity\"}, {\"label\": \"Depot Mittelalter (Medieval Storage)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-depot-medieval\"}]}, {\"label\": \"Forschungslabore (Research Laboratories)\", \"uri\": \"https://www.conservation-science.org/ontology/location/leiza-mainz-research-labs\"}]}, {\"label\": \"Ausgeliehen an (On Loan to)\", \"uri\": \"https://www.conservation-science.org/ontology/location/on-loan-to\", \"children\": [{\"label\": \"Landesmuseum Trier (State Museum Trier)\", \"uri\": \"https://www.conservation-science.org/ontology/location/landesmuseum-trier\"}, {\"label\": \"R\\u00f6misch-Germanisches Museum K\\u00f6ln (Roman-Germanic Museum Cologne)\", \"uri\": \"https://www.conservation-science.org/ontology/location/rgm-cologne\"}]}]}"
       }
     ]
   },
@@ -211,12 +211,12 @@
         "notation": "A8ABBA",
         "prefLabel": "Erfassungszeitpunkt",
         "altLabel": "Zeitpunkt der Erfassung",
-        "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \n\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
+        "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \r\n\r\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Auswahl zwischen: vor Eingriff, nach Eingriff, zwischen Eingriff, Monitoring",
-        "Typ": "{\n    \"type\": \"radio\",\n    \"options\": [\"vor Eingriff\", \"nach Eingriff\", \"zwischen Eingriff\", \"Monitoring\"]\n}"
+        "Typ": "{\r\n    \"type\": \"radio\",\r\n    \"options\": [\"vor Eingriff\", \"nach Eingriff\", \"zwischen Eingriff\", \"Monitoring\"]\r\n}"
       },
       {
         "notation": "CA1BC5",
@@ -227,7 +227,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\n    \"type\": \"date\"\n}"
+        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
       },
       {
         "notation": "HRO94F",
@@ -236,12 +236,12 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
       },
       {
         "notation": "CDD6B5",
         "prefLabel": "Dokumentationsform",
-        "definition": "Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.\n\nBeispiel: \"Zustandsbericht + Fotos\" ",
+        "definition": "Angaben, in welcher Form der Zustand erfasst wurde bzw. in welcher/welchen Datenformen/Medien die Dokumentation des Zustandes vorliegt.\r\n\r\nBeispiel: \"Zustandsbericht + Fotos\" ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja",
@@ -274,7 +274,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"Umgebungsbedingungen\", \"uri\": \"https://www.conservation-science.org/ontology/environment/G79CA9\", \"selectable\": false, \"children\": [{\"label\": \"Temperatur (Temperature)\", \"uri\": \"https://www.conservation-science.org/ontology/environment/temperature\"}, {\"label\": \"Relative Luftfeuchtigkeit (Relative Humidity)\", \"uri\": \"https://www.conservation-science.org/ontology/environment/relative-humidity\"}, {\"label\": \"Lichtexposition (Light Exposure)\", \"uri\": \"https://www.conservation-science.org/ontology/environment/light-exposure\"}]}"
+            "Baum": "{\"label\": \"Umgebungsbedingungen (Environmental Conditions)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/G9H4J2\", \"selectable\": false, \"children\": [{\"label\": \"Klima (Climate)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/climate\", \"children\": [{\"label\": \"Temperatur (Temperature)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/temperature\", \"children\": [{\"label\": \"Stabile Temperatur (Stable Temperature)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/stable-temperature\"}, {\"label\": \"Temperaturschwankungen (Temperature Fluctuations)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/temperature-fluctuations\"}]}, {\"label\": \"Relative Luftfeuchtigkeit (Relative Humidity)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/relative-humidity\", \"children\": [{\"label\": \"Stabile Luftfeuchtigkeit (Stable Humidity)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/stable-humidity\"}, {\"label\": \"Feuchtigkeitsschwankungen (Humidity Fluctuations)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/humidity-fluctuations\"}, {\"label\": \"Hohe Luftfeuchtigkeit (High Humidity)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/high-humidity\"}, {\"label\": \"Niedrige Luftfeuchtigkeit (Low Humidity)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/low-humidity\"}]}]}, {\"label\": \"Licht (Light)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/light\", \"children\": [{\"label\": \"Direkte Sonneneinstrahlung (Direct Sunlight)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/direct-sunlight\"}, {\"label\": \"Indirektes Licht (Indirect Light)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/indirect-light\"}, {\"label\": \"Dunkel (Dark)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/dark\"}, {\"label\": \"K\\u00fcnstliche Beleuchtung (Artificial Lighting)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/artificial-lighting\"}]}, {\"label\": \"Schadstoffe (Pollutants)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/pollutants\", \"children\": [{\"label\": \"Staub (Dust)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/dust\"}, {\"label\": \"Fl\\u00fcchtige organische Verbindungen (VOCs)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/vocs\"}, {\"label\": \"S\\u00e4uren (Acids)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/acids\"}, {\"label\": \"Salze (Salts)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/salts\"}]}, {\"label\": \"Biologische Aktivit\\u00e4t (Biological Activity)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/biological-activity\", \"children\": [{\"label\": \"Schimmel (Mold)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/mold\"}, {\"label\": \"Insektenbefall (Insect Infestation)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/insect-infestation\"}, {\"label\": \"Nagetiere (Rodents)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/rodents\"}]}, {\"label\": \"Physikalische Einfl\\u00fcsse (Physical Influences)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/physical-influences\", \"children\": [{\"label\": \"Vibrationen (Vibrations)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/vibrations\"}, {\"label\": \"St\\u00f6\\u00dfe (Shocks)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/shocks\"}, {\"label\": \"Druck (Pressure)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/pressure\"}]}, {\"label\": \"Lagerungsart (Storage Type)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/storage-type\", \"children\": [{\"label\": \"Archiviert (Archived)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/archived\"}, {\"label\": \"Ausgestellt (Displayed)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/displayed\"}, {\"label\": \"Depotlagerung (Depot Storage)\", \"uri\": \"https://www.conservation-science.org/ontology/environmental-conditions/depot-storage\"}]}]}"
           },
           {
             "notation": "BC5B57",
@@ -283,24 +283,24 @@
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"Physischer Objektzustand\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/BC5B57\", \"selectable\": false, \"children\": [{\"label\": \"Vollst\\u00e4ndigkeit (Completeness)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/completeness\"}, {\"label\": \"Stabilit\\u00e4t (Stability)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stability\"}, {\"label\": \"Festigkeit (Firmness)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/firmness\"}]}"
+            "Baum": "{\"label\": \"Physischer Zustand (Physical Condition)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/GDF8C2\", \"selectable\": false, \"children\": [{\"label\": \"Feuchtigkeitsgehalt (Moisture Content)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/AG4397\", \"children\": [{\"label\": \"Trocken (Dry)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/dry\"}, {\"label\": \"Feucht (Damp)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/damp\"}, {\"label\": \"Nass (Wet)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/wet\"}]}, {\"label\": \"Ver\\u00e4nderung (Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/C6GB1C\", \"children\": [{\"label\": \"Oberfl\\u00e4chenver\\u00e4nderung (Surface Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/surface-alteration\"}, {\"label\": \"Farbver\\u00e4nderung (Color Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/color-alteration\"}, {\"label\": \"Texturver\\u00e4nderung (Texture Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/texture-alteration\"}]}, {\"label\": \"Festigkeit (Strength)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/AGBB3C\", \"children\": [{\"label\": \"Fest (Strong)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/strong\"}, {\"label\": \"Br\\u00fcchig (Brittle)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/brittle\"}, {\"label\": \"Weich (Soft)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/soft\"}]}, {\"label\": \"Stabilit\\u00e4t (Stability)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/FB6AGB\", \"children\": [{\"label\": \"Stabil (Stable)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stable\"}, {\"label\": \"Instabil (Unstable)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/unstable\"}, {\"label\": \"Koh\\u00e4sionsverlust (Loss of Cohesion)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/loss-of-cohesion\"}]}, {\"label\": \"Vollst\\u00e4ndigkeit (Completeness)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/CAB799\", \"children\": [{\"label\": \"Vollst\\u00e4ndig (Complete)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/complete\"}, {\"label\": \"Fragmentiert (Fragmented)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/fragmented\"}, {\"label\": \"Teilweise fehlend (Partially Missing)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/partially-missing\"}, {\"label\": \"Zusammengesetzt (Reconstructed)\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/reconstructed\"}]}]}"
           },
           {
             "notation": "AA6941",
             "prefLabel": "Schadensphänomene",
             "altLabel": "Schadensbild| Beschädigung| Schaden",
-            "definition": "Beschreibung der beobachteten negativen Veränderungen am Objekt im Vergleich zu seinem als ursprünglich angenommenen Zustandes. \n",
+            "definition": "Beschreibung der beobachteten negativen Veränderungen am Objekt im Vergleich zu seinem als ursprünglich angenommenen Zustandes. \r\n",
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
             "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden, indem z.B. die Art der Untersuchung/Feststellung dieser Veränderung dokumentiert wird. ",
-            "Baum": "{\"label\": \"Schadensph\\u00e4nomene\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/AA6941\", \"selectable\": false, \"children\": [{\"label\": \"Korrosion (Corrosion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/corrosion\"}, {\"label\": \"Risse (Cracks)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/cracks\"}, {\"label\": \"Abplatzungen (Flaking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/flaking\"}]}",
+            "Baum": "{\"label\": \"Schadensph\\u00e4nomen (Damage Phenomenon)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/DAC996\", \"selectable\": false, \"children\": [{\"label\": \"Form\\u00e4nderung (Change in Form)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/B224CD\", \"children\": [{\"label\": \"Verformung (Deformation)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/deformation\"}, {\"label\": \"Verzug (Warping)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/warping\"}, {\"label\": \"Schrumpfung (Shrinkage)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/shrinkage\"}, {\"label\": \"Ausdehnung (Expansion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/expansion\"}, {\"label\": \"Rissbildung (Cracking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/cracking\"}, {\"label\": \"Bruch (Breakage)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/breakage\"}]}, {\"label\": \"Substanzverlust (Loss of Substance)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/C188DA\", \"children\": [{\"label\": \"Abrieb (Abrasion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/abrasion\"}, {\"label\": \"Auswaschung (Leaching)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/leaching\"}, {\"label\": \"Abplatzung (Spalling)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/spalling\"}, {\"label\": \"Fragmentierung (Fragmentation)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/fragmentation\"}, {\"label\": \"Verlust von Oberfl\\u00e4chenmaterial (Loss of Surface Material)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/loss-of-surface-material\"}]}, {\"label\": \"Koh\\u00e4sionsverlust (Loss of Cohesion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/CB9GD3\", \"children\": [{\"label\": \"Pulverung (Powdering/Friability)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/powdering\"}, {\"label\": \"Bl\\u00e4tterung (Flaking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/flaking\"}, {\"label\": \"Rissbildung (Cracking in Cohesion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/cracking-cohesion\"}, {\"label\": \"Delamination (Delamination)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/delamination\"}, {\"label\": \"Kreidung (Chalking)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/chalking\"}]}, {\"label\": \"Chemische Ver\\u00e4nderung (Chemical Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/C9D991\", \"children\": [{\"label\": \"Korrosion (Corrosion)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/corrosion\"}, {\"label\": \"Verf\\u00e4rbung (Discoloration)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/discoloration\"}, {\"label\": \"Salzausbl\\u00fchungen (Salt Efflorescence)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/salt-efflorescence\"}, {\"label\": \"Vulkanisierung (Vulcanization)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/vulcanization\"}, {\"label\": \"Oxidation (Oxidation)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/oxidation\"}]}, {\"label\": \"Materialhinzuf\\u00fcgung (Material Addition)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/B86G16\", \"children\": [{\"label\": \"Verschmutzung (Soiling)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/soiling\"}, {\"label\": \"Ablagerungen (Deposits)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/deposits\"}, {\"label\": \"Fremdmaterial (Foreign Material)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/foreign-material\"}, {\"label\": \"Restaurierungsmaterial (Restoration Material)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/restoration-material\"}]}, {\"label\": \"Visuelle Ver\\u00e4nderung (Visual Alteration)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/D3AGG6\", \"children\": [{\"label\": \"Glanzverlust (Loss of Sheen)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/loss-of-sheen\"}, {\"label\": \"Opazit\\u00e4t (Opacity)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/opacity\"}, {\"label\": \"Tr\\u00fcbung (Clouding/Hazing)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/clouding\"}, {\"label\": \"Ausbleichung (Fading)\", \"uri\": \"https://www.conservation-science.org/ontology/damage-phenomena/fading\"}]}]}",
             "narrower": [
               {
                 "notation": "C2488A",
                 "prefLabel": "Schadensgrad",
                 "altLabel": "Grad des Schadensphänomens",
-                "definition": "Bewertung des Ausmaßes der Beschädigung eines Objektes.\n\nz.B. Abnutzung - leicht, Korrosion - stark",
+                "definition": "Bewertung des Ausmaßes der Beschädigung eines Objektes.\r\n\r\nz.B. Abnutzung - leicht, Korrosion - stark",
                 "Verpflichtungsgrad": "empfohlen",
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
@@ -341,27 +341,27 @@
       {
         "notation": "G7F25F",
         "prefLabel": "Zuständige Person (Untersuchung)",
-        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \n",
+        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \r\n",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\n\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\r\n\r\n"
       },
       {
         "notation": "G76B7G",
         "prefLabel": "Durchführende Einrichtung (Untersuchung)",
-        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \n\n",
+        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \r\n\r\n",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\n\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
-        "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Untersuchung)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/G76B7G\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6misch-Germanisches Zentralmuseum (RGZM)\", \"uri\": \"https://www.wikidata.org/wiki/Q321946\"}, {\"label\": \"Deutsches Arch\\u00e4ologisches Institut (DAI)\", \"uri\": \"https://www.wikidata.org/wiki/Q567303\"}]}"
+        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\r\n\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Untersuchung)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/G76B7G\", \"selectable\": false, \"children\": [{\"label\": \"Leibniz-Zentrum f\\u00fcr Arch\\u00e4ologie (LEIZA)\", \"uri\": \"https://www.leiza.de/\", \"children\": [{\"label\": \"Labor f\\u00fcr Arch\\u00e4ometrie\", \"uri\": \"https://www.leiza.de/forschung/infrastrukturen/labore/labor-fuer-archaeometrie\"}, {\"label\": \"Labor f\\u00fcr Materialographie\", \"uri\": \"https://www.leiza.de/forschung/infrastrukturen/labore/labor-fuer-archaeometrie#materialographie\"}, {\"label\": \"Mikroskopie Labor (Microscopy Lab)\", \"uri\": \"https://www.leiza.de/forschung/infrastrukturen/labore/labor-fuer-archaeometrie#mikroskopie\"}, {\"label\": \"Laboratory for Traceology and Controlled Experiments (TraCEr)\", \"uri\": \"https://www.leiza.de/forschung/infrastrukturen/labore/tracer\"}, {\"label\": \"Labor f\\u00fcr pyrotechnologische Studien und Materialuntersuchung (PyroSEr)\", \"uri\": \"https://www.conservation-science.org/ontology/lab/pyroser\"}, {\"label\": \"Imaging Platform at LEIZA (IMPALA)\", \"uri\": \"https://www.conservation-science.org/ontology/lab/impala\"}]}, {\"label\": \"Deutsches Arch\\u00e4ologisches Institut (DAI)\", \"uri\": \"https://www.dainst.org/\", \"children\": [{\"label\": \"Labore (allgemein)\", \"uri\": \"https://www.dainst.org/forschung/labore\"}]}, {\"label\": \"Andere Forschungseinrichtungen (Other Research Institutions)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/other-research-institutions\", \"children\": [{\"label\": \"Curt-Engelhorn-Zentrum Arch\\u00e4ometrie gGmbH (CEZA)\", \"uri\": \"https://www.cez-archaeometrie.de/\"}, {\"label\": \"Landesmuseum Trier - Restaurierungswerkst\\u00e4tten\", \"uri\": \"https://www.landesmuseum-trier.de/restaurierung\"}]}, {\"label\": \"Universit\\u00e4tsinstitute (University Institutes)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/university-institutes\", \"children\": [{\"label\": \"Universit\\u00e4t K\\u00f6ln - CICS (Institut f\\u00fcr Restaurierungs- und Konservierungswissenschaft)\", \"uri\": \"https://cics.phil-fak.uni-koeln.de/forschung/labore\"}]}]}"
       },
       {
         "notation": "A2AG55",
         "prefLabel": "Untersuchungskennung",
         "altLabel": "Kennung der Untersuchung",
-        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. \nBeispiel: 2025-05-13_RFA_1 oder XY_24601",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Untersuchung eindeutig identifiziert werden kann. \r\nBeispiel: 2025-05-13_RFA_1 oder XY_24601",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -376,7 +376,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\n    \"type\": \"date\"\n}"
+        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
       },
       {
         "notation": "CF3C22",
@@ -413,7 +413,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Baum": "{\"label\": \"Untersuchungsverfahren\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/DAB4B7\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6ntgenfluoreszenzanalyse (XRF)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/xrf\"}, {\"label\": \"Rasterelektronenmikroskopie (SEM)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/sem\"}, {\"label\": \"Infrarotspektroskopie (FTIR)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ftir\"}]}",
+        "Baum": "{\"label\": \"Untersuchungsverfahren (Investigation Methods)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/DAB4B7\", \"selectable\": false, \"children\": [{\"label\": \"Chemische Analyseverfahren (Chemical Analysis Methods)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/chemical-analysis\", \"children\": [{\"label\": \"R\\u00f6ntgenfluoreszenzanalyse (XRF)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/xrf\"}, {\"label\": \"Infrarotspektroskopie mit Fourier-Transformation (FTIR)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ftir\"}, {\"label\": \"Ramanspektroskopie (Raman Spectroscopy)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/raman\"}, {\"label\": \"Massenspektrometrie (Mass Spectrometry - MS)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ms\"}, {\"label\": \"Atomabsorptionsspektroskopie (AAS)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/aas\"}, {\"label\": \"Ionenchromatographie (IC)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/ic\"}]}, {\"label\": \"Mikroskopische Verfahren (Microscopic Methods)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/microscopic-methods\", \"children\": [{\"label\": \"Rasterelektronenmikroskopie (SEM)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/sem\"}, {\"label\": \"Lichtmikroskopie (Light Microscopy)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/light-microscopy\"}, {\"label\": \"Digitales Mikroskop (Digital Microscope)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/digital-microscope\"}]}, {\"label\": \"Physikalische Verfahren (Physical Methods)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/physical-methods\", \"children\": [{\"label\": \"Radiographie (Radiography)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/radiography\"}, {\"label\": \"Farbmetrik (Colorimetry)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/colorimetry\"}, {\"label\": \"Dichtemessung (Density Measurement)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/density-measurement\"}, {\"label\": \"H\\u00e4rtemessung (Hardness Measurement)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/hardness-measurement\"}]}, {\"label\": \"Datierungsverfahren (Dating Methods)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/dating-methods\", \"children\": [{\"label\": \"Radiokarbondatierung (Radiocarbon Dating - C14)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/c14-dating\"}, {\"label\": \"Thermolumineszenzdatierung (Thermoluminescence Dating - TL)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/tl-dating\"}, {\"label\": \"Optisch stimulierte Lumineszenz (OSL)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/osl-dating\"}, {\"label\": \"Dendrochronologie (Dendrochronology)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/dendrochronology\"}]}, {\"label\": \"Bildgebende Verfahren (Imaging Techniques)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/imaging-techniques\", \"children\": [{\"label\": \"UV-Fluoreszenz (UV Fluorescence)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/uv-fluorescence\"}, {\"label\": \"Infrarot-Reflektographie (Infrared Reflectography - IRR)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-method/irr\"}]}]}",
         "narrower": [
           {
             "notation": "D1CFD5",
@@ -422,7 +422,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"verwendetes Material (Untersuchung)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/D1CFD5\", \"selectable\": false, \"children\": [{\"label\": \"Aceton\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/180\"}, {\"label\": \"Ethanol\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/702\"}]}"
+            "Baum": "{\"label\": \"Verwendetes Material (Untersuchung)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/D1CFD5\", \"selectable\": false, \"children\": [{\"label\": \"L\\u00f6sungsmittel (Solvents)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/solvents\", \"children\": [{\"label\": \"Aceton\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/180\"}, {\"label\": \"Ethanol\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/702\"}, {\"label\": \"Isopropanol\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/3776\"}, {\"label\": \"Xylol\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/135387790\"}]}, {\"label\": \"Reagenzien (Reagents)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/reagents\", \"children\": [{\"label\": \"Salpeters\\u00e4ure (Nitric Acid)\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/944\"}, {\"label\": \"Chlorwasserstoffs\\u00e4ure (Hydrochloric Acid)\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/313\"}, {\"label\": \"Natriumhydroxid (Sodium Hydroxide)\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/14798\"}, {\"label\": \"Destilliertes Wasser (Distilled Water)\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/962\"}]}, {\"label\": \"Einbettmedien (Mounting Media)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/mounting-media\", \"children\": [{\"label\": \"Epoxidharz (Epoxy Resin)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/epoxy-resin\"}, {\"label\": \"Polyesterharz (Polyester Resin)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/polyester-resin\"}]}, {\"label\": \"Standardreferenzmaterialien (Standard Reference Materials)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/standard-reference-materials\", \"children\": [{\"label\": \"Kalibrierstandards (Calibration Standards)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/calibration-standards\"}, {\"label\": \"Vergleichsproben (Reference Samples)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/reference-samples\"}]}, {\"label\": \"Verbrauchsmaterialien (Consumables)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/consumables\", \"children\": [{\"label\": \"Objekttr\\u00e4ger (Microscope Slides)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/microscope-slides\"}, {\"label\": \"Deckgl\\u00e4ser (Cover Slips)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/cover-slips\"}, {\"label\": \"Filtrierpapier (Filter Paper)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-material/filter-paper\"}]}]}"
           },
           {
             "notation": "D949G6",
@@ -431,7 +431,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"Untersuchungsger\\u00e4t\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/D949G6\", \"selectable\": false, \"children\": [{\"label\": \"Niton XL3t GOLDD+\", \"uri\": \"https://assets.thermofisher.com/TFS-Assets/CMD/Technical-Notes/TN51779-Handheld-XRF-Analysis-Niton-XL3t-GOLDD.pdf\"}, {\"label\": \"Jeol JSM-6610LV\", \"uri\": \"https://www.jeol.com/products/electron-optics/scanning-electron-microscopes-sem/JSM-6610LV/\"}]}",
+            "Baum": "{\"label\": \"Untersuchungsger\\u00e4t (Investigation Device)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/D949G6\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6ntgenfluoreszenz-Ger\\u00e4te (X-ray Fluorescence Devices)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/xrf-devices\", \"children\": [{\"label\": \"Niton XL3t GOLDD+\", \"uri\": \"https://assets.thermofisher.com/TFS-Assets/CMD/Technical-Notes/TN51779-Handheld-XRF-Analysis-Niton-XL3t-GOLDD.pdf\"}, {\"label\": \"Artax (Bruker)\", \"uri\": \"https://www.bruker.com/de/products-solutions/x-ray-diffraction-and-x-ray-fluorescence/xrf-spectrometers/artax.html\"}, {\"label\": \"Elio (Bruker)\", \"uri\": \"https://www.bruker.com/de/products-solutions/x-ray-diffraction-and-x-ray-fluorescence/xrf-spectrometers/elio.html\"}]}, {\"label\": \"Elektronenmikroskope (Electron Microscopes)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/electron-microscopes\", \"children\": [{\"label\": \"Jeol JSM-6610LV (Rasterelektronenmikroskop)\", \"uri\": \"https://www.jeol.com/products/electron-optics/scanning-electron-microscopes-sem/JSM-6610LV/\"}, {\"label\": \"Zeiss EVO (Rasterelektronenmikroskop)\", \"uri\": \"https://www.zeiss.de/mikroskopie/produkte/rasterelektronenmikroskopie/evo.html\"}]}, {\"label\": \"Spektrometer (Spectrometers)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/spectrometers\", \"children\": [{\"label\": \"PerkinElmer Frontier (FTIR-Spektrometer)\", \"uri\": \"https://www.perkinelmer.com/de/product/frontier-ftir-system-n1140026\"}, {\"label\": \"Thermo Scientific DXR2xi (Raman-Mikroskop)\", \"uri\": \"https://www.thermofisher.com/de/de/home/industrial/ramanspectroscopy/dxr2xi.html\"}]}, {\"label\": \"Radiographie-Ger\\u00e4te (Radiography Devices)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/radiography-devices\", \"children\": [{\"label\": \"YXLON Y.CT Compact (Computertomograph)\", \"uri\": \"https://www.yxlon.com/de/produkte/y-ct-compact\"}, {\"label\": \"Digitales Radiographie-System (Digital Radiography System)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/digital-radiography-system\"}]}, {\"label\": \"Mikroskope (Microscopes)\", \"uri\": \"https://www.conservation-science.org/ontology/investigation-device/microscopes\", \"children\": [{\"label\": \"Leica DVM6 (Digitales Mikroskop)\", \"uri\": \"https://www.leica-microsystems.com/de/produkte/digitale-mikroskope/p/leica-dvm6/\"}, {\"label\": \"Zeiss Axioskop (Lichtmikroskop)\", \"uri\": \"https://www.zeiss.de/mikroskopie/produkte/lichtmikroskope/axioskop.html\"}]}]}",
             "narrower": [
               {
                 "notation": "D6A11G",
@@ -472,7 +472,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\n\n"
+        "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! Die Namen sollten im Format \"Vorname Nachname erfasst werden\"\r\n\r\n"
       },
       {
         "notation": "F72743",
@@ -481,8 +481,8 @@
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\n\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
-        "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Probeentnahme)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/F72743\", \"selectable\": false, \"children\": [{\"label\": \"R\\u00f6misch-Germanisches Zentralmuseum (RGZM)\", \"uri\": \"https://www.wikidata.org/wiki/Q321946\"}]}"
+        "Verwendungshinweis": "Besonders wenn dies von einer externen Einrichtung durchgeführt wird, ist die Erfassung zu empfehlen.\r\n\r\nIn Fällen, in denen bei der Veröffentlichung des Datensatzes die zuständige Person nicht genannt werden kann/darf, sollte stattdessen zumindest die zuständige Einrichtung im Datensatz enthalten sein.",
+        "Baum": "{\"label\": \"Durchf\\u00fchrende Einrichtung (Probeentnahme)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/F72743\", \"selectable\": false, \"children\": [{\"label\": \"Forschungsinstitute mit eigenen Laboren (Research Institutes with In-House Labs)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/research-institutes-labs\", \"children\": [{\"label\": \"Leibniz-Zentrum f\\u00fcr Arch\\u00e4ologie (LEIZA)\", \"uri\": \"https://www.leiza.de/\"}, {\"label\": \"Deutsches Arch\\u00e4ologisches Institut (DAI)\", \"uri\": \"https://www.dainst.org/\"}, {\"label\": \"Rathgen-Forschungslabor der Staatlichen Museen zu Berlin\", \"uri\": \"https://www.smb.museum/museen-und-einrichtungen/rathgen-forschungslabor/\"}, {\"label\": \"Deutsches Bergbau-Museum Bochum - Forschungslabor\", \"uri\": \"https://www.bergbaumuseum.de/forschung/forschungslabor\"}]}, {\"label\": \"Gewerbliche Analyselabore (Commercial Analytical Laboratories)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/commercial-analytical-labs\", \"children\": [{\"label\": \"Curt-Engelhorn-Zentrum Arch\\u00e4ometrie gGmbH (CEZA)\", \"uri\": \"https://ceza.de/\"}, {\"label\": \"Paz Laboratorien f\\u00fcr Arch\\u00e4ometrie\", \"uri\": \"https://www.paz-lab.de/\"}, {\"label\": \"Anbus Analytik GmbH\", \"uri\": \"https://www.anbus-analytik.de/\"}, {\"label\": \"SGS Institut Fresenius GmbH (Umweltanalytik, Materialanalyse)\", \"uri\": \"https://sgs-institut-fresenius.de/\"}, {\"label\": \"Eurofins Analytik GmbH (Lebensmittel- und Materialanalysen)\", \"uri\": \"https://www.eurofins.de/\"}]}, {\"label\": \"Universit\\u00e4tsinstitute mit spezialisierten Laboren (University Institutes with Specialized Labs)\", \"uri\": \"https://www.conservation-science.org/ontology/institution/university-institutes-specialized-labs\", \"children\": [{\"label\": \"Universit\\u00e4t K\\u00f6ln - CICS (Institut f\\u00fcr Restaurierungs- und Konservierungswissenschaft)\", \"uri\": \"https://cics.phil-fak.uni-koeln.de/\"}, {\"label\": \"Technische Universit\\u00e4t M\\u00fcnchen - Lehrstuhl f\\u00fcr Restaurierung, Kunsttechnologie und Konservierungswissenschaft\", \"uri\": \"https://www.ar.tum.de/professuren/restaurierung/\"}, {\"label\": \"Hochschule Osnabr\\u00fcck - Labor f\\u00fcr Anorganische und Analytische Chemie\", \"uri\": \"https://www.hs-osnabrueck.de/forschung/recherche/laboreinrichtungen-und-versuchsbetriebe/labor-fuer-anorganische-und-analytische-chemie/\"}]}]}"
       },
       {
         "notation": "D3AF3A",
@@ -493,13 +493,13 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\n    \"type\": \"date\"\n}"
+        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
       },
       {
         "notation": "CB7747",
         "prefLabel": "Kennung der Probe",
         "altLabel": "Name der Probe| Nummer der Probe",
-        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. \n\nBeispiel: Metall-Probe_24601",
+        "definition": "Bezeichnung oder Nummer, mit der die jeweilige Probe eindeutig identifiziert werden kann. \r\n\r\nBeispiel: Metall-Probe_24601",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -508,7 +508,7 @@
       {
         "notation": "FD2B2B",
         "prefLabel": "Probenbeschreibung",
-        "definition": "Kurze Definition der wichtigsten Eigenschaften und Beschaffenheit der Probe. Möglichkeit, weitere Hintergrundinformationen zur Probe bzw. dem Befund, aus dem die Probe entstammt, zu erfassen.\n\nBeispiel: \"Erdreste mit roten Verfärbungen\" , \"Textilfasern von rechter Skelettrippe\"",
+        "definition": "Kurze Definition der wichtigsten Eigenschaften und Beschaffenheit der Probe. Möglichkeit, weitere Hintergrundinformationen zur Probe bzw. dem Befund, aus dem die Probe entstammt, zu erfassen.\r\n\r\nBeispiel: \"Erdreste mit roten Verfärbungen\" , \"Textilfasern von rechter Skelettrippe\"",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -517,7 +517,7 @@
         "notation": "C33D85",
         "prefLabel": "Anlass der Probenentnahme",
         "altLabel": "Grund der Beprobung",
-        "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\n\nBeispiel: Materialbestimmung, Altersdatierung",
+        "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\r\n\r\nBeispiel: Materialbestimmung, Altersdatierung",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -526,7 +526,7 @@
         "notation": "F58F6D",
         "prefLabel": "Stelle der Probenentnahme",
         "altLabel": "Lokalisation der Probenentnahme",
-        "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\n\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
+        "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\r\n\r\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -535,11 +535,11 @@
         "notation": "D9A6FA",
         "prefLabel": "Entnahmemethode",
         "altLabel": "Beprobungsmethode| Entnahmeverfahren",
-        "definition": "Beschreibung, mit welcher Methode die Probe entnommen wurde. Angaben zur Vorgehensweise und zum eingesetzten Werkzeug.\n\nBeispiel: Skalpellentnahme, Bohrkernentnahme, Abstrich mit Wattestäbchen",
+        "definition": "Beschreibung, mit welcher Methode die Probe entnommen wurde. Angaben zur Vorgehensweise und zum eingesetzten Werkzeug.\r\n\r\nBeispiel: Skalpellentnahme, Bohrkernentnahme, Abstrich mit Wattestäbchen",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
-        "Baum": "{\"label\": \"Entnahmemethode\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/D9A6FA\", \"selectable\": false, \"children\": [{\"label\": \"Skalpellentnahme (Scalpel Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/scalpel-sampling\"}, {\"label\": \"Bohrkernentnahme (Core Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/core-sampling\"}, {\"label\": \"Abstrich mit Wattest\\u00e4bchen (Cotton Swab Swab)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/cotton-swab-swab\"}]}"
+        "Baum": "{\"label\": \"Entnahmemethode (Sampling Method)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/D9A6FA\", \"selectable\": false, \"children\": [{\"label\": \"Mikro-invasive Entnahme (Micro-invasive Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/micro-invasive-sampling\", \"children\": [{\"label\": \"Skalpellentnahme (Scalpel Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/scalpel-sampling\"}, {\"label\": \"Nadelentnahme (Needle Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/needle-sampling\"}, {\"label\": \"Mikro-Bohrkernentnahme (Micro-Core Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/micro-core-sampling\"}, {\"label\": \"Faserextraktion (Fiber Extraction)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/fiber-extraction\"}]}, {\"label\": \"Kontakt- und Oberfl\\u00e4chenentnahme (Contact and Surface Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/contact-surface-sampling\", \"children\": [{\"label\": \"Abstrich mit Wattest\\u00e4bchen (Cotton Swab Swab)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/cotton-swab-swab\"}, {\"label\": \"Abklatsch (Tape Lift / Peel Sample)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/tape-lift\"}, {\"label\": \"Pinselentnahme (Brush Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/brush-sampling\"}]}, {\"label\": \"Bohrkernentnahme (Core Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/core-sampling\"}, {\"label\": \"Pulverentnahme (Powder Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/powder-sampling\", \"children\": [{\"label\": \"Schaben (Scraping)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/scraping\"}, {\"label\": \"Staubsaugerentnahme (Vacuum Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/vacuum-sampling\"}]}, {\"label\": \"Fl\\u00fcssigkeitsentnahme (Liquid Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/liquid-sampling\", \"children\": [{\"label\": \"Pipettieren (Pipetting)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/pipetting\"}]}, {\"label\": \"Gasentnahme (Gas Sampling)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/gas-sampling\", \"children\": [{\"label\": \"Headspace-Analyse (Headspace Analysis)\", \"uri\": \"https://www.conservation-science.org/ontology/sampling-method/headspace-analysis\"}]}]}"
       }
     ]
   },
@@ -554,7 +554,7 @@
       {
         "notation": "C6A532",
         "prefLabel": "Anlass der Maßnahme",
-        "definition": "Hintergrundinformationen, aus welchem Grund das Objekt konservatorisch-restauratorisch behandelt werden soll. I.d.R. beziehen sich diese Angaben darauf, was im Anschluss mit dem Objekt geschehen soll oder zuvor bereits geschehen ist. \n\nBeispiel: Ausstellungsvorbereitung, Rückkehr aus Leihverkehr",
+        "definition": "Hintergrundinformationen, aus welchem Grund das Objekt konservatorisch-restauratorisch behandelt werden soll. I.d.R. beziehen sich diese Angaben darauf, was im Anschluss mit dem Objekt geschehen soll oder zuvor bereits geschehen ist. \r\n\r\nBeispiel: Ausstellungsvorbereitung, Rückkehr aus Leihverkehr",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -563,7 +563,7 @@
         "notation": "FGF575",
         "prefLabel": "konservatorische Zielsetzung",
         "altLabel": "Konservierungsziel| konservatorische Zielsetzung| Erhaltungsziel",
-        "definition": "Beschreibung der angestrebten Ergebnisse, die mit der durchgeführten Maßnahme erreicht werden sollen.\n\nBeispiel: Sicherung der Malschichten, Volle Rekonstruktion der ursprünglichen Form ",
+        "definition": "Beschreibung der angestrebten Ergebnisse, die mit der durchgeführten Maßnahme erreicht werden sollen.\r\n\r\nBeispiel: Sicherung der Malschichten, Volle Rekonstruktion der ursprünglichen Form ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
@@ -588,7 +588,7 @@
           {
             "notation": "AF1F5C",
             "prefLabel": "Maßnahmenkennnummer ",
-            "definition": "Nummer, die die jeweilige Maßnahme eindeutig identifiziert. \n\nBeipspiel: Labornummer, Dokumentationsnummern, Werkblattnummer, etc. ",
+            "definition": "Nummer, die die jeweilige Maßnahme eindeutig identifiziert. \r\n\r\nBeipspiel: Labornummer, Dokumentationsnummern, Werkblattnummer, etc. ",
             "Verpflichtungsgrad": "Bedingte Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
@@ -612,7 +612,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\n    \"type\": \"date\"\n}"
+            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
           },
           {
             "notation": "CDF685",
@@ -622,7 +622,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\n    \"type\": \"date\"\n}"
+            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
           },
           {
             "notation": "G814D2",
@@ -642,7 +642,7 @@
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"Eingriff\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/A13CD1\", \"selectable\": false, \"children\": [{\"label\": \"Reinigung (Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/cleaning\"}, {\"label\": \"Konsolidierung (Consolidation)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/consolidation\"}, {\"label\": \"Retusche (Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/retouching\"}]}",
+            "Baum": "{\"label\": \"Eingriff (Intervention)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/A13CD1\", \"selectable\": false, \"children\": [{\"label\": \"Reinigung (Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/cleaning\", \"children\": [{\"label\": \"Trockenreinigung (Dry Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/dry-cleaning\", \"children\": [{\"label\": \"Mechanische Reinigung (Mechanical Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/mechanical-cleaning\"}, {\"label\": \"Absaugen (Vacuuming)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/vacuuming\"}, {\"label\": \"Radieren (Erasing)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/erasing\"}]}, {\"label\": \"Feuchtreinigung (Wet Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/wet-cleaning\", \"children\": [{\"label\": \"W\\u00e4ssrige Reinigung (Aqueous Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/aqueous-cleaning\"}, {\"label\": \"L\\u00f6sungsmittelreinigung (Solvent Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/solvent-cleaning\"}, {\"label\": \"Gele und Pasten (Gels and Pastes)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/gels-pastes\"}]}, {\"label\": \"Laserreinigung (Laser Cleaning)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/laser-cleaning\"}]}, {\"label\": \"Konsolidierung (Consolidation)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/consolidation\", \"children\": [{\"label\": \"Impr\\u00e4gnierung (Impregnation)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/impregnation\"}, {\"label\": \"Verklebung/Verkittung (Adhesion/Mending)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/adhesion-mending\"}, {\"label\": \"Hinterklebung (Lining/Backing)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/lining-backing\"}]}, {\"label\": \"Retusche (Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/retouching\", \"children\": [{\"label\": \"Integrierende Retusche (Integrating Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/integrating-retouching\"}, {\"label\": \"\\u00c4sthetische Retusche (Aesthetic Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/aesthetic-retouching\"}, {\"label\": \"Reversibel Retusche (Reversible Retouching)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/reversible-retouching\"}]}, {\"label\": \"Reparatur (Repair)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/repair\", \"children\": [{\"label\": \"Kleben (Adhesive Bonding)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/adhesive-bonding\"}, {\"label\": \"F\\u00fcllen (Filling)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/filling\"}, {\"label\": \"Zusammensetzen (Reassembly)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/reassembly\"}]}, {\"label\": \"Strukturelle Stabilisierung (Structural Stabilization)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/structural-stabilization\", \"children\": [{\"label\": \"St\\u00fctzen (Propping/Supports)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/propping\"}, {\"label\": \"Montieren (Mounting)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/mounting\"}]}, {\"label\": \"Schutzma\\u00dfnahmen (Protective Measures)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/protective-measures\", \"children\": [{\"label\": \"Beschichtung (Coating)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/coating\"}, {\"label\": \"Verpackung (Packaging)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/packaging\"}, {\"label\": \"Klimakontrolle (Climate Control)\", \"uri\": \"https://www.conservation-science.org/ontology/intervention/climate-control\"}]}]} ",
             "narrower": [
               {
                 "notation": "CGC619",
@@ -651,7 +651,7 @@
                 "Verpflichtungsgrad": "Pflicht",
                 "Feldwert": "Text/URI",
                 "Wiederholbar": "Ja",
-                "Baum": "{\"label\": \"Verwendetes Material\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/CGC619\", \"selectable\": false, \"children\": [{\"label\": \"Paraloid B-72\", \"uri\": \"https://www.conservation-wiki.com/wiki/Paraloid_B-72\"}, {\"label\": \"Primal AC-33\", \"uri\": \"https://www.conservation-wiki.com/wiki/Primal_AC-33\"}]}",
+                "Baum": "{\"label\": \"Verwendetes Material (Used Material)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/CGC619\", \"selectable\": false, \"children\": [{\"label\": \"Klebstoffe (Adhesives)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/adhesives\", \"children\": [{\"label\": \"Synthetische Polymere (Synthetic Polymers)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/synthetic-polymers-adhesives\", \"children\": [{\"label\": \"Paraloid B-72\", \"uri\": \"https://www.conservation-wiki.com/wiki/Paraloid_B-72\"}, {\"label\": \"Primal AC-33\", \"uri\": \"https://www.conservation-wiki.org/wiki/Primal_AC-33\"}, {\"label\": \"Mowilith (Polyvinylacetat)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Polyvinyl_Acetate\"}, {\"label\": \"Epoxidharze (Epoxy Resins)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Epoxy_resin\"}, {\"label\": \"Cyanacrylate (Cyanoacrylates)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Cyanoacrylate\"}]}, {\"label\": \"Naturharze (Natural Resins)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/natural-resins-adhesives\", \"children\": [{\"label\": \"Knochenleim (Hide Glue)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Hide_glue\"}, {\"label\": \"Fischleim (Fish Glue)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Fish_glue\"}]}]}, {\"label\": \"F\\u00fcllmaterialien (Filling Materials)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/filling-materials\", \"children\": [{\"label\": \"Gips (Plaster)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Plaster\"}, {\"label\": \"Kitt (Putty)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Putty\"}, {\"label\": \"Modelliermassen (Modeling Compounds)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Modeling_compounds\"}, {\"label\": \"Mikroballons (Microballoons)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Microballoons\"}]}, {\"label\": \"Konsolidierungsmittel (Consolidants)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/consolidants\", \"children\": [{\"label\": \"Alkoxysilane (Alkoxysilanes)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Alkoxysilanes\"}, {\"label\": \"Acrylharze (Acrylic Resins)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Acrylic_resin\"}]}, {\"label\": \"Reinigungsmittel (Cleaning Agents)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/cleaning-agents\", \"children\": [{\"label\": \"Destilliertes Wasser (Distilled Water)\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/962\"}, {\"label\": \"Ethanol\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/702\"}, {\"label\": \"Aceton\", \"uri\": \"https://pubchem.ncbi.nlm.nih.gov/compound/180\"}, {\"label\": \"Tenside (Surfactants)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Surfactants\"}, {\"label\": \"Gele (Gels)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Gels\"}]}, {\"label\": \"Pigmente und Bindemittel (Pigments and Binders)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/pigments-binders\", \"children\": [{\"label\": \"Mineralpigmente (Mineral Pigments)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Mineral_pigments\"}, {\"label\": \"Acrylbinder (Acrylic Binders)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Acrylic_binder\"}, {\"label\": \"Aquarellfarben (Watercolors)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Watercolors\"}]}, {\"label\": \"Schutzschichten/\\u00dcberz\\u00fcge (Protective Coatings)\", \"uri\": \"https://www.conservation-science.org/ontology/conservation-material/protective-coatings\", \"children\": [{\"label\": \"Wachse (Waxes)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Waxes\"}, {\"label\": \"Harze (Resins)\", \"uri\": \"https://www.conservation-wiki.com/wiki/Resins\"}]}]}",
                 "narrower": [
                   {
                     "notation": "D865C3",
@@ -679,7 +679,7 @@
                     "Feldwert": "Text",
                     "Wiederholbar": "Nein",
                     "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-                    "Typ": "{\n    \"type\": \"date\"\n}"
+                    "Typ": "{\r\n    \"type\": \"date\"\r\n}"
                   }
                 ]
               },
@@ -691,7 +691,7 @@
                 "Verpflichtungsgrad": "empfohlen",
                 "Feldwert": "Text/URI",
                 "Wiederholbar": "Ja",
-                "Baum": "{\"label\": \"Werkzeug\", \"uri\": \"https://www.conservation-science.org/ontology/tool/F87124\", \"selectable\": false, \"children\": [{\"label\": \"Skalpell (Scalpel)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/scalpel\"}, {\"label\": \"Pinsel (Brush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/brush\"}, {\"label\": \"Luftpistole (Airbrush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/airbrush\"}]}"
+                "Baum": "{\"label\": \"Werkzeug (Tool)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/F87124\", \"selectable\": false, \"children\": [{\"label\": \"Manuelle Reinigungswerkzeuge (Manual Cleaning Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/manual-cleaning-tools\", \"children\": [{\"label\": \"Skalpell (Scalpel)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/scalpel\"}, {\"label\": \"Pinsel (Brush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/brush\"}, {\"label\": \"Wattest\\u00e4bchen (Cotton Swab)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/cotton-swab\"}, {\"label\": \"Schwamm (Sponge)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/sponge\"}, {\"label\": \"Radiergummi (Eraser)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/eraser\"}]}, {\"label\": \"Applikationswerkzeuge (Application Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/application-tools\", \"children\": [{\"label\": \"Pinsel (Brush - for application)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/brush-application\"}, {\"label\": \"Spritze (Syringe)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/syringe\"}, {\"label\": \"Pipette (Pipette)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/pipette\"}, {\"label\": \"Spachtel (Spatula)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/spatula\"}, {\"label\": \"Luftpistole (Airbrush)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/airbrush\"}, {\"label\": \"Rolle (Roller)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/roller\"}]}, {\"label\": \"Formgebende Werkzeuge (Shaping Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/shaping-tools\", \"children\": [{\"label\": \"Modellierwerkzeuge (Modeling Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/modeling-tools\"}, {\"label\": \"Schleifwerkzeuge (Sanding Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/sanding-tools\"}]}, {\"label\": \"Messwerkzeuge (Measuring Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/measuring-tools\", \"children\": [{\"label\": \"Messschieber (Caliper)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/caliper\"}, {\"label\": \"Mikrometer (Micrometer)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/micrometer\"}, {\"label\": \"Waage (Scale)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/scale\"}]}, {\"label\": \"Beleuchtung und Optik (Lighting and Optics)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/lighting-optics\", \"children\": [{\"label\": \"Lupe (Magnifying Glass)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/magnifying-glass\"}, {\"label\": \"Stirnlupe (Headband Magnifier)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/headband-magnifier\"}, {\"label\": \"Arbeitsleuchte (Work Light)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/work-light\"}]}, {\"label\": \"Spezialwerkzeuge (Specialized Tools)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/specialized-tools\", \"children\": [{\"label\": \"Hei\\u00dfluftf\\u00f6hn (Heat Gun)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/heat-gun\"}, {\"label\": \"Ultraschallreiniger (Ultrasonic Cleaner)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/ultrasonic-cleaner\"}, {\"label\": \"Niederdruck-Saugplatte (Low Pressure Suction Table)\", \"uri\": \"https://www.conservation-science.org/ontology/tool/low-pressure-suction-table\"}]}]}"
               }
             ]
           }
@@ -709,7 +709,7 @@
       {
         "notation": "FBFFF5",
         "prefLabel": "Gefährdungshinweise",
-        "definition": "Hinweise auf potenzielle Gefahrenquellen und Risiken im Zusammenhang mit dem Objekt oder den bei der konservatorisch-restauratorischen Maßnahme (oder früheren Maßnahmen) verwendeten Materialien.\n\nBeispiel: Schimmelbefall, Schadstoff kontaminiert ",
+        "definition": "Hinweise auf potenzielle Gefahrenquellen und Risiken im Zusammenhang mit dem Objekt oder den bei der konservatorisch-restauratorischen Maßnahme (oder früheren Maßnahmen) verwendeten Materialien.\r\n\r\nBeispiel: Schimmelbefall, Schadstoff kontaminiert ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -725,7 +725,7 @@
       {
         "notation": "BB78D2",
         "prefLabel": "Getroffene Schutzmaßnahmen",
-        "definition": "Dokumentation der bereits umgesetzten und/oder während der Objektbehandlung einzuhaltenden Schutzmaßnahmen zur Minimierung der Gefährdung. Einschließlich persönlicher Schutzausrüstung (PSA), technischer und organisatorischer Maßnahmen.\n\nBeispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",
+        "definition": "Dokumentation der bereits umgesetzten und/oder während der Objektbehandlung einzuhaltenden Schutzmaßnahmen zur Minimierung der Gefährdung. Einschließlich persönlicher Schutzausrüstung (PSA), technischer und organisatorischer Maßnahmen.\r\n\r\nBeispiele: Tragen von Schutzhandschuhen, Arbeiten unter Abzug/ im Quarantänebereich, Objekt eingeschweißt",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Ja"
@@ -745,7 +745,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\n    \"type\": \"date\"\n}"
+            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
           },
           {
             "notation": "ADD53A",
@@ -776,7 +776,7 @@
           {
             "notation": "D941BB",
             "prefLabel": "Präsentationsvorgaben",
-            "definition": "Angaben zu Besonderheiten, die bei der Ausstellung/Präsentation des Objektes zu beachten sind. \n\nBeispiel: \"Objekt ausschließlich auf individuell angepasster Stützkonstruktion präsentieren\", \"Ausstellung nur in klimatisierter Vitrine\" ",
+            "definition": "Angaben zu Besonderheiten, die bei der Ausstellung/Präsentation des Objektes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich auf individuell angepasster Stützkonstruktion präsentieren\", \"Ausstellung nur in klimatisierter Vitrine\" ",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -784,7 +784,7 @@
           {
             "notation": "F2244D",
             "prefLabel": "Verpackungs- und Transportempfehlungen",
-            "definition": "Angaben zu Besonderheiten, die im Zuge der Objektverpackung oder des Transportes zu beachten sind. \n\nBeispiel: \"Objekt ausschließlich liegend transportieren\", \"Transport nur in klimatisiertem Fahrzeug\"",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Objektverpackung oder des Transportes zu beachten sind. \r\n\r\nBeispiel: \"Objekt ausschließlich liegend transportieren\", \"Transport nur in klimatisiertem Fahrzeug\"",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -793,7 +793,7 @@
             "notation": "B14C4A",
             "prefLabel": "Empfehlungen zur Handhabung",
             "altLabel": "Handlingsempfehlungen",
-            "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \n\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
+            "definition": "Angaben zu Besonderheiten, die im Zuge der Handhabung des Objektes berücksichtigt werden müssen. \r\n\r\nBeispiel: \"Nicht an den Henkeln anfassen\" ",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -865,7 +865,7 @@
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-            "Typ": "{\n    \"type\": \"date\"\n}"
+            "Typ": "{\r\n    \"type\": \"date\"\r\n}"
           },
           {
             "notation": "B9835A",
@@ -874,7 +874,7 @@
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \n\n"
+            "Verwendungshinweis": "Für die interne Zuweisung der Verantwortlichkeit/Zuständigkeit ist es empfohlen, diese Daten regelhaft zu erfassen. Bei der potenziellen Veröffentlichung bzw. dem Austausch des Datensatzes außerhalb der eigenen Einrichtung ist an dieser Stelle zu entscheiden, in wie fern die Person namentlich genannt werden möchte/kann! \r\n\r\n"
           },
           {
             "notation": "FFFCB7",
@@ -892,7 +892,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
+                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
               },
               {
                 "notation": "A5C668",
@@ -902,7 +902,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
+                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
               },
               {
                 "notation": "C9C527",
@@ -913,7 +913,7 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
+                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
               },
               {
                 "notation": "BF3639",
@@ -923,14 +923,14 @@
                 "Feldwert": "Text",
                 "Wiederholbar": "Nein",
                 "Verwendungshinweis": "Die Erfassung sollte hier hin Form von \"Ja/Nein\" Abfragen oder Checkboxen erfolgen. ",
-                "Typ": "{\n    \"type\": \"checkbox\",\n    \"true-value\": \"Ja\",\n    \"false-value\": \"Nein\"\n}"
+                "Typ": "{\r\n    \"type\": \"checkbox\",\r\n    \"true-value\": \"Ja\",\r\n    \"false-value\": \"Nein\"\r\n}"
               }
             ]
           },
           {
             "notation": "F396G6",
             "prefLabel": "Ergebnis des Monitorings",
-            "definition": "Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. \n\nBeispiel: \"Alle Parameter im Normbereich\", \"Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich\", \"Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht\"",
+            "definition": "Zusammenfassende Bewertung aller durchgeführten Kontrollmaßnahme mit Angabe festgestellter Beobachtungen, Auffälligkeiten oder Handlungsempfehlungen. \r\n\r\nBeispiel: \"Alle Parameter im Normbereich\", \"Luftfeuchtigkeit 5% über Sollwert, Nachregulierung erforderlich\", \"Verdacht auf Schimmelbildung, Objekt zur weiteren Untersuchung in Labor verbracht\"",
             "Verpflichtungsgrad": "empfohlen",
             "Feldwert": "Text",
             "Wiederholbar": "Ja"
@@ -953,7 +953,7 @@
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
-        "Typ": "{\n    \"type\": \"date\"\n}"
+        "Typ": "{\r\n    \"type\": \"date\"\r\n}"
       },
       {
         "notation": "F285B2",

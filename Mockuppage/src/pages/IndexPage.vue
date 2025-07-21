@@ -11,7 +11,7 @@
         </q-form>
 
         <div v-if="exportTerms.length > 0" class="q-mt-xl">
-          <p class="text-h6">Submission Successful</p>
+          <p class="text-h6">Proto Austauschformat</p>
           <pre>{{ exportTerms }}</pre>
         </div>
       </q-page>
@@ -23,7 +23,7 @@
         push
         >
           <q-btn
-            label="Submit"
+            label="Abschicken"
             type="submit"
             color="primary"
             icon="mdi-check-circle"
@@ -32,7 +32,7 @@
           />
           <q-separator vertical class="q-mx-md" />
           <q-btn
-            label="Reset"
+            label="Zurücksetzen"
             type="reset"
             color="grey"
             class="q-ml-sm"
@@ -42,7 +42,7 @@
           />
           <q-separator vertical class="q-mx-md" />
           <q-btn
-            label="Fill all fields"
+            label="Felder ausfüllen"
             color="accent"
             icon="mdi-auto-fix"
             @click="() => fillAllFields(excludeNotations.value)"
@@ -50,7 +50,7 @@
           />
           <q-separator vertical class="q-mx-md" />
           <q-btn
-            label="Expand All"
+            label="Ausklappen"
             color="secondary"
             icon="mdi-unfold-more-vertical"
             @click="toggleAll(true)"
@@ -58,7 +58,7 @@
           />
           <q-separator vertical class="q-mx-md" />
           <q-btn
-            label="Collapse All"
+            label="Zusammenklappen"
             color="secondary"
             class="q-ml-sm"
             icon="mdi-unfold-less-vertical"
@@ -94,10 +94,8 @@ function createInitialTerms(termsList, path = [], expandNotations = expandNotati
   return termsList.map((term, index) => {
     const currentPath = [...path, index];
 
-    // Check if this term should be expanded
     const shouldExpand = expandNotations.includes(term.notation);
     if (shouldExpand && term.narrower && term.narrower.length > 0) {
-      // add all notations of term.nattower to expandNotations
       expandNotations.push(...term.narrower.map(t => t.notation));
     }
 
@@ -124,7 +122,6 @@ function createInitialTerms(termsList, path = [], expandNotations = expandNotati
     }
 
     if (term.narrower) {
-      // Recursively create narrower terms, and pass the same expand list
       formTerm.narrower = createInitialTerms(term.narrower, currentPath, expandNotations);
     }
 
@@ -139,7 +136,7 @@ const onReset = () => {
   exportTerms.value = [];
   validationError.value = null;
   $q.notify({
-    message: 'Form has been reset.',
+    message: 'Formular zurückgesetzt',
     color: 'info',
     icon: 'mdi-reload',
   });
@@ -171,8 +168,8 @@ const fillAllFields = (exclude = []) => {
     $q.notify({
       type: 'positive',
       message: exclude.length === 0
-        ? "All fields have been filled."
-        : "Curatory fields have been prefilled. Ready to start with conservation specific data.",
+        ? "Formular ausgefüllt"
+        : "Bestandsdaten vorausgefüllt. Restaurierungsspezifische Daten können eingetragen werden.",
       icon: 'mdi-auto-fix',
     });
 
@@ -214,7 +211,7 @@ const onSubmit = async () => {
     exportTerms.value = transformFormData(terms.value);
     $q.notify({
       type: 'positive',
-      message: 'Form submitted successfully!',
+      message: 'Dokument erfolgreich abgesendet!',
       icon: 'mdi-check-circle-outline',
     });
     
@@ -231,7 +228,7 @@ function validateForm(currentTerms) {
   for (const term of currentTerms) {
     if (term.Verpflichtungsgrad === 'Pflicht' && term.Feldwert && !term.value) {
       return { 
-        error: `Error: '${term.prefLabel}' is a required field.`,
+        error: `Fehler: '${term.prefLabel}' ist ein verpflichtendes Feld.`,
         path: term.path 
       };
     }
