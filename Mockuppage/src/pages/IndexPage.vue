@@ -9,7 +9,6 @@
             :term="term"
           />
         </q-form>
-
         <div v-if="exportTerms.length > 0" class="q-mt-xl">
           <div class="row items-center q-mb-md">
             <p class="text-h6 q-mb-none">{{ outputFormat === 'json' ? 'JSON Proto Austauschformat' : 'XML Proto Austauschformat' }}</p>
@@ -25,28 +24,33 @@
             />
           </div>
           <pre>{{ displayOutput }}</pre>
-          
-          <!-- Action Buttons -->
-          <div class="q-mt-md">
-            <q-btn
-              :label="`Download ${outputFormat.toUpperCase()}`"
-              color="primary"
-              icon="mdi-download"
-              @click="downloadOutput"
-              outline
-              class="q-mr-sm"
-            />
-            <q-btn
-              label="In Zwischenablage kopieren"
-              color="secondary"
-              icon="mdi-content-copy"
-              @click="copyToClipboard"
-              outline
-            />
-          </div>
         </div>
+        
+        <!-- Add padding bottom to prevent content from being hidden behind sticky buttons when they're visible -->
+        <div v-if="exportTerms.length > 0" class="q-pb-xl"></div>
       </q-page>
     </q-page-container>
+    
+    <!-- Sticky download/copy buttons - only rendered when condition is met -->
+    <div v-if="exportTerms.length > 0" class="fixed-bottom bg-white" style="bottom: 65px; left: 0; right: 0; z-index: 1000; border-top: 1px solid #e0e0e0;">
+      <div class="flex flex-center q-pa-sm">
+        <q-btn
+          :label="`Download ${outputFormat.toUpperCase()}`"
+          color="primary"
+          icon="mdi-download"
+          @click="downloadOutput"
+          outline
+          class="q-mr-sm"
+        />
+        <q-btn
+          label="In Zwischenablage kopieren"
+          color="secondary"
+          icon="mdi-content-copy"
+          @click="copyToClipboard"
+          outline
+        />
+      </div>
+    </div>
 
     <q-footer bordered class="bg-white text-primary q-pa-sm">
       <q-toolbar class="row justify-center">
