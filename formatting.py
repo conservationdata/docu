@@ -3,40 +3,52 @@ import json
 jsonString2 = """
 {
   "label": "Eingriff",
+  "uri": "https://www.conservation-science.org/ontology/intervention/CD3353",
+  "selectable": false,
   "children": [
     {
       "label": "Reinigung",
+      "uri": "https://www.conservation-science.org/ontology/intervention/cleaning",
       "children": [
         {
-          "label": "Trockenreinigung"
+          "label": "Trockenreinigung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/dry-cleaning"
         },
         {
-          "label": "Feuchtreinigung"
+          "label": "Feuchtreinigung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/wet-cleaning"
         },
         {
-          "label": "Laserreinigung"
+          "label": "Laserreinigung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/laser-cleaning"
         }
       ]
     },
     {
       "label": "Festigung",
+      "uri": "https://www.conservation-science.org/ontology/intervention/consolidation",
       "children": [
         {
-          "label": "temporärer Stabilisierung"
+          "label": "temporärer Stabilisierung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/temporary-stabilization"
         },
         {
-          "label": "Tränkung"
+          "label": "Tränkung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/impregnation"
         }
       ]
     },
     {
       "label": "Klebung",
+      "uri": "https://www.conservation-science.org/ontology/intervention/adhesion",
       "children": [
         {
-          "label": "Infiltrationsklebung"
+          "label": "Infiltrationsklebung",
+          "uri": "https://www.conservation-science.org/ontology/intervention/infiltration-bonding"
         },
         {
-          "label": "Aufbaumethode"
+          "label": "Aufbaumethode",
+          "uri": "https://www.conservation-science.org/ontology/intervention/build-up-method"
         }
       ]
     }
