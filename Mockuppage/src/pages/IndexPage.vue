@@ -12,7 +12,7 @@
 
         <div v-if="exportTerms.length > 0" class="q-mt-xl">
           <div class="row items-center q-mb-md">
-            <p class="text-h6 q-mb-none">{{ outputFormat === 'json' ? 'JSON Proto Datenformat' : 'XML Pseudo LIDO' }}</p>
+            <p class="text-h6 q-mb-none">{{ outputFormat === 'json' ? 'JSON Proto Austauschformat' : 'XML Proto Austauschformat' }}</p>
             <q-space />
             <q-btn-toggle
               v-model="outputFormat"
@@ -123,79 +123,57 @@ const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
 };
 
-// XML Konvertierungsfunktionen
-function jsonToLidoXml(jsonData, options = {}) {
-    const {
-        rootElement = 'lido:descriptiveMetadata',
-        namespace = 'lido',
-        namespaceUri = 'http://www.lido-schema.org',
-        termElement = 'lido:term',
-        conceptElement = 'lido:conceptID'
-    } = options;
-
+function jsonToSimplifiedXml(jsonData) {
     function escapeXml(text) {
-        if (!text) return '';
+        if (text === null || typeof text === 'undefined') return '';
         return String(text)
             .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
+            .replace(/</g, '<')
+            .replace(/>/g, '>')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
     }
 
-    function processTerms(terms, level = 0) {
+    function processEntries(entries, level = 0) {
         let xml = '';
-        const indent = '  '.repeat(level + 2);
-        
-        for (const term of terms) {
-            xml += `${indent}<${termElement}>\n`;
-            
-            if (term.Identifikator) {
-                xml += `${indent}  <${conceptElement} lido:type="uri">${escapeXml(term.Identifikator)}</${conceptElement}>\n`;
+        const indent = '  '.repeat(level);
+
+        for (const entry of entries) {
+            const hasChildren = entry.Untereinträge && entry.Untereinträge.length > 0;
+            const hasValue = entry.value !== null && entry.value !== undefined && entry.value !== '';
+            const uncertainAttr = entry.Unsicher === 'Ja' ? ' Unsicher="true"' : '';
+
+            // Open <Dokumentationseintrag>
+            xml += `${indent}<Dokumentationseintrag${uncertainAttr}>\n`;
+            xml += `${indent}  <Name>${escapeXml(entry.Name)}</Name>\n`;
+            xml += `${indent}  <Identifikator>${escapeXml(entry.Identifikator)}</Identifikator>\n`;
+
+            // Add <Value> first if present
+            if (hasValue) {
+                xml += `${indent}  <Value>${escapeXml(entry.value)}</Value>\n`;
             }
-            
-            if (term.Name) {
-                xml += `${indent}  <lido:term xml:lang="de">${escapeXml(term.Name)}</lido:term>\n`;
+
+            // Add <Untereinträge> container if children exist
+            if (hasChildren) {
+                xml += `${indent}  <Untereinträge>\n`;
+                xml += processEntries(entry.Untereinträge, level + 2);
+                xml += `${indent}  </Untereinträge>\n`;
             }
-            
-            if (term.value) {
-                xml += `${indent}  <lido:termValue>${escapeXml(term.value)}</lido:termValue>\n`;
-            }
-            
-            if (term.Unsicher === 'Ja') {
-                xml += `${indent}  <lido:qualifierTerm lido:type="uncertainty">uncertain</lido:qualifierTerm>\n`;
-            }
-            
-            if (term.Untereinträge && term.Untereinträge.length > 0) {
-                xml += `${indent}  <lido:subTerms>\n`;
-                xml += processTerms(term.Untereinträge, level + 2);
-                xml += `${indent}  </lido:subTerms>\n`;
-            }
-            
-            xml += `${indent}</${termElement}>\n`;
+
+            // Close </Dokumentationseintrag>
+            xml += `${indent}</Dokumentationseintrag>\n`;
         }
-        
+
         return xml;
     }
 
+    // Build final XML
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    xml += `<${rootElement} xmlns:${namespace}="${namespaceUri}">\n`;
-    xml += `  <lido:objectIdentificationWrap>\n`;
-    xml += `    <lido:titleWrap>\n`;
-    xml += `      <lido:titleSet>\n`;
-    
-    xml += processTerms(jsonData);
-    
-    xml += `      </lido:titleSet>\n`;
-    xml += `    </lido:titleWrap>\n`;
-    xml += `  </lido:objectIdentificationWrap>\n`;
-    xml += `</${rootElement}>`;
+    xml += '<ConservationData>\n';
+    xml += processEntries(jsonData, 1);
+    xml += '</ConservationData>\n';
 
-    return xml;
-}
-
-function convertToLidoXml(originalData, options = {}) {
-    return jsonToLidoXml(originalData, options);
+    return xml.trimEnd();
 }
 
 function createInitialTerms(termsList, path = [], expandNotations = expandNotationsOnStartup.value) {
@@ -296,7 +274,8 @@ const updateOutput = () => {
     if (outputFormat.value === 'json') {
       displayOutput.value = JSON.stringify(exportTerms.value, null, 2);
     } else {
-      displayOutput.value = convertToLidoXml(exportTerms.value);
+      // Use the new simplified XML function
+      displayOutput.value = jsonToSimplifiedXml(exportTerms.value);
     }
   }
 };
@@ -310,7 +289,7 @@ const copyToClipboard = async () => {
       icon: 'mdi-content-copy',
     });
   } catch {
-    // Fallback für ältere Browser
+    // Fallback for older Browsers
     const textArea = document.createElement('textarea');
     textArea.value = displayOutput.value;
     textArea.style.position = 'fixed';
@@ -386,7 +365,7 @@ const onSubmit = async () => {
     }
   } else {
     exportTerms.value = transformFormData(terms.value);
-    updateOutput(); // Aktualisiere die Ausgabe basierend auf dem gewählten Format
+    updateOutput(); // Update output based on the selected format
     
     $q.notify({
       type: 'positive',
@@ -423,7 +402,16 @@ function validateForm(currentTerms) {
 function transformFormData(currentTerms) {
   const transformedTerms = [];
   for (const term of currentTerms) {
-    if (term.value || (term.narrower && term.narrower.length > 0)) {
+    // Only include terms that have a value OR have children that will be transformed
+    const hasValue = term.value || (term.Feldwert && term.value === ''); // Keep even if value is empty string
+    const hasChildren = term.narrower && term.narrower.length > 0;
+    
+    let narrowerExport = [];
+    if (hasChildren) {
+        narrowerExport = transformFormData(term.narrower);
+    }
+
+    if (hasValue || narrowerExport.length > 0) {
       const exportTerm = {
         Name: term.prefLabel,
         Identifikator: `https://conservationdata.github.io/terms/metadata/${term.notation}`,
@@ -436,11 +424,8 @@ function transformFormData(currentTerms) {
         exportTerm.Unsicher = 'Ja';
       }
 
-      if (term.narrower) {
-        const narrowerExport = transformFormData(term.narrower);
-        if (narrowerExport.length > 0) {
-          exportTerm.Untereinträge = narrowerExport;
-        }
+      if (narrowerExport.length > 0) {
+        exportTerm.Untereinträge = narrowerExport;
       }
       transformedTerms.push(exportTerm);
     }
