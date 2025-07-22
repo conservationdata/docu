@@ -11,8 +11,39 @@
         </q-form>
 
         <div v-if="exportTerms.length > 0" class="q-mt-xl">
-          <p class="text-h6">Proto Austauschformat</p>
-          <pre>{{ exportTerms }}</pre>
+          <div class="row items-center q-mb-md">
+            <p class="text-h6 q-mb-none">{{ outputFormat === 'json' ? 'JSON Proto Datenformat' : 'XML Pseudo LIDO' }}</p>
+            <q-space />
+            <q-btn-toggle
+              v-model="outputFormat"
+              toggle-color="primary"
+              :options="[
+                {label: 'JSON', value: 'json'},
+                {label: 'XML', value: 'xml'}
+              ]"
+              @update:model-value="updateOutput"
+            />
+          </div>
+          <pre>{{ displayOutput }}</pre>
+          
+          <!-- Action Buttons -->
+          <div class="q-mt-md">
+            <q-btn
+              :label="`Download ${outputFormat.toUpperCase()}`"
+              color="primary"
+              icon="mdi-download"
+              @click="downloadOutput"
+              outline
+              class="q-mr-sm"
+            />
+            <q-btn
+              label="In Zwischenablage kopieren"
+              color="secondary"
+              icon="mdi-content-copy"
+              @click="copyToClipboard"
+              outline
+            />
+          </div>
         </div>
       </q-page>
     </q-page-container>
@@ -82,6 +113,8 @@ const $q = useQuasar();
 const dataDefinition = ref(docuData);
 const terms = ref([]);
 const exportTerms = ref([]);
+const displayOutput = ref('');
+const outputFormat = ref('json');
 const validationError = ref(null);
 const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
 const excludeNotations = ref(["F52262", "BAA258"]);
@@ -89,6 +122,81 @@ const excludeNotations = ref(["F52262", "BAA258"]);
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
 };
+
+// XML Konvertierungsfunktionen
+function jsonToLidoXml(jsonData, options = {}) {
+    const {
+        rootElement = 'lido:descriptiveMetadata',
+        namespace = 'lido',
+        namespaceUri = 'http://www.lido-schema.org',
+        termElement = 'lido:term',
+        conceptElement = 'lido:conceptID'
+    } = options;
+
+    function escapeXml(text) {
+        if (!text) return '';
+        return String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function processTerms(terms, level = 0) {
+        let xml = '';
+        const indent = '  '.repeat(level + 2);
+        
+        for (const term of terms) {
+            xml += `${indent}<${termElement}>\n`;
+            
+            if (term.Identifikator) {
+                xml += `${indent}  <${conceptElement} lido:type="uri">${escapeXml(term.Identifikator)}</${conceptElement}>\n`;
+            }
+            
+            if (term.Name) {
+                xml += `${indent}  <lido:term xml:lang="de">${escapeXml(term.Name)}</lido:term>\n`;
+            }
+            
+            if (term.value) {
+                xml += `${indent}  <lido:termValue>${escapeXml(term.value)}</lido:termValue>\n`;
+            }
+            
+            if (term.Unsicher === 'Ja') {
+                xml += `${indent}  <lido:qualifierTerm lido:type="uncertainty">uncertain</lido:qualifierTerm>\n`;
+            }
+            
+            if (term.Untereinträge && term.Untereinträge.length > 0) {
+                xml += `${indent}  <lido:subTerms>\n`;
+                xml += processTerms(term.Untereinträge, level + 2);
+                xml += `${indent}  </lido:subTerms>\n`;
+            }
+            
+            xml += `${indent}</${termElement}>\n`;
+        }
+        
+        return xml;
+    }
+
+    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    xml += `<${rootElement} xmlns:${namespace}="${namespaceUri}">\n`;
+    xml += `  <lido:objectIdentificationWrap>\n`;
+    xml += `    <lido:titleWrap>\n`;
+    xml += `      <lido:titleSet>\n`;
+    
+    xml += processTerms(jsonData);
+    
+    xml += `      </lido:titleSet>\n`;
+    xml += `    </lido:titleWrap>\n`;
+    xml += `  </lido:objectIdentificationWrap>\n`;
+    xml += `</${rootElement}>`;
+
+    return xml;
+}
+
+function convertToLidoXml(originalData, options = {}) {
+    return jsonToLidoXml(originalData, options);
+}
 
 function createInitialTerms(termsList, path = [], expandNotations = expandNotationsOnStartup.value) {
   return termsList.map((term, index) => {
@@ -98,7 +206,6 @@ function createInitialTerms(termsList, path = [], expandNotations = expandNotati
     if (shouldExpand && term.narrower && term.narrower.length > 0) {
       expandNotations.push(...term.narrower.map(t => t.notation));
     }
-
 
     const formTerm = {
       path: currentPath,
@@ -134,6 +241,7 @@ terms.value = createInitialTerms(dataDefinition.value);
 const onReset = () => {
   terms.value = createInitialTerms(dataDefinition.value);
   exportTerms.value = [];
+  displayOutput.value = '';
   validationError.value = null;
   $q.notify({
     message: 'Formular zurückgesetzt',
@@ -146,7 +254,6 @@ const fillAllFields = (exclude = []) => {
   try {
     const fillTermsRecursively = (currentTerms, exclude = []) => {
       currentTerms.forEach(term => {
-        // Only fill if this term's notation is NOT in the exclude list
         if (!(exclude.includes(term.notation))) {
           if (term.Feldwert && term.notation && exampleData[term.notation]) {
             const exampleValue = exampleData[term.notation];
@@ -155,7 +262,6 @@ const fillAllFields = (exclude = []) => {
             }
           }
 
-          // Recurse into children only if current term is not excluded
           if (term.narrower && term.narrower.length > 0) {
             fillTermsRecursively(term.narrower, exclude);
           }
@@ -168,8 +274,8 @@ const fillAllFields = (exclude = []) => {
     $q.notify({
       type: 'positive',
       message: exclude.length === 0
-        ? "Formular ausgefüllt"
-        : "Bestandsdaten vorausgefüllt. Restaurierungsspezifische Daten können eingetragen werden.",
+        ? "Alle Felder mit Beispieldaten ausgefüllt"
+        : "Kuratorische Daten erstellt. Restaurierungsspezifische Felder ausfüllen.",
       icon: 'mdi-auto-fix',
     });
 
@@ -185,8 +291,79 @@ const fillAllFields = (exclude = []) => {
 
 fillAllFields(excludeNotations.value);
 
+const updateOutput = () => {
+  if (exportTerms.value.length > 0) {
+    if (outputFormat.value === 'json') {
+      displayOutput.value = JSON.stringify(exportTerms.value, null, 2);
+    } else {
+      displayOutput.value = convertToLidoXml(exportTerms.value);
+    }
+  }
+};
+
+const copyToClipboard = async () => {
+  try {
+    await navigator.clipboard.writeText(displayOutput.value);
+    $q.notify({
+      type: 'positive',
+      message: `${outputFormat.value.toUpperCase()}-Inhalt in Zwischenablage kopiert`,
+      icon: 'mdi-content-copy',
+    });
+  } catch {
+    // Fallback für ältere Browser
+    const textArea = document.createElement('textarea');
+    textArea.value = displayOutput.value;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+      document.execCommand('copy');
+      $q.notify({
+        type: 'positive',
+        message: `${outputFormat.value.toUpperCase()}-Inhalt in Zwischenablage kopiert`,
+        icon: 'mdi-content-copy',
+      });
+    } catch {
+      $q.notify({
+        type: 'negative',
+        message: 'Fehler beim Kopieren in die Zwischenablage',
+        icon: 'mdi-alert-circle-outline',
+      });
+    } finally {
+      document.body.removeChild(textArea);
+    }
+  }
+}
+
+const downloadOutput = () => {
+  const content = displayOutput.value;
+  const filename = outputFormat.value === 'json' ? 'export.json' : 'export.xml';
+  const mimeType = outputFormat.value === 'json' ? 'application/json' : 'text/xml';
+  
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+  
+  $q.notify({
+    type: 'positive',
+    message: `${filename} erfolgreich heruntergeladen`,
+    icon: 'mdi-download',
+  });
+};
+
 const onSubmit = async () => {
   exportTerms.value = [];
+  displayOutput.value = '';
   validationError.value = null;
   
   const errorInfo = validateForm(terms.value);
@@ -209,13 +386,14 @@ const onSubmit = async () => {
     }
   } else {
     exportTerms.value = transformFormData(terms.value);
+    updateOutput(); // Aktualisiere die Ausgabe basierend auf dem gewählten Format
+    
     $q.notify({
       type: 'positive',
-      message: 'Dokument erfolgreich abgesendet!',
+      message: 'Datensatz erstellt und validiert!',
       icon: 'mdi-check-circle-outline',
     });
     
-    // Scroll to the export results section
     await nextTick();
     const resultsElement = document.querySelector('.q-mt-xl');
     if (resultsElement) {
@@ -270,7 +448,6 @@ function transformFormData(currentTerms) {
   return transformedTerms;
 }
 
-
 function toggleAll(expand) {
   const recursiveToggle = (nodes) => {
     nodes.forEach(node => {
@@ -324,14 +501,13 @@ provide('formManager', {
       recalculatePaths(terms.value);
     }
   },
-updateValueAtPath(path, value, field = 'value') {
-  let target = terms.value;
-  path.forEach((index, i) => {
-    target = (i < path.length - 1) ? target[index].narrower : target[index];
-  });
-  target[field] = value;
-},
-
+  updateValueAtPath(path, value, field = 'value') {
+    let target = terms.value;
+    path.forEach((index, i) => {
+      target = (i < path.length - 1) ? target[index].narrower : target[index];
+    });
+    target[field] = value;
+  },
   toggleExpansionAtPath(path) {
     let target = terms.value;
     path.forEach((index, i) => {
