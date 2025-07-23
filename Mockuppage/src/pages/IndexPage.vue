@@ -1,5 +1,41 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <q-dialog v-model="showIntroDialog" persistent>
+      <q-card style="min-width: 400px; max-width: 600px;">
+        <q-card-section class="bg-primary text-white row items-center q-pb-none">
+          <div class="text-h6 q-pa-sm">Willkommen auf der Mockup-App für Konservierungsdaten</div>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section class="q-pa-md">
+          <p>Dieses Tool dient zur beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsmaßnahmen.</p>
+          <p>Grundlage hierfür ist der Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz. </p>
+          <p><strong> Funktionen:</strong></p>
+          <ul>
+            <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
+            <li><strong>Bestandsdaten:</strong> Kuratorische Daten sind bereits exemplarisch vorgeladen.</li>
+            <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um die Eingaben zu prüfen.</li>
+            <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin .</li>
+            <li><strong>Datengenerierung:</strong> Nach erfolgreicher Validierung werden strukturierte Daten erstellt.</li>
+            <li><strong>Exportieren:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
+            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um Beispieldaten zu laden.</li>
+            <li><strong>Helfer:</strong> "Ausklappen/Zusammenklappen" für die Navigation, und "Zurücksetzen" zum Leeren des Formulars.</li>
+          </ul>
+          <p>Beginnen Sie, indem Sie die benötigten Felder "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf "Abschicken" klicken.</p>
+        </q-card-section>
+
+        <q-card-actions align="right" class="q-pr-md q-pb-md">
+          <q-btn
+            label="Verstanden"
+            color="primary"
+            @click="
+              showIntroDialog = false;
+            "
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
     <q-page-container>
       <q-page class="q-pa-md form-page" :style-fn="pageStyle">
         <q-form class="q-gutter-md">
@@ -25,13 +61,9 @@
           </div>
           <pre>{{ displayOutput }}</pre>
         </div>
-        
-        <!-- Add padding bottom to prevent content from being hidden behind sticky buttons when they're visible -->
         <div v-if="exportTerms.length > 0" class="q-pb-xl"></div>
       </q-page>
     </q-page-container>
-    
-    <!-- Sticky download/copy buttons - only rendered when condition is met -->
     <div v-if="exportTerms.length > 0" class="fixed-bottom bg-white" style="bottom: 65px; left: 0; right: 0; z-index: 1000; border-top: 1px solid #e0e0e0;">
       <div class="flex flex-center q-pa-sm">
         <q-btn
@@ -51,63 +83,76 @@
         />
       </div>
     </div>
-
-    <q-footer bordered class="bg-white text-primary q-pa-sm">
-      <q-toolbar class="row justify-center">
-        <q-btn-group
-        push
-        >
-          <q-btn
-            label="Abschicken"
-            type="submit"
-            color="primary"
-            icon="mdi-check-circle"
-            @click="onSubmit"
-            flat
-          />
-          <q-separator vertical class="q-mx-md" />
-          <q-btn
-            label="Zurücksetzen"
-            type="reset"
-            color="grey"
-            class="q-ml-sm"
-            icon="mdi-reload"
-            @click="onReset"
-            flat
-          />
-          <q-separator vertical class="q-mx-md" />
-          <q-btn
-            label="Felder ausfüllen"
-            color="accent"
-            icon="mdi-auto-fix"
-            @click="() => fillAllFields(excludeNotations.value)"
-            flat
-          />
-          <q-separator vertical class="q-mx-md" />
-          <q-btn
-            label="Ausklappen"
-            color="secondary"
-            icon="mdi-unfold-more-vertical"
-            @click="toggleAll(true)"
-            flat
-          />
-          <q-separator vertical class="q-mx-md" />
-          <q-btn
-            label="Zusammenklappen"
-            color="secondary"
-            class="q-ml-sm"
-            icon="mdi-unfold-less-vertical"
-            @click="toggleAll(false)"
-            flat
-          />
-        </q-btn-group>
-      </q-toolbar>
-    </q-footer>
+<q-footer bordered class="bg-white text-primary">
+  <q-toolbar class="column q-py-sm">
+    <!-- Button group -->
+    <div class="row justify-center q-mb-sm">
+      <q-btn-group push>
+        <q-btn
+          label="Abschicken"
+          type="submit"
+          color="primary"
+          icon="mdi-check-circle"
+          @click="onSubmit"
+          flat
+        />
+        <q-separator vertical class="q-mx-md" />
+        <q-btn
+          label="Zurücksetzen"
+          type="reset"
+          color="grey"
+          icon="mdi-reload"
+          @click="onReset"
+          flat
+        />
+        <q-separator vertical class="q-mx-md" />
+        <q-btn
+          label="Felder ausfüllen"
+          color="accent"
+          icon="mdi-auto-fix"
+          @click="() => fillAllFields(excludeNotations.value)"
+          flat
+        />
+        <q-separator vertical class="q-mx-md" />
+        <q-btn
+          label="Ausklappen"
+          color="secondary"
+          icon="mdi-unfold-more-vertical"
+          @click="toggleAll(true)"
+          flat
+        />
+        <q-separator vertical class="q-mx-md" />
+        <q-btn
+          label="Zusammenklappen"
+          color="secondary"
+          icon="mdi-unfold-less-vertical"
+          @click="toggleAll(false)"
+          flat
+        />
+      </q-btn-group>
+    </div>
+    
+    <!-- Simple contact info -->
+    <div class="row justify-center items-center">
+      <span class="text-caption text-grey-7 q-mr-xs">Kontakt:</span>
+      <q-btn
+        :label="contactEmail"
+        flat
+        dense
+        no-caps
+        color="primary"
+        @click="openEmailClient"
+        class="text-caption"
+        style="text-decoration: underline; padding: 2px 4px;"
+      />
+    </div>
+  </q-toolbar>
+</q-footer>
   </q-layout>
 </template>
 
 <script setup>
-import { ref, provide, toRaw, nextTick } from 'vue';
+import { ref, provide, toRaw, nextTick, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
@@ -122,9 +167,67 @@ const outputFormat = ref('json');
 const validationError = ref(null);
 const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
 const excludeNotations = ref(["F52262", "BAA258"]);
+const showIntroDialog = ref(true);
+const contactEmail = ref('');
+const showEmail = ref(false);
 
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
+};
+
+onMounted(() => {
+  decodeEmail();
+  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+  if (hasSeenIntro) {
+    showIntroDialog.value = false;
+  }
+});
+
+const decodeEmail = () => {
+  
+  // Method 1: ROT13-like character shifting
+  const shifted = 'frqvgl@rknzcyr.pbz'; // Example shifted email
+  let decoded = '';
+  for (let i = 0; i < shifted.length; i++) {
+    const char = shifted[i];
+    if (char >= 'a' && char <= 'z') {
+      decoded += String.fromCharCode(((char.charCodeAt(0) - 97 + 13) % 26) + 97);
+    } else if (char >= 'A' && char <= 'Z') {
+      decoded += String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65);
+    } else {
+      decoded += char;
+    }
+  }
+  
+  
+  // Method 2: Reverse and reconstruct
+  const reversed = 'Wursthausen@leiza.de'.split('').reverse().join('');
+  
+  // Use one of the decoded emails
+  contactEmail.value = reversed; // or use 'decoded' for ROT13 method
+};
+
+const revealEmail = () => {
+  showEmail.value = true;
+  // Small delay to make it less bot-friendly
+  setTimeout(() => {
+    const emailElement = document.querySelector('.revealed-email');
+    if (emailElement) {
+      emailElement.style.userSelect = 'text';
+    }
+  }, 100);
+};
+
+const openEmailClient = () => {
+  if (!showEmail.value) {
+    revealEmail();
+    return;
+  }
+  
+  const subject = encodeURIComponent('Konservierungsdaten App - Anfrage');
+  const body = encodeURIComponent('Hallo,\n\nIch habe eine Frage zur Konservierungsdaten App:\n\n');
+  const mailtoLink = `mailto:${contactEmail.value}?subject=${subject}&body=${body}`;
+  window.open(mailtoLink);
 };
 
 function jsonToSimplifiedXml(jsonData) {

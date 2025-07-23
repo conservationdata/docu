@@ -2,57 +2,62 @@ import json
 
 jsonString2 = """
 {
-  "label": "Eingriff",
-  "uri": "https://www.conservation-science.org/ontology/intervention/CD3353",
-  "selectable": false,
-  "children": [
-    {
-      "label": "Reinigung",
-      "uri": "https://www.conservation-science.org/ontology/intervention/cleaning",
-      "children": [
+    "label": "Schadensphänomen (Damage Phenomenon)",
+    "uri": "https://www.conservation-science.org/ontology/damage-phenomena/DAC996",
+    "selectable": false,
+    "children": [
         {
-          "label": "Trockenreinigung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/dry-cleaning"
+            "label": "Formänderung (Change in Form)",
+            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/B224CD",
+            "children": [
+                {
+                    "label": "aufgeraut (Schadensphänomen)",
+                    "uri": "https://www.conservation-science.org/ontology/damage-phenomena/A21DB2"
+                },
+                {
+                    "label": "deformiert",
+                    "uri": "https://www.conservation-science.org/ontology/damage-phenomena/A8D9GF",
+                    "children": [
+                        {
+                            "label": "geknickt",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/ABB9FA"
+                        },
+                        {
+                            "label": "gewellt",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/B89818"
+                        },
+                        {
+                            "label": "verbogen",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/C535G6"
+                        },
+                        {
+                            "label": "verdreht",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/CF4199"
+                        },
+                        {
+                            "label": "verworfen",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/FC4DGB"
+                        },
+                        {
+                            "label": "eingedrückt (Schadensphänomen)",
+                            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/GAC37B"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "label": "Feuchtreinigung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/wet-cleaning"
-        },
-        {
-          "label": "Laserreinigung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/laser-cleaning"
+            "label": "Kohäsionsverlust",
+            "uri": "https://www.conservation-science.org/ontology/damage-phenomena/KOHA123",
+            "selectable": false,
+            "children": [
+                {
+                    "label": "fragmentiert",
+                    "uri": "https://www.conservation-science.org/ontology/damage-phenomena/FRAG456"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "label": "Festigung",
-      "uri": "https://www.conservation-science.org/ontology/intervention/consolidation",
-      "children": [
-        {
-          "label": "temporärer Stabilisierung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/temporary-stabilization"
-        },
-        {
-          "label": "Tränkung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/impregnation"
-        }
-      ]
-    },
-    {
-      "label": "Klebung",
-      "uri": "https://www.conservation-science.org/ontology/intervention/adhesion",
-      "children": [
-        {
-          "label": "Infiltrationsklebung",
-          "uri": "https://www.conservation-science.org/ontology/intervention/infiltration-bonding"
-        },
-        {
-          "label": "Aufbaumethode",
-          "uri": "https://www.conservation-science.org/ontology/intervention/build-up-method"
-        }
-      ]
-    }
-  ]
+    ]
 }
     """
 
