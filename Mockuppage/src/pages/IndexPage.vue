@@ -9,7 +9,7 @@
 
         <q-card-section class="q-pa-md">
           <p>Dieses Tool dient zur beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsmaßnahmen.</p>
-          <p>Grundlage hierfür ist der Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz. </p>
+          <p>Grundlage hierfür ist der Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz der Temporary Working Group <i>Community-Standards für kontrollierte Vokabulare und Austauschformate im Bereich der Erhaltung und Pflege des kulturellen Erbes</i> innerhalb des Konsortiums NFDI4Objects. </p>
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
@@ -132,27 +132,37 @@
       </q-btn-group>
     </div>
     
-    <!-- Simple contact info -->
-    <div class="row justify-center items-center">
-      <span class="text-caption text-grey-7 q-mr-xs">Kontakt:</span>
-      <q-btn
-        :label="contactEmail"
-        flat
-        dense
-        no-caps
-        color="primary"
-        @click="openEmailClient"
-        class="text-caption"
-        style="text-decoration: underline; padding: 2px 4px;"
-      />
+  <div class="row justify-center items-center q-pa-md">
+
+    <q-btn
+      v-if="!showEmails"
+      label="Kontakt"
+      @click="showEmails = true"
+      color="primary"
+      icon="email"
+      unelevated
+    />
+
+    <div v-if="showEmails" class="row items-center">
+      <a
+        v-for="(email, index) in decodedEmails"
+        :key="email"
+        :href="'mailto:' + email"
+        class="q-ml-sm text-primary"
+        style="text-decoration: none;"
+      >
+        {{ email }}<span v-if="index < decodedEmails.length - 1">,</span>
+      </a>
     </div>
+
+  </div>
   </q-toolbar>
 </q-footer>
   </q-layout>
 </template>
 
 <script setup>
-import { ref, provide, toRaw, nextTick, onMounted } from 'vue';
+import { ref, provide, toRaw, nextTick, onMounted, computed } from 'vue';
 import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
 import docuData from 'src/data/docu.json';
@@ -168,67 +178,38 @@ const validationError = ref(null);
 const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
 const excludeNotations = ref(["F52262", "BAA258"]);
 const showIntroDialog = ref(true);
-const contactEmail = ref('');
-const showEmail = ref(false);
+const showEmails = ref(false);
+const obfuscatedEmails = ref([
+  "7l4a9s2s1e6x3m5e8m0p4e2l7l9a1e6n3g8e5r2x9l7e4i1z6a8x2d5e9",
+  "7k4r9i2s1t6i3n5a8x0f4i2s7c9h1e6r3x8l5e2i9z7a4x1d6e8",
+  "7n4a9t2h1a6l3y5x8w0i4t2t7x9l1e6i3z8a5x2d9e7"
+])
+
+const decodedEmails = computed(() => {
+  return obfuscatedEmails.value.map(email => {
+    let decoded = email.replace(/\d/g, '');
+    let parts = decoded.split('x').filter(part => part.length > 0);
+    if (parts.length >= 4) {
+      const firstName = parts[0];
+      const lastName = parts[1];
+      const domain = parts[2];
+      const tld = parts[3];
+      return `${firstName}.${lastName}@${domain}.${tld}`;
+    }
+    return email;
+  });
+});
 
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
 };
 
 onMounted(() => {
-  decodeEmail();
   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
   if (hasSeenIntro) {
     showIntroDialog.value = false;
   }
 });
-
-const decodeEmail = () => {
-  
-  // Method 1: ROT13-like character shifting
-  const shifted = 'frqvgl@rknzcyr.pbz'; // Example shifted email
-  let decoded = '';
-  for (let i = 0; i < shifted.length; i++) {
-    const char = shifted[i];
-    if (char >= 'a' && char <= 'z') {
-      decoded += String.fromCharCode(((char.charCodeAt(0) - 97 + 13) % 26) + 97);
-    } else if (char >= 'A' && char <= 'Z') {
-      decoded += String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65);
-    } else {
-      decoded += char;
-    }
-  }
-  
-  
-  // Method 2: Reverse and reconstruct
-  const reversed = 'Wursthausen@leiza.de'.split('').reverse().join('');
-  
-  // Use one of the decoded emails
-  contactEmail.value = reversed; // or use 'decoded' for ROT13 method
-};
-
-const revealEmail = () => {
-  showEmail.value = true;
-  // Small delay to make it less bot-friendly
-  setTimeout(() => {
-    const emailElement = document.querySelector('.revealed-email');
-    if (emailElement) {
-      emailElement.style.userSelect = 'text';
-    }
-  }, 100);
-};
-
-const openEmailClient = () => {
-  if (!showEmail.value) {
-    revealEmail();
-    return;
-  }
-  
-  const subject = encodeURIComponent('Konservierungsdaten App - Anfrage');
-  const body = encodeURIComponent('Hallo,\n\nIch habe eine Frage zur Konservierungsdaten App:\n\n');
-  const mailtoLink = `mailto:${contactEmail.value}?subject=${subject}&body=${body}`;
-  window.open(mailtoLink);
-};
 
 function jsonToSimplifiedXml(jsonData) {
     function escapeXml(text) {
