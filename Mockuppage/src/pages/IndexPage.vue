@@ -6,22 +6,22 @@
           <div class="text-h6 q-pa-sm">Willkommen auf der Mockup-App für Konservierungsdaten</div>
           <q-space />
         </q-card-section>
-
         <q-card-section class="q-pa-md">
           <p>Dieses Tool dient zur beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsmaßnahmen.</p>
           <p>Grundlage hierfür ist der Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz der Temporary Working Group <i>Community-Standards für kontrollierte Vokabulare und Austauschformate im Bereich der Erhaltung und Pflege des kulturellen Erbes</i> innerhalb des Konsortiums NFDI4Objects. </p>
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
-            <li><strong>Bestandsdaten:</strong> Kuratorische Daten sind bereits exemplarisch vorgeladen.</li>
-            <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um die Eingaben zu prüfen.</li>
-            <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin .</li>
+            <li><strong>Normdatenbäume:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus hierarchischen Normdaten.</li>
+            <li><strong>Bestandsdaten:</strong> Exemplarische kuratorische Daten werden vorgeladen.</li>
+            <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um ihre Eingaben zu prüfen.</li>
+            <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin.</li>
             <li><strong>Datengenerierung:</strong> Nach erfolgreicher Validierung werden strukturierte Daten erstellt.</li>
-            <li><strong>Exportieren:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
-            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um Beispieldaten zu laden.</li>
+            <li><strong>Export:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
+            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um das komplette Formular mit Beispieldaten zu laden.</li>
             <li><strong>Helfer:</strong> "Ausklappen/Zusammenklappen" für die Navigation, und "Zurücksetzen" zum Leeren des Formulars.</li>
           </ul>
-          <p>Beginnen Sie, indem Sie die benötigten Felder "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf "Abschicken" klicken.</p>
+          <p>Beginnen Sie, indem Sie die benötigten Abschnitte "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf "Abschicken" klicken.</p>
         </q-card-section>
 
         <q-card-actions align="right" class="q-pr-md q-pb-md">
@@ -64,107 +64,84 @@
         <div v-if="exportTerms.length > 0" class="q-pb-xl"></div>
       </q-page>
     </q-page-container>
-    <div v-if="exportTerms.length > 0" class="fixed-bottom bg-white" style="bottom: 65px; left: 0; right: 0; z-index: 1000; border-top: 1px solid #e0e0e0;">
-      <div class="flex flex-center q-pa-sm">
-        <q-btn
-          :label="`Download ${outputFormat.toUpperCase()}`"
-          color="primary"
-          icon="mdi-download"
-          @click="downloadOutput"
-          outline
-          class="q-mr-sm"
-        />
-        <q-btn
-          label="In Zwischenablage kopieren"
-          color="secondary"
-          icon="mdi-content-copy"
-          @click="copyToClipboard"
-          outline
-        />
-      </div>
-    </div>
-<q-footer bordered class="bg-white text-primary">
-  <q-toolbar class="column q-py-sm">
-    <!-- Button group -->
-    <div class="row justify-center q-mb-sm">
-      <q-btn-group push>
-        <q-btn
-          label="Abschicken"
-          type="submit"
-          color="primary"
-          icon="mdi-check-circle"
-          @click="onSubmit"
-          flat
-        />
-        <q-separator vertical class="q-mx-md" />
-        <q-btn
-          label="Zurücksetzen"
-          type="reset"
-          color="grey"
-          icon="mdi-reload"
-          @click="onReset"
-          flat
-        />
-        <q-separator vertical class="q-mx-md" />
-        <q-btn
-          label="Felder ausfüllen"
-          color="accent"
-          icon="mdi-auto-fix"
-          @click="() => fillAllFields(excludeNotations.value)"
-          flat
-        />
-        <q-separator vertical class="q-mx-md" />
-        <q-btn
-          label="Ausklappen"
-          color="secondary"
-          icon="mdi-unfold-more-vertical"
-          @click="toggleAll(true)"
-          flat
-        />
-        <q-separator vertical class="q-mx-md" />
-        <q-btn
-          label="Zusammenklappen"
-          color="secondary"
-          icon="mdi-unfold-less-vertical"
-          @click="toggleAll(false)"
-          flat
-        />
-      </q-btn-group>
-    </div>
-    
-  <div class="row justify-center items-center q-pa-md">
-
-    <q-btn
-      v-if="!showEmails"
-      label="Kontakt"
-      @click="showEmails = true"
-      color="primary"
-      icon="email"
-      unelevated
-    />
-
-    <div v-if="showEmails" class="row items-center">
-      <a
-        v-for="(email, index) in decodedEmails"
-        :key="email"
-        :href="'mailto:' + email"
-        class="q-ml-sm text-primary"
-        style="text-decoration: none;"
-      >
-        {{ email }}<span v-if="index < decodedEmails.length - 1">,</span>
-      </a>
-    </div>
-
-  </div>
-  </q-toolbar>
-</q-footer>
+    <q-footer bordered class="bg-white text-primary footer-container">
+      <q-toolbar class="column q-py-sm">
+        <!-- Download/Copy buttons - only show when export data exists -->
+        <div v-if="exportTerms.length > 0" class="row justify-center q-mb-sm">
+          <q-btn-group push>
+            <q-btn
+              :label="`Download ${outputFormat.toUpperCase()}`"
+              color="primary"
+              icon="mdi-download"
+              @click="downloadOutput"
+              flat
+            />
+            <q-separator vertical class="q-mx-sm" />
+            <q-btn
+              label="In Zwischenablage kopieren"
+              color="secondary"
+              icon="mdi-content-copy"
+              @click="copyToClipboard"
+              flat
+            />
+          </q-btn-group>
+        </div>
+        <div class="row justify-center q-mb-sm">
+          <q-btn-group push>
+            <q-btn
+              label="Abschicken"
+              type="submit"
+              color="primary"
+              icon="mdi-check-circle"
+              @click="onSubmit"
+              flat
+            />
+            <q-separator vertical class="q-mx-sm" />
+            <q-btn
+              label="Zurücksetzen"
+              type="reset"
+              color="grey"
+              icon="mdi-reload"
+              @click="onReset"
+              flat
+            />
+            <q-separator vertical class="q-mx-sm" />
+            <q-btn
+              label="Felder ausfüllen"
+              color="accent"
+              icon="mdi-auto-fix"
+              @click="() => fillAllFields(excludeNotations.value)"
+              flat
+            />
+            <q-separator vertical class="q-mx-sm" />
+            <q-btn
+              label="Ausklappen"
+              color="secondary"
+              icon="mdi-unfold-more-vertical"
+              @click="toggleAll(true)"
+              flat
+            />
+            <q-separator vertical class="q-mx-sm" />
+            <q-btn
+              label="Zusammenklappen"
+              color="secondary"
+              icon="mdi-unfold-less-vertical"
+              @click="toggleAll(false)"
+              flat
+            />
+          </q-btn-group>
+        </div>
+        <ContactComponent></ContactComponent>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
 <script setup>
-import { ref, provide, toRaw, nextTick, onMounted, computed } from 'vue';
+import { ref, provide, toRaw, nextTick, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
+import ContactComponent from 'src/components/contactComponent.vue';
 import docuData from 'src/data/docu.json';
 import exampleData from 'src/data/example.json';
 
@@ -178,27 +155,6 @@ const validationError = ref(null);
 const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
 const excludeNotations = ref(["F52262", "BAA258"]);
 const showIntroDialog = ref(true);
-const showEmails = ref(false);
-const obfuscatedEmails = ref([
-  "7l4a9s2s1e6x3m5e8m0p4e2l7l9a1e6n3g8e5r2x9l7e4i1z6a8x2d5e9",
-  "7k4r9i2s1t6i3n5a8x0f4i2s7c9h1e6r3x8l5e2i9z7a4x1d6e8",
-  "7n4a9t2h1a6l3y5x8w0i4t2t7x9l1e6i3z8a5x2d9e7"
-])
-
-const decodedEmails = computed(() => {
-  return obfuscatedEmails.value.map(email => {
-    let decoded = email.replace(/\d/g, '');
-    let parts = decoded.split('x').filter(part => part.length > 0);
-    if (parts.length >= 4) {
-      const firstName = parts[0];
-      const lastName = parts[1];
-      const domain = parts[2];
-      const tld = parts[3];
-      return `${firstName}.${lastName}@${domain}.${tld}`;
-    }
-    return email;
-  });
-});
 
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
@@ -615,6 +571,10 @@ function recalculatePaths(nodes, path = []) {
   max-width: 900px;
   margin: 0 auto;
   background-color: #ffffff;
+}
+
+.footer-container {
+  border-top: 1px solid #e0e0e0;
 }
 
 pre {
