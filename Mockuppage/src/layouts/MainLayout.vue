@@ -1,63 +1,45 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white">
-      <q-toolbar>
-        <!-- 
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-        -->
-        <q-toolbar-title>
-          <div class="text-center text-bold text-h4 header-title">Conservation Documentation</div>
-          <div class="text-center text-bold text-subtitle4 header-subtitle">Metadata Mockup</div>
+      <q-toolbar class="q-gutter-md">
+        <!-- Left Section -->
+        <div class="row items-center no-wrap">
+          <q-icon name="settings" size="sm" class="q-mr-sm" />
+          <span class="text-subtitle1">tools.LEIZA</span>
+        </div>
+
+        <!-- Center Section (Title + Subtitle) -->
+        <q-toolbar-title class="text-center">
+          <div class="column items-center">
+            <div class="text-h5 text-bold header-title">Conservation Documentation</div>
+            <div class="text-subtitle1 header-subtitle">Metadata Mockup (Beta)</div>
+          </div>
         </q-toolbar-title>
+
+        <!-- Right Section -->
+        <div class="row items-center no-wrap">
+          <span class="text-subtitle2">LEIZA Department of Scientific IT</span>
+        </div>
+
       </q-toolbar>
     </q-header>
-
-    <!-- 
-    <q-drawer v-model="leftDrawerOpen" side="left" bordered>
-      </q-drawer>
-    -->
 
     <q-page-container class="bg-grey-2">
       <router-view />
     </q-page-container>
-
-    <!--
-    <q-footer elevated class="bg-primary text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
-    -->
-
   </q-layout>
 </template>
 
-<script>
-import { ref } from 'vue'
-
-export default {
-  setup () {
-    const leftDrawerOpen = ref(true)
-
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-}
-</script>
 
 <style scoped>
 .header-title {
-  font-size: 2.0rem; /* Larger font size for the main title */
-  letter-spacing: 0.05em; /* Slightly more spaced letters */
+  font-size: 2rem;
+  letter-spacing: 0.05em;
 }
 
 .header-subtitle {
-  font-size: 1rem; /* Appropriate size for a subtitle */
-  opacity: 0.8; /* Slightly less prominent */
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
+
 </style>

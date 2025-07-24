@@ -67,7 +67,6 @@
     </q-page-container>
     <q-footer bordered class="bg-white text-primary footer-container">
       <q-toolbar class="column q-py-sm">
-        <!-- Download/Copy buttons - only show when export data exists -->
         <div v-if="exportTerms.length > 0" class="row justify-center q-mb-sm">
           <q-btn-group push>
             <q-btn
@@ -132,7 +131,19 @@
             />
           </q-btn-group>
         </div>
-        <ContactComponent></ContactComponent>
+        <q-breadcrumbs  separator="" separator-color="secondary" active-color="" >
+          <q-breadcrumbs-el label="Leibniz-Zentrum für Archäologie (LEIZA) 2025" />
+          <q-breadcrumbs-el label="Lasse Mempel-Länger & Kristina Fischer & Nathaly Witt" />
+        </q-breadcrumbs>
+        <q-breadcrumbs separator="" separator-color="secondary" active-color="">
+          <a href="https://www.leiza.de/impressum" target="_blank" style="">
+            <q-breadcrumbs-el label="Impressum"/>
+          </a>
+          <ContactComponent></ContactComponent>
+          <a href="https://www.leiza.de/datenschutz" target="_blank" style="">
+            <q-breadcrumbs-el label="Datenschutz" />
+          </a>
+        </q-breadcrumbs>
       </q-toolbar>
     </q-footer>
   </q-layout>
