@@ -7,21 +7,22 @@
           <q-space />
         </q-card-section>
         <q-card-section class="q-pa-md">
-          <p>Dieses Tool dient zur beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsmaßnahmen.</p>
-          <p>Grundlage hierfür ist der Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz der Temporary Working Group <i>Community-Standards für kontrollierte Vokabulare und Austauschformate im Bereich der Erhaltung und Pflege des kulturellen Erbes</i> innerhalb des Konsortiums NFDI4Objects. </p>
+          <p>Dieses Tool dient der beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsprozessen.</p>
+          <p>Grundlage hierfür ist ein Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz. </p>
+          <p>Dieser wurde von der Temporary Working Group <i>Community-Standards für kontrollierte Vokabulare und Austauschformate im Bereich der Erhaltung und Pflege des kulturellen Erbes</i> innerhalb des Konsortiums NFDI4Objects entwickelt.</p>
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
-            <li><strong>Normdatenbäume:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus hierarchischen Normdaten.</li>
+            <li><strong>Normdatenbäume:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus (simulierten) hierarchischen Normdaten.</li>
             <li><strong>Bestandsdaten:</strong> Exemplarische kuratorische Daten werden vorgeladen.</li>
             <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um ihre Eingaben zu prüfen.</li>
             <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin.</li>
             <li><strong>Datengenerierung:</strong> Nach erfolgreicher Validierung werden strukturierte Daten erstellt.</li>
             <li><strong>Export:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
-            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um das komplette Formular mit Beispieldaten zu laden.</li>
-            <li><strong>Helfer:</strong> "Ausklappen/Zusammenklappen" für die Navigation, und "Zurücksetzen" zum Leeren des Formulars.</li>
+            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um das komplette Formular mit Beispieldaten zu laden und dann abzuschicken.</li>
+            <li><strong>Helfer:</strong> <i>Ausklappen</i> und <i>Zusammenklappen</i> für die Übersicht, sowie <i>Zurücksetzen</i>" zum Leeren des Formulars.</li>
           </ul>
-          <p>Beginnen Sie, indem Sie die benötigten Abschnitte "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf "Abschicken" klicken.</p>
+          <p>Beginnen Sie, indem Sie die benötigten Abschnitte "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf <i>Abschicken</i> klicken.</p>
         </q-card-section>
 
         <q-card-actions align="right" class="q-pr-md q-pb-md">
