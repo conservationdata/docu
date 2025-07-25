@@ -6,7 +6,7 @@
           :href="link" 
           :title="term.definition"
           target="_blank"
-          class="text-primary text-bold"
+          class="text-secondary text-bold"
         >
           {{ term.prefLabel }}
         </a>

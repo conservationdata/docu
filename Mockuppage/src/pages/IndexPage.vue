@@ -1,42 +1,5 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-dialog v-model="showIntroDialog" persistent>
-      <q-card style="min-width: 400px; max-width: 600px;">
-        <q-card-section class="bg-primary text-white row items-center q-pb-none">
-          <div class="text-h6 q-pa-sm">Willkommen auf der Mockup-App für Konservierungsdaten</div>
-          <q-space />
-        </q-card-section>
-        <q-card-section class="q-pa-md">
-          <p>Dieses Tool dient der beispielhaften Erstellung strukturierter Daten zur Dokumentation von Konservierungs- und Restaurierungsprozessen.</p>
-          <p>Grundlage hierfür ist ein Entwurf für einen Konservierungs- und Restaurierungs Metadatensatz. </p>
-          <p>Dieser wurde von der Temporary Working Group <i>Community-Standards für kontrollierte Vokabulare und Austauschformate im Bereich der Erhaltung und Pflege des kulturellen Erbes</i> innerhalb des Konsortiums NFDI4Objects entwickelt.</p>
-          <p><strong> Funktionen:</strong></p>
-          <ul>
-            <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
-            <li><strong>Normdatenbäume:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus (simulierten) hierarchischen Normdaten.</li>
-            <li><strong>Bestandsdaten:</strong> Exemplarische kuratorische Daten werden vorgeladen.</li>
-            <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um ihre Eingaben zu prüfen.</li>
-            <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin.</li>
-            <li><strong>Datengenerierung:</strong> Nach erfolgreicher Validierung werden strukturierte Daten erstellt.</li>
-            <li><strong>Export:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
-            <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf "Felder ausfüllen", um das komplette Formular mit Beispieldaten zu laden und dann abzuschicken.</li>
-            <li><strong>Helfer:</strong> <i>Ausklappen</i> und <i>Zusammenklappen</i> für die Übersicht, sowie <i>Zurücksetzen</i>" zum Leeren des Formulars.</li>
-          </ul>
-          <p>Beginnen Sie, indem Sie die benötigten Abschnitte "Zustandserfassung" und "Konservierungskonzept" ausfüllen. Anschließend auf <i>Abschicken</i> klicken.</p>
-        </q-card-section>
-
-        <q-card-actions align="right" class="q-pr-md q-pb-md">
-          <q-btn
-            label="Verstanden"
-            color="primary"
-            @click="
-              showIntroDialog = false;
-            "
-            v-close-popup
-          />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
     <q-page-container>
       <q-page class="q-pa-md form-page" :style-fn="pageStyle">
         <q-form class="q-gutter-md">
@@ -47,51 +10,55 @@
           />
         </q-form>
         <div v-if="exportTerms.length > 0" class="q-mt-xl">
-          <div class="row items-center q-mb-md">
-            <p class="text-h6 q-mb-none">{{ outputFormat === 'json' ? 'JSON Proto Austauschformat' : 'XML Proto Austauschformat' }}</p>
+          <div class="row">
+            <p class="text-h6 q-mb-none text-secondary">{{ outputFormat === 'json' ? 'Proto-JSON' : 'Proto-XML' }}</p>
             <q-space />
-            <q-btn-toggle
-              v-model="outputFormat"
-              toggle-color="primary"
-              :options="[
-                {label: 'JSON', value: 'json'},
-                {label: 'XML', value: 'xml'}
-              ]"
-              @update:model-value="updateOutput"
-            />
+            <div class="row">
+              <q-btn-toggle
+                v-model="outputFormat"
+                toggle-color="accent"
+                text-color="secondary"
+                :options="[
+                  {label: 'JSON', value: 'json'},
+                  {label: 'XML', value: 'xml'}
+                ]"
+                @update:model-value="updateOutput"
+              />
+              <q-btn-group push>
+                <q-btn
+                  :label="`Download`"
+                  color="accent"
+                  text-color="secondary"
+                  icon="mdi-download"
+                  @click="downloadOutput"
+                  flat
+                />
+                <q-separator vertical class="q-mx-sm" />
+                <q-btn
+                  label="Kopieren"
+                  color="accent"
+                  text-color="secondary"
+                  icon="mdi-content-copy"
+                  @click="copyToClipboard"
+                  flat
+                />
+              </q-btn-group>
+            </div>
           </div>
           <pre>{{ displayOutput }}</pre>
         </div>
         <div v-if="exportTerms.length > 0" class="q-pb-xl"></div>
       </q-page>
     </q-page-container>
-    <q-footer bordered class="bg-white text-primary footer-container">
+    <q-footer bordered class="bg-primary text-secondary footer-container">
       <q-toolbar class="column q-py-sm">
-        <div v-if="exportTerms.length > 0" class="row justify-center q-mb-sm">
-          <q-btn-group push>
-            <q-btn
-              :label="`Download ${outputFormat.toUpperCase()}`"
-              color="primary"
-              icon="mdi-download"
-              @click="downloadOutput"
-              flat
-            />
-            <q-separator vertical class="q-mx-sm" />
-            <q-btn
-              label="In Zwischenablage kopieren"
-              color="secondary"
-              icon="mdi-content-copy"
-              @click="copyToClipboard"
-              flat
-            />
-          </q-btn-group>
-        </div>
         <div class="row justify-center q-mb-sm">
           <q-btn-group push>
             <q-btn
               label="Abschicken"
               type="submit"
-              color="primary"
+              color="accent"
+              text-color="secondary"
               icon="mdi-check-circle"
               @click="onSubmit"
               flat
@@ -100,7 +67,8 @@
             <q-btn
               label="Zurücksetzen"
               type="reset"
-              color="grey"
+              color="accent"
+              text-color="secondary"
               icon="mdi-reload"
               @click="onReset"
               flat
@@ -109,6 +77,7 @@
             <q-btn
               label="Felder ausfüllen"
               color="accent"
+              text-color="secondary"
               icon="mdi-auto-fix"
               @click="() => fillAllFields(excludeNotations.value)"
               flat
@@ -116,22 +85,24 @@
             <q-separator vertical class="q-mx-sm" />
             <q-btn
               label="Ausklappen"
-              color="secondary"
+              color="accent"
+              text-color="secondary"
               icon="mdi-unfold-more-vertical"
               @click="toggleAll(true)"
               flat
             />
             <q-separator vertical class="q-mx-sm" />
             <q-btn
-              label="Zusammenklappen"
-              color="secondary"
+              label="Einklappen"
+              color="accent"
+              text-color="secondary"
               icon="mdi-unfold-less-vertical"
               @click="toggleAll(false)"
               flat
             />
           </q-btn-group>
         </div>
-        <q-breadcrumbs  separator="" separator-color="secondary" active-color="" >
+        <q-breadcrumbs  separator="|" separator-color="secondary" active-color="" >
           <q-breadcrumbs-el label="Leibniz-Zentrum für Archäologie (LEIZA) 2025" />
           <q-breadcrumbs-el label="Lasse Mempel-Länger & Kristina Fischer & Nathaly Witt" />
         </q-breadcrumbs>
@@ -150,7 +121,7 @@
 </template>
 
 <script setup>
-import { ref, provide, toRaw, nextTick, onMounted } from 'vue';
+import { ref, provide, toRaw, nextTick } from 'vue';
 import { useQuasar } from 'quasar';
 import TermComponent from 'src/components/termComponent.vue';
 import ContactComponent from 'src/components/contactComponent.vue';
@@ -166,18 +137,10 @@ const outputFormat = ref('json');
 const validationError = ref(null);
 const expandNotationsOnStartup = ref(["F52262", "BAA258"]);
 const excludeNotations = ref(["F52262", "BAA258"]);
-const showIntroDialog = ref(true);
 
 const pageStyle = (offset) => {
   return { paddingBottom: `${offset + 16}px` };
 };
-
-onMounted(() => {
-  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-  if (hasSeenIntro) {
-    showIntroDialog.value = false;
-  }
-});
 
 function jsonToSimplifiedXml(jsonData) {
     function escapeXml(text) {

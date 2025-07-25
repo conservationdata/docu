@@ -3,7 +3,7 @@
     :nodes="tree"
     node-key="uri"
     :selected="selected"
-    selected-color="primary"
+    selected-color="accent"
     @update:selected="handleSelection"
     default-expand-all
   />
