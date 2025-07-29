@@ -24,11 +24,29 @@
     <q-page-container class="bg-grey-2">
       <router-view />
     </q-page-container>
+    <q-footer bordered class="bg-primary text-secondary footer-container">
+      <q-toolbar class="column q-py-md">
+        <q-breadcrumbs  separator="|" separator-color="secondary" active-color="" >
+          <q-breadcrumbs-el label="Leibniz-Zentrum für Archäologie (LEIZA) 2025" />
+          <q-breadcrumbs-el label="Lasse Mempel-Länger & Kristina Fischer & Nathaly Witt" />
+        </q-breadcrumbs>
+        <q-breadcrumbs separator="" separator-color="secondary" active-color="">
+          <a href="https://www.leiza.de/impressum" target="_blank" style="">
+            <q-breadcrumbs-el label="Impressum"/>
+          </a>
+          <ContactComponent></ContactComponent>
+          <a href="https://www.leiza.de/datenschutz" target="_blank" style="">
+            <q-breadcrumbs-el label="Datenschutz" />
+          </a>
+        </q-breadcrumbs>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
 <script setup>
   import DialogueComponent from 'src/components/dialogueComponent.vue';
+  import ContactComponent from 'src/components/contactComponent.vue';
 </script>
 
 <style scoped>
