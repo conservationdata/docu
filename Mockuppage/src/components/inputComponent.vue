@@ -7,6 +7,7 @@
         :model-value="localValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
         :hint="term.Verwendungshinweis || 'Bitte Datum eintragen'"
+        color="accent"
       />
     </div>
 
@@ -22,6 +23,7 @@
         :val="option"
         :label="option"
         :hint="term.Verwendungshinweis || 'Bitte Wert eintragen'"
+        color="accent"
       />
     </div>
 
@@ -33,6 +35,7 @@
         :true-value="inputConfig['true-value']"
         :false-value="inputConfig['false-value']"
         :hint="term.Verwendungshinweis || 'Bitte Wert eintragen'"
+        color="accent"
       />
       <div class="text-caption checkbox-hint" v-if="term.Verwendungshinweis">
         {{ term.Verwendungshinweis }}

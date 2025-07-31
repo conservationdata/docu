@@ -4,7 +4,7 @@
         v-if="!showEmails"
         label="Kontakt"
         @click="showEmails = true"
-        color="accent"
+        color="white"
         text-color="secondary"
         icon="email"
         unelevated
@@ -16,7 +16,7 @@
                 v-for="(email, index) in decodedEmails"
                 :key="email"
                 :href="'mailto:' + email"
-                class="q-ml-sm text-secondary"
+                class="q-ml-sm text-white"
                 style="text-decoration: none; font-size: 14px;"
             >
                 {{ email }}<span v-if="index < decodedEmails.length - 1">,</span>
