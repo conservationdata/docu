@@ -24,7 +24,7 @@
     <q-page-container class="bg-grey-2">
       <router-view />
     </q-page-container>
-    <q-footer bordered class="bg-primary text-secondary footer-container">
+    <q-footer bordered class="bg-primary text-secondary">
       <q-toolbar class="column q-py-md">
         <q-breadcrumbs  separator="|" separator-color="secondary" active-color="" >
           <q-breadcrumbs-el label="Leibniz-Zentrum für Archäologie (LEIZA) 2025" />

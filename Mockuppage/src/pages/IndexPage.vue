@@ -1,6 +1,5 @@
 <template>
   <q-page class="q-pa-md form-page">
-
     <q-form class="q-gutter-md">
       <TermComponent
         v-for="term in terms"
@@ -9,97 +8,80 @@
       />
     </q-form>
 
-    <div v-if="exportTerms.length > 0" class="q-mt-xl">
-      <div class="row">
+    <div v-if="exportTerms.length > 0" class="q-mt-xl q-mb-xl">
+      <div class="row justify-around">
         <p class="text-h6 q-mb-none text-secondary">{{ outputFormat === 'json' ? 'Proto-JSON' : 'Proto-XML' }}</p>
-        <q-space />
-        <div class="row">
-          <q-btn-toggle
-            v-model="outputFormat"
-            toggle-color="accent"
+        <q-btn-toggle
+          v-model="outputFormat"
+          toggle-color="accent"
+          text-color="secondary"
+          :options="[
+            { label: 'JSON', value: 'json' },
+            { label: 'XML', value: 'xml' }
+          ]"
+          @update:model-value="updateOutput"
+          dense
+        />
+        <q-btn-group push>
+          <q-btn
+            label="Download"
+            color="accent"
             text-color="secondary"
-            :options="[
-              { label: 'JSON', value: 'json' },
-              { label: 'XML', value: 'xml' }
-            ]"
-            @update:model-value="updateOutput"
+            @click="downloadOutputBound"
+            dense
           />
-          <q-separator vertical class="q-mx-sm" />
-          <q-btn-group push>
-            <q-btn
-              label="Download"
-              color="accent"
-              text-color="secondary"
-              icon="mdi-download"
-              @click="downloadOutputBound"
-              flat
-            />
-            <q-separator vertical class="q-mx-sm" />
-            <q-btn
-              label="Kopieren"
-              color="accent"
-              text-color="secondary"
-              icon="mdi-content-copy"
-              @click="copyToClipboardBound"
-              flat
-            />
-          </q-btn-group>
-        </div>
+          <q-btn
+            label="Kopieren"
+            color="accent"
+            text-color="secondary"
+            @click="copyToClipboardBound"
+            dense
+          />
+        </q-btn-group>
       </div>
       <pre>{{ displayOutput }}</pre>
     </div>
 
-    <q-page-sticky position="bottom" class="full-width" style="bottom: 5px;">
-      <div class="flex justify-center">
-        <q-btn-group push>
-          <q-btn
-            label="Abschicken"
-            color="accent"
-            text-color="secondary"
-            icon="mdi-check-circle"
-            @click="onSubmit"
-            flat
-          />
-          <q-separator vertical class="q-mx-sm" />
-          <q-btn
-            label="Zurücksetzen"
-            color="accent"
-            text-color="secondary"
-            icon="mdi-reload"
-            @click="onReset"
-            flat
-          />
-          <q-separator vertical class="q-mx-sm" />
-          <q-btn
-            label="Felder ausfüllen"
-            color="accent"
-            text-color="secondary"
-            icon="mdi-auto-fix"
-            @click="() => { 
-              fillAllFields(terms, []); 
-              $q.notify({ type: 'positive', message: 'Alle Felder befüllt' }); 
-            }"
-            flat
-          />
-          <q-separator vertical class="q-mx-sm" />
-          <q-btn
-            label="Ausklappen"
-            color="accent"
-            text-color="secondary"
-            icon="mdi-unfold-more-vertical"
-            @click="() => toggleAll(terms, true)"
-            flat
-          />
-          <q-separator vertical class="q-mx-sm" />
-          <q-btn
-            label="Einklappen"
-            color="accent"
-            text-color="secondary"
-            icon="mdi-unfold-less-vertical"
-            @click="() => toggleAll(terms, false)"
-            flat
-          />
-        </q-btn-group>
+    <q-page-sticky position="bottom" expand>
+      <div class="row bg-white q-pa-sm justify-evenly full-width" style="max-width: 900px;">
+      <q-btn
+        label="Abschicken"
+        color="accent"
+        text-color="secondary"
+        @click="onSubmit"
+        dense
+      />
+      <q-btn
+        label="Zurücksetzen"
+        color="accent"
+        text-color="secondary"
+        @click="onReset"
+        dense
+      />
+      <q-btn
+        label="Felder ausfüllen"
+        color="accent"
+        text-color="secondary"
+        @click="() => { 
+          fillAllFields(terms, []); 
+          $q.notify({ type: 'positive', message: 'Alle Felder befüllt' }); 
+        }"
+        dense
+      />
+      <q-btn
+        label="Ausklappen"
+        color="accent"
+        text-color="secondary"
+        @click="() => toggleAll(terms, true)"
+        dense
+      />
+      <q-btn
+        label="Einklappen"
+        color="accent"
+        text-color="secondary"
+        @click="() => toggleAll(terms, false)"
+        dense
+      />
       </div>
     </q-page-sticky>
   </q-page>
@@ -189,7 +171,7 @@ const onReset = () => {
   terms.value = createInitialTerms(dataDefinition.value, [], expandNotationsOnStartup);
   exportTerms.value = [];
   displayOutput.value = '';
-  $q.notify({ message: 'Formular zurückgesetzt' });
+  $q.notify({ type: 'positive', message: 'Formular zurückgesetzt' });
 };
 
 // Provide form manager
@@ -242,6 +224,7 @@ $q.notify({ type: 'positive', message: 'Kuratorische Beispieldaten eingetragen.'
   margin: 0 auto;
   background-color: #ffffff;
 }
+
 pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;

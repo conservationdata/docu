@@ -5,6 +5,7 @@
         label="Kontakt"
         @click="showEmails = true"
         color="accent"
+        text-color="secondary"
         icon="email"
         unelevated
         size="sm"
