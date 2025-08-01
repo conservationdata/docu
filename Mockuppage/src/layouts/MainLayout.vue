@@ -41,19 +41,22 @@
 <q-footer bordered class="bg-secondary text-white">
 <q-toolbar class="column q-py-md">
   <!-- Mobile Footer Content -->
-  <div class="mobile-footer lt-sm">
+<div class="mobile-footer lt-sm">
     <div class="text-center q-mb-sm">
       <div class="text-caption">Leibniz-Zentrum für Archäologie (LEIZA) 2025</div>
       <div class="text-caption">Lasse Mempel-Länger & Kristina Fischer & Nathaly Witt</div>
     </div>
-    <div class="row justify-center items-center q-gutter-md">
-      <a href="https://www.leiza.de/impressum" target="_blank" class="text-white text-decoration-none">
-        <span class="text-caption">Impressum</span>
-      </a>
+
+    <div class="row justify-center items-stretch q-gutter-x-md">
+      <div class="column justify-between">
+        <a href="https://www.leiza.de/impressum" target="_blank" class="text-white text-decoration-none">
+          <span class="text-caption">Impressum</span>
+        </a>
+        <a href="https://www.leiza.de/datenschutz" target="_blank" class="text-white text-decoration-none">
+          <span class="text-caption">Datenschutz</span>
+        </a>
+      </div>
       <ContactComponent></ContactComponent>
-      <a href="https://www.leiza.de/datenschutz" target="_blank" class="text-white text-decoration-none">
-        <span class="text-caption">Datenschutz</span>
-      </a>
     </div>
   </div>
 
