@@ -8,39 +8,42 @@
       />
     </q-form>
 
-    <div v-if="exportTerms.length > 0" class="q-mt-xl q-mb-xl">
-      <div class="row justify-around">
-        <p class="text-h6 q-mb-none text-secondary">{{ outputFormat === 'json' ? 'Proto-JSON' : 'Proto-XML' }}</p>
-        <q-btn-toggle
-          v-model="outputFormat"
-          toggle-color="accent"
-          text-color="secondary"
-          :options="[
-            { label: 'JSON', value: 'json' },
-            { label: 'XML', value: 'xml' }
-          ]"
-          @update:model-value="updateOutput"
-          dense
-        />
-        <q-btn-group push>
-          <q-btn
-            label="Download"
-            color="accent"
-            text-color="secondary"
-            @click="downloadOutputBound"
-            dense
-          />
-          <q-btn
-            label="Kopieren"
-            color="accent"
-            text-color="secondary"
-            @click="copyToClipboardBound"
-            dense
-          />
-        </q-btn-group>
-      </div>
-      <pre>{{ displayOutput }}</pre>
+ <div v-if="exportTerms.length > 0" class="q-mt-xl q-mb-xl">
+  <div class="row justify-between items-center">
+    <p class="text-h6 q-mb-none text-secondary">{{ outputFormat === 'json' ? 'Proto-JSON' : 'Proto-XML' }}</p>
+
+    <div class="row items-center q-gutter-md">
+      <q-btn-toggle
+        v-model="outputFormat"
+        toggle-color="accent"
+        text-color="secondary"
+        :options="[
+          { label: 'JSON', value: 'json' },
+          { label: 'XML', value: 'xml' }
+        ]"
+        @update:model-value="updateOutput"
+        dense
+      />
+      <q-btn
+        label="Download"
+        color="accent"
+        text-color="secondary"
+        @click="downloadOutputBound"
+        dense
+        push
+      />
+      <q-btn
+        label="Kopieren"
+        color="accent"
+        text-color="secondary"
+        @click="copyToClipboardBound"
+        dense
+        push
+      />
     </div>
+  </div>
+  <pre>{{ displayOutput }}</pre>
+</div>
 
     <q-page-sticky position="bottom" expand>
       <div class="row bg-white q-pa-sm justify-evenly full-width" style="max-width: 900px;">
