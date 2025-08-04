@@ -12,7 +12,7 @@
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
-            <li><strong>Normdatenbäume:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus (simulierten) hierarchischen Normdaten.</li>
+            <li><strong>Kontrolliertes Vokabular:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus (simulierten) hierarchischen Normdaten.</li>
             <li><strong>Bestandsdaten:</strong> Exemplarische kuratorische Daten werden vorgeladen.</li>
             <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um ihre Eingaben zu prüfen.</li>
             <li><strong>Hinweise:</strong> Fehlermeldungen weisen auf ausgelassene Pflichtfelder (markiert mit rotem *) hin.</li>
@@ -22,6 +22,7 @@
             <li><strong>Helfer:</strong> <i>Ausklappen</i> und <i>Einklappen</i> für die Übersicht, sowie <i>Zurücksetzen</i> zum Leeren des Formulars.</li>
           </ul>
           <p>Beginnen Sie, indem Sie die benötigten Abschnitte <b>Zustandserfassung</b> und <b>Konservierungskonzept</b> ausfüllen. Anschließend auf <i>Abschicken</i> klicken.</p>
+          <p>Eingegebene Daten werden nicht gespeichert.</p>
         </q-card-section>
         <q-card-actions align="right" class="q-pr-md q-pb-md">
           <q-btn

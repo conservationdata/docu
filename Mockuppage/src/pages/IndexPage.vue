@@ -30,7 +30,6 @@
         text-color="secondary"
         @click="downloadOutputBound"
         dense
-        push
       />
       <q-btn
         label="Kopieren"
@@ -38,7 +37,6 @@
         text-color="secondary"
         @click="copyToClipboardBound"
         dense
-        push
       />
     </div>
   </div>

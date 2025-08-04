@@ -21,7 +21,7 @@
   <!-- Desktop Header Content (your original) -->
   <div class="desktop-header gt-xs row items-center no-wrap full-width" style="justify-content: space-between;">
     <div class="row items-center no-wrap">
-      <img src="icons/02_Blau_Claim_kurz.svg" width="100" height="75"/>
+      <img src="icons/02_Blau_Claim_kurz.svg" width="100" height="75" class="q-ml-md"/>
     </div>
     <q-toolbar-title class="text-center">
       <div class="column items-center">
