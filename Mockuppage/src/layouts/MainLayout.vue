@@ -6,7 +6,7 @@
   <!-- Mobile Header Content -->
   <div class="mobile-header lt-sm full-width">
     <div class="row items-center justify-between q-mb-sm">
-      <img src="icons/02_Blau_Claim_kurz.svg" width="80" height="60"/>
+      <img src="icons/02_Blau_Claim_kurz.svg" width="80" height="60" class="q-ml-md"/>
       <div class="text-right">
         <div class="text-caption text-secondary">LEIZA Department of</div>
         <div class="text-caption text-secondary">Scientific IT</div>

@@ -106,9 +106,6 @@ const decodedEmails = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 8px;
   position: relative;
   min-width: 200px;
 }

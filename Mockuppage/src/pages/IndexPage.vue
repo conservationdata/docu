@@ -44,7 +44,7 @@
 </div>
 
     <q-page-sticky position="bottom" expand>
-      <div class="row bg-white q-pa-sm justify-evenly full-width" style="max-width: 900px;">
+      <div class="row bg-white q-pa-sm q-gutter-sm justify-evenly full-width" style="max-width: 900px;">
       <q-btn
         label="Abschicken"
         color="accent"
