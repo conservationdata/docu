@@ -71,11 +71,11 @@
     <div class="row justify-center">
       <q-breadcrumbs separator="" separator-color="secondary" active-color="">
         <a href="https://www.leiza.de/impressum" target="_blank" style="">
-          <q-breadcrumbs-el label="Impressum"/>
+          <q-breadcrumbs-el label="Impressum" class="text-white"/>
         </a>
         <ContactComponent></ContactComponent>
         <a href="https://www.leiza.de/datenschutz" target="_blank" style="">
-          <q-breadcrumbs-el label="Datenschutz" />
+          <q-breadcrumbs-el label="Datenschutz" class="text-white"/>
         </a>
       </q-breadcrumbs>
     </div>
