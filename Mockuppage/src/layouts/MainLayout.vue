@@ -1,3 +1,5 @@
+<!-- MainLayout.vue -->
+ 
 <template>
  <DialogueComponent/>
 <q-layout view="hHh lpR fFf">

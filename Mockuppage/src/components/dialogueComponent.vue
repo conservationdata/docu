@@ -1,3 +1,5 @@
+<!-- DialogueComponent.vue -->
+
 <template>
     <q-dialog v-model="showIntroDialog" persistent>
       <q-card style="min-width: 400px; max-width: 600px;">

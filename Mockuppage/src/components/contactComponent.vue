@@ -1,3 +1,5 @@
+<!-- ContactComponent.vue -->
+
 <template>
   <div class="contact-container">
     <q-btn
