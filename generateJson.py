@@ -35,7 +35,7 @@ df = pd.read_csv("data.csv", encoding="utf-8")
 df.rename(columns=propertyMatchDict, inplace=True) # rename columns according to propertyMatchDict
 
 # delete column "source" from df
-df = df.drop(columns=["source", "MMS", "Empfohlene Vokabulare"])
+df = df.drop(columns=["source", "Empfohlene Vokabulare"])
 # df = sortNotation(df)
 
 topDf = df[df["broader"] == "top"]
