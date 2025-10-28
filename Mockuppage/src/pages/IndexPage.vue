@@ -5,6 +5,7 @@
         v-for="term in terms"
         :key="term.path.join('-')"
         :term="term"
+        :show-only-required="showOnlyRequired"
       />
     </q-form>
 
@@ -83,6 +84,13 @@
         @click="() => toggleAll(terms, false)"
         dense
       />
+      <q-btn
+        :label="showOnlyRequired ? 'Erweiterter Datensatz' : 'Nur Pflichtfelder'"
+        color="accent"
+        text-color="secondary"
+        @click="() => { showOnlyRequired = !showOnlyRequired; }"
+        dense
+      />
       </div>
     </q-page-sticky>
   </q-page>
@@ -127,6 +135,9 @@ const exportTerms = ref([]);
 const displayOutput = ref('');
 const outputFormat = ref('json');
 const validationError = ref(null);
+const showOnlyRequired = ref(true); // Button for switching between view modes
+                                     // true = "Nur Pflichtfelder" (only show required fields)
+                                     // false = "Erweiterter Datensatz" (show all fields)
 
 const expandNotationsOnStartup = ["F52262", "BAA258"]; // F52262 Zustandserfassung BAA258 Konservierungskonzept
 const excludeNotations = ["F52262", "BAA258"];

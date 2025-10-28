@@ -2,9 +2,11 @@
 
 This document provides an overview of the Quasar Vue3 web application, detailing its scripts, functions, and their purposes.
 
+The path to this documentation file - project.md is docu/Mockuppage/project.md
+
 ## Boot Files
 
-### `boot/axios.js`
+### `docu/Mockuppage/src/boot/axios.js`
 
 **Purpose:** This file configures and integrates the `axios` HTTP client into the Vue application. It creates a pre-configured instance for API communication and makes it globally available within Vue components.
 
@@ -21,7 +23,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 - **`api`**
   - **Purpose:** An `axios` instance created with a default `baseURL` of `'https://api.example.com'`. It is intended for all communications with the application's backend API. It can be imported and used directly in JavaScript modules like Pinia stores.
 
-### `boot/i18n.js`
+### `docu/Mockuppage/src/boot/i18n.js`
 
 **Purpose:** This file initializes and configures the `vue-i18n` library, enabling internationalization (i18n) for the application. It sets up the i18n instance with the necessary translation messages and integrates it with Vue.
 
@@ -37,7 +39,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## Components
 
-### `components/contactComponent.vue`
+### `docu/Mockuppage/src/components/contactComponent.vue`
 
 **Purpose:** This component displays a "Kontakt" button that, when clicked, reveals a list of contact email addresses. The emails are stored in an obfuscated format to deter scrapers and are decoded on the fly. The component is responsive, showing a vertical list on mobile and a horizontal list on desktop.
 
@@ -53,7 +55,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
   - **Logic:** It maps over the `obfuscatedEmails` array, removes all numeric characters from each string, and then splits the string by the character 'x' to reconstruct the email address in the format `firstName.lastName@domain.tld`.
   - **Returns:** An array of decoded email address strings.
 
-### `components/dialogueComponent.vue`
+### `docu/Mockuppage/src/components/dialogueComponent.vue`
 
 **Purpose:** This component presents a persistent welcome dialog to the user upon visiting the application. The dialog provides an introduction to the tool, explains its key features, and gives instructions on how to proceed. It remains on screen until the user explicitly dismisses it.
 
@@ -61,7 +63,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 - **`showIntroDialog`**: A reactive boolean (`ref`) that controls the visibility of the dialog. It is initialized to `true`, making the dialog visible by default.
 
-### `components/inputComponent.vue`
+### `docu/Mockuppage/src/components/inputComponent.vue`
 
 **Purpose:** A versatile and dynamic component that renders different types of form inputs based on the configuration provided in the `term` prop. It is designed to be highly reusable and is central to the application's data entry forms.
 
@@ -95,9 +97,9 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 - The component uses `watch` to synchronize its internal state with the `modelValue` prop and to emit `update:modelValue` events when the user changes the input.
 
-### `components/termComponent.vue`
+### `docu/Mockuppage/src/components/termComponent.vue`
 
-**Purpose:** This is a recursive component responsible for rendering an individual "term" or field within the data entry form. It dynamically displays the term's label, an appropriate input field (via `InputComponent`), and controls for repeating or nesting terms.
+**Purpose:** This is a recursive component responsible for rendering an individual "term" or field within the data entry form. It dynamically displays the term's label, an appropriate input field (via `InputComponent`), and controls for repeating or nesting terms. It also supports conditional rendering based on the "Nur Pflichtfelder" filter.
 
 **Props:**
 
@@ -119,7 +121,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 - **`toggleExpansion()`**: Toggles the visibility of a term's child terms.
 - **`updateValue(newVal)`**: Updates the term's value in the central `formManager`.
 
-### `components/uriSelector.vue`
+### `docu/Mockuppage/src/components/uriSelector.vue`
 
 **Purpose:** This component renders a hierarchical tree structure, allowing users to select a value from a controlled vocabulary. It is used within `InputComponent` when a field is configured to accept a URI.
 
@@ -149,17 +151,17 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## i18n
 
-### `i18n/index.js`
+### `docu/Mockuppage/src/i18n/index.js`
 
 **Purpose:** This file acts as the central hub for the application's translation messages. It imports all the individual language packs and exports them as a single object, which is then used to configure the `vue-i1e-i18n` instance.
 
-### `i18n/en-US/index.js`
+### `docu/Mockuppage/src/i18n/en-US/index.js`
 
 **Purpose:** This file provides the English (US) language pack for the application. It exports an object containing key-value pairs, where each key is a unique identifier for a piece of text, and the value is its English translation.
 
 ## Layouts
 
-### `layouts/MainLayout.vue`
+### `docu/Mockuppage/src/layouts/MainLayout.vue`
 
 **Purpose:** This component serves as the primary visual structure for the application. It defines a consistent layout with a header, a footer, and a main content area for displaying different pages. The layout is responsive, adapting its design for both mobile and desktop viewports.
 
@@ -171,13 +173,13 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## Pages
 
-### `pages/ErrorNotFound.vue`
+### `docu/Mockuppage/src/pages/ErrorNotFound.vue`
 
 **Purpose:** This page is displayed whenever the user tries to access a route that doesn't exist within the application. It serves as a user-friendly "404 Not Found" error page, providing a clear message and a button to navigate back to the homepage.
 
-### `pages/IndexPage.vue`
+### `docu/Mockuppage/src/pages/IndexPage.vue`
 
-**Purpose:** This is the core page of the application, responsible for rendering the main data entry form. It dynamically generates the form based on a JSON data definition and provides a suite of tools for the user to interact with the form, validate their input, and export the final data.
+**Purpose:** This is the core page of the application, responsible for rendering the main data entry form. It dynamically generates the form based on a JSON data definition and provides a suite of tools for the user to interact with the form, validate their input, and export the final data. It also includes a toggle button in the footer button group that allows users to switch between "Nur Pflichtfelder" and "Erweiterter Datensatz" modes to filter the form.
 
 **State:**
 
@@ -202,7 +204,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## Router
 
-### `router/index.js`
+### `docu/Mockuppage/src/router/index.js`
 
 **Purpose:** This file is the main configuration entry point for the application's routing system. It uses the `defineRouter` helper from Quasar to create and configure the Vue Router instance.
 
@@ -215,7 +217,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
     - It instantiates the router with the defined `routes` and a `scrollBehavior` that scrolls to the top of the page on every navigation.
   - **Returns:** The configured Vue Router instance.
 
-### `router/routes.js`
+### `docu/Mockuppage/src/router/routes.js`
 
 **Purpose:** This file defines the application's routes. It exports an array of route objects, where each object maps a URL path to a specific component.
 
@@ -230,7 +232,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## Stores
 
-### `stores/example-store.js`
+### `docu/Mockuppage/src/stores/example-store.js`
 
 **Purpose:** This file serves as a boilerplate example of a Pinia store. It defines a simple store named `counter` to manage a piece of state and is intended to be a template for creating new stores.
 
@@ -246,7 +248,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 - **`increment()`**: A function that increases the value of `counter` by 1.
 
-### `stores/index.js`
+### `docu/Mockuppage/src/stores/index.js`
 
 **Purpose:** This file is the initialization point for the Pinia state management library. It uses the `defineStore` helper from Quasar to create the main Pinia instance for the application.
 
@@ -258,7 +260,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
 
 ## Utils
 
-### `utils/fieldOperations.js`
+### `docu/Mockuppage/src/utils/fieldOperations.js`
 
 **Purpose:** This module contains utility functions for performing operations on the form's data fields, such as filling them with example data or clearing their values.
 
@@ -273,7 +275,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
   - **Purpose:** Recursively clears the `value` and `UnsicherValue` properties of a given term and all its descendants. It also collapses any expanded sections.
   - **Ingoing Parameter:** `node` (Object): The term object to reset.
 
-### `utils/formStructure.js`
+### `docu/Mockuppage/src/utils/formStructure.js`
 
 **Purpose:** This module provides functions for creating and managing the hierarchical structure of the form.
 
@@ -292,7 +294,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
     - `nodes` (Array): The array of term objects to update.
     - `path` (Array): The current path in the hierarchy.
 
-### `utils/formValidation.js`
+### `docu/Mockuppage/src/utils/formValidation.js`
 
 **Purpose:** This module contains functions related to form validation and data transformation for export.
 
@@ -307,7 +309,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
   - **Ingoing Parameter:** `currentTerms` (Array): The array of term objects to transform.
   - **Returns:** A new array of transformed term objects.
 
-### `utils/outputExport.js`
+### `docu/Mockuppage/src/utils/outputExport.js`
 
 **Purpose:** This module contains utility functions for exporting the final form data.
 
@@ -332,7 +334,7 @@ This document provides an overview of the Quasar Vue3 web application, detailing
     - `$q` (Object): The Quasar `useQuasar` composable, for notifications.
   - **Returns:** A function.
 
-### `utils/uiExpansion.js`
+### `docu/Mockuppage/src/utils/uiExpansion.js`
 
 **Purpose:** This module contains utility functions for controlling the expansion and collapse state of the UI components.
 

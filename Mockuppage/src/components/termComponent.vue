@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-sm term-container" :id="termId">
+  <div v-if="shouldShowTerm" class="q-pa-sm term-container" :id="termId">
     <div class="row items-center term-header">
       <h6 class="q-ma-none term-label">
         <a 
@@ -72,6 +72,7 @@
         v-for="child in term.narrower"
         :key="child.path.join('-')"
         :term="child"
+        :show-only-required="showOnlyRequired"
       />
     </div>
   </div>
@@ -85,6 +86,10 @@ const props = defineProps({
   term: {
     type: Object,
     required: true
+  },
+  showOnlyRequired: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -122,6 +127,47 @@ const unsicherValue = computed({
   set: (isChecked) => {
     formManager.updateValueAtPath(props.term.path, isChecked ? 'Ja' : '', 'UnsicherValue');
   }
+});
+
+// Function to check if a term or any of its descendants match the required criteria
+const shouldShowTerm = computed(() => {
+  // If filter is not active, show all terms
+  if (!props.showOnlyRequired) {
+    return true;
+  }
+  
+  // Check if this term matches the criteria
+  const isRequired = props.term.Verpflichtungsgrad === 'Pflicht' || props.term.Verpflichtungsgrad === 'bedingte Pflicht';
+  
+  // If this term is required, show it
+  if (isRequired) {
+    return true;
+  }
+  
+  // If this term is not required, check if any of its descendants are required
+  if (props.term.narrower && props.term.narrower.length > 0) {
+    // Recursively check all descendants
+    const hasRequiredDescendants = (terms) => {
+      for (const term of terms) {
+        // Check if this direct child is required
+        if (term.Verpflichtungsgrad === 'Pflicht' || term.Verpflichtungsgrad === 'bedingte Pflicht') {
+          return true;
+        }
+        // Check if this child has required descendants
+        if (term.narrower && term.narrower.length > 0) {
+          if (hasRequiredDescendants(term.narrower)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    };
+    
+    return hasRequiredDescendants(props.term.narrower);
+  }
+  
+  // If filter is active but term is not required and has no required descendants, don't show it
+  return false;
 });
 </script>
 
