@@ -22,6 +22,7 @@
             <li><strong>Export:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
             <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf <i>Felder</i> ausfüllen, um das komplette Formular mit Beispieldaten zu laden und dann abzuschicken.</li>
             <li><strong>Helfer:</strong> <i>Ausklappen</i> und <i>Einklappen</i> für die Übersicht, sowie <i>Zurücksetzen</i> zum Leeren des Formulars.</li>
+            <li><strong>Erweiterter Datensatz:</strong> Zur Übersichtlichkeit werden nur verpflichtende Felder angezeigt. Mit diesem Knopf lässt sich der volle Datensatz bearbeiten. </li>
           </ul>
           <p>Beginnen Sie, indem Sie die benötigten Abschnitte <b>Zustandserfassung</b> und <b>Konservierungskonzept</b> ausfüllen. Anschließend auf <i>Abschicken</i> klicken.</p>
           <p>Eingegebene Daten werden nicht gespeichert.</p>
