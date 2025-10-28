@@ -14,6 +14,7 @@
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
+            <li><strong>Verpflichtungsgrad:</strong> Farblich codierte Symbole zeigen den Verpflcihtungsgrad der Felder an. Pflicht: <span class="text-red">*</span> Bedingte Pflicht: <span class="text-orange">*</span> Empfohlen: <span class="text-green">°</span> Optional: <span class="text-blue">°</span> </li>
             <li><strong>Kontrolliertes Vokabular:</strong> Baumstrukturen ermöglichen die Auswahl von Daten aus (simulierten) hierarchischen Normdaten.</li>
             <li><strong>Bestandsdaten:</strong> Exemplarische kuratorische Daten werden vorgeladen.</li>
             <li><strong>Validieren:</strong> Klicken Sie auf "Abschicken", um ihre Eingaben zu prüfen.</li>
@@ -22,7 +23,7 @@
             <li><strong>Export:</strong> Diese lassen sich im JSON oder XML-Format kopieren und herunterladen.</li>
             <li><strong>Keine Zeit?:</strong> Nutzen Sie den Knopf <i>Felder</i> ausfüllen, um das komplette Formular mit Beispieldaten zu laden und dann abzuschicken.</li>
             <li><strong>Helfer:</strong> <i>Ausklappen</i> und <i>Einklappen</i> für die Übersicht, sowie <i>Zurücksetzen</i> zum Leeren des Formulars.</li>
-            <li><strong>Erweiterter Datensatz:</strong> Zur Übersichtlichkeit werden nur verpflichtende Felder angezeigt. Mit diesem Knopf lässt sich der volle Datensatz bearbeiten. </li>
+            <li><strong>Minimalmetadatensatz:</strong> Zur Übersichtlichkeit werden nur verpflichtende Felder angezeigt. Der Knopf <i>Erweiterter Datensatz</i> macht empfohlene und optionale Felder ebenfalls sichtbar.  </li>
           </ul>
           <p>Beginnen Sie, indem Sie die benötigten Abschnitte <b>Zustandserfassung</b> und <b>Konservierungskonzept</b> ausfüllen. Anschließend auf <i>Abschicken</i> klicken.</p>
           <p>Eingegebene Daten werden nicht gespeichert.</p>

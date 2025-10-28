@@ -12,9 +12,24 @@
         </a>
         <span 
           v-if="term.Verpflichtungsgrad === 'Pflicht'" 
-          :title="'Verpflichtend'"
+          :title="'Pflicht'"
           class="text-red q-ml-sm required-indicator"
         >*</span>
+        <span 
+          v-if="term.Verpflichtungsgrad === 'bedingte Pflicht'" 
+          :title="'bedingte Pflicht'"
+          class="text-orange q-ml-sm required-indicator"
+        >*</span>
+        <span 
+          v-if="term.Verpflichtungsgrad === 'empfohlen'" 
+          :title="'empfohlen'"
+          class="text-green q-ml-sm required-indicator"
+        >°</span>
+        <span 
+          v-if="term.Verpflichtungsgrad === 'optional'" 
+          :title="'optional'"
+          class="text-blue q-ml-sm required-indicator"
+        >°</span>
       </h6>
       <q-btn
         v-if="term.narrower && term.narrower.length"
