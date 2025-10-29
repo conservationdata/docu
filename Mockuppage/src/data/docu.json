@@ -4,6 +4,7 @@
     "prefLabel": "Objektkennzeichnung",
     "altLabel": "Objektidentifikation",
     "definition": "Übergeordneter Begriff zur eindeutigen Kennzeichnung des zu behandelnden Objektes sowie Erfassung weiterer indentifizierender Merkmale, die eine zweifelsfreie Zuordnung des Objektes während des gesamten Behandlungsprozesses gewährleistet.",
+    "Verpflichtungsgrad": "Pflicht",
     "Wiederholbar": "Nein",
     "narrower": [
       {
@@ -107,6 +108,7 @@
     "notation": "DA2D73",
     "prefLabel": "Objektbeschreibung",
     "definition": "Oberbegriff für Informationen, die die Beschaffenheit, Merkmale und die Bedeutung des Objektes näher beschreiben",
+    "Verpflichtungsgrad": "Pflicht",
     "Wiederholbar": "Nein",
     "narrower": [
       {
@@ -229,6 +231,7 @@
     "prefLabel": "Zustandserfassung",
     "altLabel": "Zustandserhebung",
     "definition": "Oberbegriff für Informationen, die die systematische Erfassung des Zustands eines Objektes zu einem definierten Zeitpunkt dokumentieren.",
+    "Verpflichtungsgrad": "Pflicht",
     "Wiederholbar": "Ja",
     "narrower": [
       {
