@@ -17,7 +17,7 @@
         >*</span>
         <span 
           v-if="term.Verpflichtungsgrad === 'bedingte Pflicht'" 
-          :title="'bedingte Pflicht'"
+          :title="'bedingte Pflicht (Pflicht, falls vorhanden)'"
           class="text-orange q-ml-sm required-indicator"
         >*</span>
         <span 

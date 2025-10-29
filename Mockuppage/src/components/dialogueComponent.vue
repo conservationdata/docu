@@ -13,7 +13,7 @@
           <p><strong> Funktionen:</strong></p>
           <ul>
             <li><strong>Datenfelder:</strong> Geben Sie Informationen in die bereitgestellten Felder ein.</li>
-            <li><strong>Verpflichtungsgrad:</strong> Farblich codierte Symbole zeigen den Verpflichtungsgrad der Felder an. 
+            <li><strong>Verpflichtungsgrad:</strong> Farblich codierte Symbole zeigen den Verpflichtungsgrad an. 
               <ul>
                 <li>Pflicht: <span class="text-red">*</span> </li> 
                 <li>bedingte Pflicht (Pflicht, falls vorhanden): <span class="text-orange">*</span> </li>
