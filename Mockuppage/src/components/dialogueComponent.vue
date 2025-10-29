@@ -16,7 +16,7 @@
             <li><strong>Verpflichtungsgrad:</strong> Farblich codierte Symbole zeigen den Verpflichtungsgrad an. 
               <ul>
                 <li>Pflicht: <span class="text-red">*</span> </li> 
-                <li>bedingte Pflicht (Pflicht, falls vorhanden): <span class="text-orange">*</span> </li>
+                <li>bedingte Pflicht (Pflicht, falls Daten bekannt): <span class="text-orange">*</span> </li>
                 <li>Empfohlen: <span class="text-blue">°</span> </li>
                 <li>Optional: <span class="text-gray">°</span> </li>
               </ul>
