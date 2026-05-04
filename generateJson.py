@@ -13,7 +13,7 @@ def sortNotation(df):
     i = 0
     changeDict = {}
     for index, row in df.iterrows():
-        if row["prefLabel"] and isinstance(row["prefLabel"], str) and row["notation"] and isinstance(row["notation"], str):
+        if row["prefLabel@de"] and isinstance(row["prefLabel@de"], str) and row["notation"] and isinstance(row["notation"], str):
             oldNotation = row['notation'].strip()
             newNotation = uuids[i]
             i += 1
@@ -35,7 +35,7 @@ df = pd.read_csv("data.csv", encoding="utf-8")
 df.rename(columns=propertyMatchDict, inplace=True) # rename columns according to propertyMatchDict
 
 # delete column "source" from df
-df = df.drop(columns=["source", "Empfohlene Vokabulare"])
+df = df.drop(columns=["source"])
 # df = sortNotation(df)
 
 topDf = df[df["broader"] == "top"]
@@ -46,8 +46,8 @@ def getChildren(notation):
     childrenDf = df[df["broader"] == notation]
     childrenArray = []
     for index, row in childrenDf.iterrows():
-        if row["prefLabel"] and isinstance(row["prefLabel"], str) and row["notation"] and isinstance(row["notation"], str):
-            notation_child, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis, Typ, Baum, Einheit, Unsicher = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"], row["type"], row["tree"], row["unit"], row["Unsicher"]
+        if row["prefLabel@de"] and isinstance(row["prefLabel@de"], str) and row["notation"] and isinstance(row["notation"], str):
+            notation_child, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis, Typ, Baum, Einheit, Unsicher = row["notation"], row["prefLabel@de"], row["altLabel@de"], row["definition@de"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"], row["type"], row["tree"], row["unit"], row["Unsicher"]
             # Fixed: Use notation_child to avoid variable name conflict
             narrower = getChildren(notation_child)
             propertyTuples = [("notation", notation_child), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("Verwendungshinweis", Verwendungshinweis), ("Typ", Typ), ("Baum", Baum), ("Einheit", Einheit), ("Unsicher", Unsicher), ("narrower", narrower)]
@@ -61,8 +61,8 @@ def getChildren(notation):
     return childrenArray
 
 for index, row in topDf.iterrows():
-    if row["prefLabel"] and isinstance(row["prefLabel"], str) and row["notation"] and isinstance(row["notation"], str):
-        notation, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis, Typ, Baum, Einheit, Unsicher = row["notation"], row["prefLabel"], row["altLabel"], row["definition"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"], row["type"], row["tree"], row["unit"], row["Unsicher"]
+    if row["prefLabel@de"] and isinstance(row["prefLabel@de"], str) and row["notation"] and isinstance(row["notation"], str):
+        notation, prefLabel, altLabel, definition, broader, Verpflichtungsgrad, Feldwert, Wiederholbar, Verwendungshinweis, Typ, Baum, Einheit, Unsicher = row["notation"], row["prefLabel@de"], row["altLabel@de"], row["definition@de"], row["broader"], row["Verpflichtungsgrad"], row["Feldwert"], row["Wiederholbar"], row["Verwendungshinweis"], row["type"], row["tree"], row["unit"], row["Unsicher"]
         narrower = getChildren(notation)
         propertyTuples = [("notation", notation), ("prefLabel", prefLabel), ("altLabel", altLabel), ("definition", definition), ("Verpflichtungsgrad",Verpflichtungsgrad), ("Feldwert",Feldwert), ("Wiederholbar",Wiederholbar), ("Verwendungshinweis", Verwendungshinweis), ("Typ", Typ), ("Baum", Baum), ("Einheit", Einheit), ("Unsicher", Unsicher), ("narrower", narrower)]
         topJSON = {}

@@ -11,25 +11,25 @@
         "notation": "B5DD1A",
         "prefLabel": "Objektbenennung",
         "altLabel": "Objekttitel| Objektname| Objektansprache",
-        "definition": "Benennung des konkreten Objektes. \n\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
+        "definition": "Benennung des konkreten Objektes. Kann sich aus einem offiziellen Titel oder aus Objekttyp und beschreibenden Attributen zusammensetzen.\n\nBeispiel: \"Mona-Lisa\", \"rotfiguriger Krater\"",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
-        "Wiederholbar": "Ja",
-        "Verwendungshinweis": "Kann sich aus einem offiziellen Titel oder aus Objekttyp und beschreibenden Attributen zusammensetzen."
+        "Wiederholbar": "Ja"
       },
       {
         "notation": "F7D3DB",
         "prefLabel": "Kennzeichnungsnummer",
         "altLabel": "Inventarnummer, Objektnummer, Signatur, Katalognummer",
-        "definition": "Nummer, die das Objekt eindeutig identifiziert. \n\nBeispiel: \"O.3649\", \"2025-05-21\" ",
+        "definition": "Nummer, die das Objekt eindeutig identifiziert. Dies sollte im Idealfall eine Inventarnummer sein. Da in der Realität nicht alle Objekte eine Inventarnummer haben, sind auch andere Arten von Nummern möglich, die das Objekt eindeutig referenzierbar machen.\n\nBeispiel: \"O.3649\", \"2025-05-21\" ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text ",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Dies sollte im Idealfall eine Inventarnummer sein, aber auch andere Arten von eindeutigen Identifikationsnummern sind möglich.",
         "narrower": [
           {
             "notation": "G59SR3",
             "prefLabel": "Art der Kennzeichnungsnummer",
+            "altLabel": "Kennzeichnungsnummerntyp",
+            "definition": "Angabe, um was für eine Art von Nummer es sich bei der Kennzeichnungsnummer handelt. Ob es sich um eine feste Inventarnummer handelt oder eine temporäre Nummer (z.B. Fundnummer), o.Ä.  ",
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text ",
             "Wiederholbar": "Nein"
@@ -40,10 +40,19 @@
         "notation": "K343FVC",
         "prefLabel": "Weitere Objektnummern",
         "altLabel": "Alternative Nummern",
-        "definition": "Weitere Nummern, die in der Vergangenheit dem Objekt zugeordnet wurden.",
+        "definition": "Weitere Nummern, die in der Vergangenheit dem Objekt zugeordnet wurden und erfasst werden sollen.",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text ",
-        "Wiederholbar": "Ja"
+        "Wiederholbar": "Ja",
+        "narrower": [
+          {
+            "notation": "LGPT6AC",
+            "prefLabel": "Art der weiteren Objektnummer",
+            "definition": "Angabe, um was für eine Art von weitere Objektnummer es sich handelt. \n\nz.B. frühere Inventarnummer, temporäre Nummer, etc.",
+            "Verpflichtungsgrad": "bedingte Pflicht",
+            "Feldwert": "Text"
+          }
+        ]
       },
       {
         "notation": "F9GB13",
@@ -74,6 +83,16 @@
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
+      },
+      {
+        "notation": "FC3322",
+        "prefLabel": "Standort",
+        "definition": "Angabe des regelhaften Aufbewahrungsort des Objekts, außerhalb der Restaurierungseinrichtung.",
+        "Verpflichtungsgrad": "Pflicht",
+        "Feldwert": "Text/URI",
+        "Wiederholbar": "Ja",
+        "Verwendungshinweis": "Bei diesem Feld muss zwischen der internen Erfassung des genauen Standorts und der allgemeinen Standortangabe für die Veröffentlichung des Datensatzes unterschieden werden. Der genaue Standort dient der internen Dokumentation und kann bei Bedarf vertraulich behandelt werden. Für veröffentlichte Datensätze sollte nur der übergeordnete Standort (z. B. Einrichtung,  Ausstellung, Depot) angegeben werden.",
+        "Baum": "{\"label\": \"aktueller Standort\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/CD3346\", \"selectable\": false, \"children\": [{\"label\": \"Leibniz-Zentrum f\\u00fcr Arch\\u00e4ologie (LEIZA)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza\", \"children\": [{\"label\": \"Depot\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-depot\"}, {\"label\": \"Ausstellung\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-ausstellung\"}, {\"label\": \"Labor\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-labor\"}]}, {\"label\": \"Reiss-Engelhorn-Museen (REM)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim\", \"children\": [{\"label\": \"Ausstellung\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-ausstellung\"}, {\"label\": \"Depot\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-depot\"}, {\"label\": \"Atelier\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-atelier\"}]}, {\"label\": \"Restaurierungszentrum D\\u00fcsseldorf (RED)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rzd\"}]}"
       },
       {
         "notation": "F3G8D1",
@@ -153,76 +172,6 @@
         "Verwendungshinweis": "Idealerweise sollte auch die Belastbarkeit dieser Angaben mit erfasst werden. Da es sich häufig um interpretative Zuschreibungen handelt, sollte der Grad der Sicherheit bzw. die zugrundeliegende Beobachtung oder Untersuchung angegeben werden.",
         "Baum": "{\"label\": \"Herstellungstechnik\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/CD3345\", \"selectable\": false, \"children\": [{\"label\": \"F\\u00fcgetechnik\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/fuegetechnik\"}, {\"label\": \"formgebende Technik\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/formgebende-technik\", \"children\": [{\"label\": \"gegossen\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/gegossen\"}, {\"label\": \"getrieben\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/getrieben\"}, {\"label\": \"geschmiedet\", \"uri\": \"https://www.conservation-science.org/ontology/manufacturing-technique/geschmiedet\"}]}]}",
         "Unsicher": "Ja"
-      },
-      {
-        "notation": "DBC278",
-        "prefLabel": "aktuelle Maße",
-        "altLabel": "Abmessungen| Maßangabe| Dimension",
-        "definition": "Angaben zu den räumlichen Dimensionen des Objektes, zum letzten Zeitpunkt der Begutachtung. Die Maße des Objektes können sich im Laufe der Zeit verändern (z.B. durch Beschädigung oder die Zusammensetzung eines zerscherbten Objektes).",
-        "Verpflichtungsgrad": "bedingte Pflicht",
-        "Wiederholbar": "Nein",
-        "narrower": [
-          {
-            "notation": "GF856C",
-            "prefLabel": "Höhe",
-            "definition": "Angabe der vertikalen Ausdehnung eines Objektes von seiner untersten zur höchsten Stelle (Y-Achse).",
-            "Verpflichtungsgrad": "bedingte Pflicht",
-            "Feldwert": "Text",
-            "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
-            "Einheit": "mm,cm,m"
-          },
-          {
-            "notation": "WF436G",
-            "prefLabel": "Breite",
-            "definition": "Angabe der horizontalen Ausdehnung eines Objektes von seiner linken zur rechten Seite in Frontalansicht (X-Achse).",
-            "Verpflichtungsgrad": "bedingte Pflicht",
-            "Feldwert": "Text",
-            "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
-            "Einheit": "mm,cm,m"
-          },
-          {
-            "notation": "QD45G7",
-            "prefLabel": "Tiefe",
-            "definition": "Angabe zur räumlichen Ausdehnung eines Objektes von seiner Vorder- zur Rückseite (Z-Achse). ",
-            "Verpflichtungsgrad": "optional",
-            "Feldwert": "Text",
-            "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
-            "Einheit": "mm,cm,m"
-          },
-          {
-            "notation": "FRG491G",
-            "prefLabel": "Durchmesser",
-            "definition": "Angabe zur größten linearen Ausdehnung eines Objekten mit runder, ovaler oder ringförmiger Grundform, gemessen zwischen zwei gegenüberliegenden Punkten über den geometrischen Mittelpunkt.",
-            "Verpflichtungsgrad": "optional",
-            "Feldwert": "Text",
-            "Wiederholbar": "Nein",
-            "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischem Standard (mm, cm, m) enthalten",
-            "Einheit": "mm,cm,m"
-          }
-        ]
-      },
-      {
-        "notation": "C7C3B7",
-        "prefLabel": "aktuelles Gewicht",
-        "definition": "Angaben zur Masse des Objekts zum letzten Zeitpunkt der Objektuntersuchung",
-        "Verpflichtungsgrad": "optional",
-        "Feldwert": "Text",
-        "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (g oder kg) enthalten",
-        "Einheit": "g,kg,t"
-      },
-      {
-        "notation": "FC3322",
-        "prefLabel": "aktueller Standort",
-        "definition": "Angaben zum letzten bekannten Standort des Objekts.",
-        "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Text/URI",
-        "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Bei diesem Feld muss zwischen der internen Erfassung des genauen Standorts und der allgemeinen Standortangabe für die Veröffentlichung des Datensatzes unterschieden werden. Der genaue Standort dient der internen Dokumentation und kann bei Bedarf vertraulich behandelt werden. Für veröffentlichte Datensätze sollte nur der übergeordnete Standort (z. B. Einrichtung,  Ausstellung, Depot) angegeben werden.",
-        "Baum": "{\"label\": \"aktueller Standort\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/CD3346\", \"selectable\": false, \"children\": [{\"label\": \"Leibniz-Zentrum f\\u00fcr Arch\\u00e4ologie (LEIZA)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza\", \"children\": [{\"label\": \"Depot\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-depot\"}, {\"label\": \"Ausstellung\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-ausstellung\"}, {\"label\": \"Labor\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/leiza-labor\"}]}, {\"label\": \"Reiss-Engelhorn-Museen (REM)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim\", \"children\": [{\"label\": \"Ausstellung\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-ausstellung\"}, {\"label\": \"Depot\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-depot\"}, {\"label\": \"Atelier\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rem-mannheim-atelier\"}]}, {\"label\": \"Restaurierungszentrum D\\u00fcsseldorf (RED)\", \"uri\": \"https://www.conservation-science.org/ontology/current-location/rzd\"}]}"
       }
     ]
   },
@@ -238,14 +187,16 @@
         "notation": "G5TA85",
         "prefLabel": "Anlass der Zustandserfassung",
         "altLabel": "Grund der Zustandserfassung",
+        "definition": "Angaben, vor welchem Hintergrund die Zustandserfassung durchgeführt wurde. \n\nZum Beispiel im Zuge der Neu-Aufnahme eines Objektes in die Sammlung, in Vor- oder Nachbereitung einer konservatorisch-restauratorischen Maßnahme, vor oder nach einer Leihnahme, etc. ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
+        "Wiederholbar": "Nein",
         "narrower": [
           {
             "notation": "A8ABBA",
             "prefLabel": "Erfassungszeitpunkt",
             "altLabel": "Zeitpunkt der Erfassung",
-            "definition": "Angaben ob es sich bei dem erfassten Zustand um den Zeitpunkt vor, nach oder zwischen einem konservatorisch-restauratorischen Eingriff handelt oder der Zustand beispielsweise im Zuge eines Monitorings, ohne anschließendem Eingriff, erfasst wurde. \n\nDer Zustand vor und nach einem Eingriff sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen sind bei Bedarf möglich.",
+            "definition": "Ergänzende Angaben, im Falle einer Zustandserfassung aufgrund konservatorisch-restauratorischer Maßnahme, ob es sich bei dem erfassten Zustand um den Zeitpunkt vor (Vorzustand), nach (Endzustand) oder zwischen der Maßnahme handelt.\n\nDer Zustand vor und nach einer Maßnahme sollte dabei verpflichtend erfasst werden. Weitere Zustandserfassungen zwischen verschiedenen Maßnahmen sind bei Bedarf möglich.",
             "Verpflichtungsgrad": "bedingte Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
@@ -262,7 +213,7 @@
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
-        "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
+        "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. Im Falle der Nacherfassung ",
         "Typ": "{\n    \"type\": \"date\"\n}"
       },
       {
@@ -318,9 +269,86 @@
             "altLabel": "Erhaltungszustand",
             "definition": "Beschreibung der physischen Merkmale und Eigenschaften des Objektes wie Vollständigkeit, Stabilität, Festigkeit, Maße, Feuchtigkeitsgehalt, etc. ",
             "Verpflichtungsgrad": "Pflicht",
-            "Feldwert": "Text/URI",
             "Wiederholbar": "Ja",
-            "Baum": "{\"label\": \"Physischer Objektzustand\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/CD3348\", \"selectable\": false, \"children\": [{\"label\": \"Stabilit\\u00e4t\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stability\", \"children\": [{\"label\": \"stabil\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stable\"}, {\"label\": \"instabil\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/unstable\"}]}, {\"label\": \"Vollst\\u00e4ndigkeit\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/completeness\", \"children\": [{\"label\": \"vollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/complete\"}, {\"label\": \"unvollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/incomplete\"}, {\"label\": \"weitgehend vollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/largely-complete\"}]}]}"
+            "Baum": "{\"label\": \"Physischer Objektzustand\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/CD3348\", \"selectable\": false, \"children\": [{\"label\": \"Stabilit\\u00e4t\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stability\", \"children\": [{\"label\": \"stabil\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/stable\"}, {\"label\": \"instabil\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/unstable\"}]}, {\"label\": \"Vollst\\u00e4ndigkeit\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/completeness\", \"children\": [{\"label\": \"vollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/complete\"}, {\"label\": \"unvollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/incomplete\"}, {\"label\": \"weitgehend vollst\\u00e4ndig\", \"uri\": \"https://www.conservation-science.org/ontology/physical-condition/largely-complete\"}]}]}",
+            "narrower": [
+              {
+                "notation": "CA8K78",
+                "prefLabel": "Vollständigkeit",
+                "definition": "Angabe zum Vorhandensein aller ursprünglichen Bestandteile oder Elemente eines Objektes.",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text/URI",
+                "Wiederholbar": "nein"
+              },
+              {
+                "notation": "GVB7T9",
+                "prefLabel": "Stabilität",
+                "definition": "Angaben zur Fähigkeit des Objektes bei physischer Einwirkung seine Form oder Struktur bei zu behalten.",
+                "Verpflichtungsgrad": "empfohlen",
+                "Feldwert": "Text/URI",
+                "Wiederholbar": "ja"
+              },
+              {
+                "notation": "DBC278",
+                "prefLabel": "aktuelle Maße",
+                "altLabel": "Abmessungen| Maßangabe| Dimension",
+                "definition": "Angaben zu den räumlichen Dimensionen des Objektes, zum letzten Zeitpunkt der Begutachtung. Die Maße des Objektes können sich im Laufe der Zeit verändern (z.B. durch Beschädigung oder die Zusammensetzung eines zerscherbten Objektes).",
+                "Verpflichtungsgrad": "bedingte Pflicht",
+                "Wiederholbar": "Nein",
+                "narrower": [
+                  {
+                    "notation": "GF856C",
+                    "prefLabel": "Höhe",
+                    "definition": "Angabe der vertikalen Ausdehnung eines Objektes von seiner untersten zur höchsten Stelle (Y-Achse).",
+                    "Verpflichtungsgrad": "bedingte Pflicht",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein",
+                    "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
+                    "Einheit": "mm,cm,m"
+                  },
+                  {
+                    "notation": "WF436G",
+                    "prefLabel": "Breite",
+                    "definition": "Angabe der horizontalen Ausdehnung eines Objektes von seiner linken zur rechten Seite in Frontalansicht (X-Achse).",
+                    "Verpflichtungsgrad": "bedingte Pflicht",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein",
+                    "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
+                    "Einheit": "mm,cm,m"
+                  },
+                  {
+                    "notation": "QD45G7",
+                    "prefLabel": "Tiefe",
+                    "definition": "Angabe zur räumlichen Ausdehnung eines Objektes von seiner Vorder- zur Rückseite (Z-Achse). ",
+                    "Verpflichtungsgrad": "optional",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein",
+                    "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (mm, cm, m) enthalten",
+                    "Einheit": "mm,cm,m"
+                  },
+                  {
+                    "notation": "FRG491G",
+                    "prefLabel": "Durchmesser",
+                    "definition": "Angabe zur größten linearen Ausdehnung eines Objektes mit runder, ovaler oder ringförmiger Grundform, gemessen zwischen zwei gegenüberliegenden Punkten über dem geometrischen Mittelpunkt.",
+                    "Verpflichtungsgrad": "optional",
+                    "Feldwert": "Text",
+                    "Wiederholbar": "Nein",
+                    "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischem Standard (mm, cm, m) enthalten",
+                    "Einheit": "mm,cm,m"
+                  }
+                ]
+              },
+              {
+                "notation": "C7C3B7",
+                "prefLabel": "aktuelles Gewicht",
+                "definition": "Angaben zur Masse des Objekts zum letzten Zeitpunkt der Objektuntersuchung",
+                "Verpflichtungsgrad": "optional",
+                "Feldwert": "Text",
+                "Wiederholbar": "Nein",
+                "Verwendungshinweis": "Die Angaben sollten sowohl den numerischen Wert als auch die Maßeinheit nach metrischem System im jeweils fachspezifischen Standard (g oder kg) enthalten",
+                "Einheit": "g,kg,t"
+              }
+            ]
           },
           {
             "notation": "AA6941",
@@ -378,7 +406,7 @@
       {
         "notation": "G7F25F",
         "prefLabel": "Zuständige Person (Untersuchung)",
-        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. \n",
+        "definition": "Benennung der Person, die die Untersuchung durchgeführt hat bzw. für diese verantwortlich ist. ",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -387,7 +415,7 @@
       {
         "notation": "G76B7G",
         "prefLabel": "Durchführende Einrichtung (Untersuchung)",
-        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. \n\n",
+        "definition": "Benennung der Einrichtung, die die Untersuchung durchgeführt hat. ",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text/URI",
         "Wiederholbar": "Nein",
@@ -525,7 +553,7 @@
         "notation": "D3AF3A",
         "prefLabel": "Datum der Probennahme",
         "altLabel": "Datum der Beprobung",
-        "definition": "Datum, an dem die Probe aus dem Objekt entnommen wurde.\n\nAuch vage Angaben über den genauen Zeitpunkt einer Untersuchung, z.B. bei der Nacherfassung historischer Untersuchungen, sind Informationen. Auch die Angabe \"unbekannt\" ist möglich.",
+        "definition": "Datum, an dem die Probe aus dem Objekt entnommen wurde.\n\nAuch vage Angaben über den genauen Zeitpunkt der Probennahme, z.B. bei der Nacherfassung historischer Unterlagen, sind Informationen. Auch die Angabe \"unbekannt\" ist möglich.",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
@@ -584,7 +612,7 @@
     "notation": "BAA258",
     "prefLabel": "Erhaltungskonzept",
     "altLabel": "Restaurierungskonzept| Konservierungskonzept| Konservierungsplanung| Konservierungs-Restaurierungsplanung|Behandlungskonzept| Maßnahmenkonzept",
-    "definition": "Oberbegriff für Informationen, die im Vorfeld des Eingriffs zur Entscheidung und Koordination der durchgeführte(n) Maßnahmen(n) erfasst werden. ",
+    "definition": "Oberbegriff für sämtliche Informationen, die im Zuge der Planung, Vorbereitung und Durchführung einer Erhaltungsmaßnahme erfasst werden. ",
     "Verpflichtungsgrad": "Pflicht",
     "Wiederholbar": "Ja",
     "narrower": [
@@ -609,7 +637,7 @@
         "notation": "DA9CGG",
         "prefLabel": "Erhaltungsmaßnahme",
         "altLabel": "Konservierung| Restaurierung| Konservierung-Restaurierung| Bestandserhaltung| Durchgeführte Maßnahme",
-        "definition": "Oberbegriff für die Sammlung an Angaben, die zur konkreten Maßnahme erfasst werden.",
+        "definition": "Oberbegriff für die Angaben, die zur Durchführung einer konkreten Maßnahme erfasst werden.",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Wiederholbar": "Ja",
         "narrower": [
@@ -617,7 +645,7 @@
             "notation": "GF41DG",
             "prefLabel": "Zuständige Restaurierungseinrichtung ",
             "altLabel": "Werkstatt, Labor, Atelier, Restaurierungswerkstatt",
-            "definition": "Benennung der Einrichtung, in der die jeweilige Maßnahme durchgeführt würde. Der Begriff \"Einrichtung\" wurde dabei als generischer Überbegriff verwendet, um individuelle Bezeichnungen wie \"Werkstatt\", \"Atelier\", \"Labor\", etc. unter einem Begriff zu vereinen. Institutionen können den jeweils in ihrem Arbeitsalltag verwendeten Begriff auf diesen Überbegriff mappen, ohne ihre eigene hausinterne Terminologie verändern zu müssen.",
+            "definition": "Benennung der Einrichtung, in der die jeweilige Maßnahme durchgeführt wurde. Der Begriff \"Einrichtung\" wurde dabei als generischer Überbegriff verwendet, um individuelle Bezeichnungen wie \"Werkstatt\", \"Atelier\", \"Labor\", etc. unter einem Begriff zu vereinen. Institutionen können den jeweils in ihrem Arbeitsalltag verwendeten Begriff auf diesen Überbegriff mappen, ohne ihre eigene hausinterne Terminologie verändern zu müssen.",
             "Verpflichtungsgrad": "Pflicht",
             "Feldwert": "Text",
             "Wiederholbar": "Nein",
@@ -685,7 +713,7 @@
             "narrower": [
               {
                 "notation": "CGC619",
-                "prefLabel": "Verwendetes Material (Erhaltungsmaßnahme)",
+                "prefLabel": "Verwendetes Material (Eingriff)",
                 "definition": "Benennung des bzw. der Materialien, die für die jeweilige konservatorische und/oder restauratorische Maßnahme verwendet wurden.",
                 "Verpflichtungsgrad": "Pflicht",
                 "Feldwert": "Text/URI",
@@ -801,7 +829,7 @@
   {
     "notation": "C93638",
     "prefLabel": "Präventive Konservierung",
-    "definition": "Übergeordneter Begriff zur Erfassung aller Angaben bezüglich vorbeugender Maßnahmen, die ohne direkten Eingriff am Objekt selbst darauf abzielen Schäden am Objekt zu vermindern.",
+    "definition": "Übergeordneter Begriff zur Erfassung aller Angaben bezüglich vorbeugender Maßnahmen, die ohne direkten Eingriff am Objekt selbst darauf abzielen, Schäden am Objekt zu vermindern.",
     "Verpflichtungsgrad": "empfohlen",
     "Wiederholbar": "Nein",
     "narrower": [
@@ -997,7 +1025,7 @@
       },
       {
         "notation": "F285B2",
-        "prefLabel": "Bearbeiter*in des Datensatzes",
+        "prefLabel": "Bearbeiter*in",
         "definition": "Angaben zur Person (Name, ggfs. Funktion) der für den Bericht verantwortlichen Person.",
         "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
@@ -1038,6 +1066,23 @@
         "altLabel": "Nutzungsrechte",
         "definition": "Angaben zum Urheberrecht bzw. der Nutzungsrechte des Berichtes",
         "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "G50P34",
+        "prefLabel": "Sprache",
+        "definition": "Angaben zur Sprache, in der der Bericht vorliegt.",
+        "Verpflichtungsgrad": "empfohlen",
+        "Feldwert": "Text",
+        "Wiederholbar": "Nein"
+      },
+      {
+        "notation": "K543W2",
+        "prefLabel": "Datensatzkennung",
+        "altLabel": "ID Datensatz",
+        "definition": "Eindeutige Kennung, die den Bericht referenzierbar macht.",
+        "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein"
       }
