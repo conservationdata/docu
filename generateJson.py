@@ -25,7 +25,13 @@ def sortNotation(df):
     return df
 
 link = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRb0tjnjkyjzReZ_--dYJOD4rbl1_iV8EdVTFXATh9ie6u3bRAeEYYrMNKZF0AcM_PQJkQbmZyGFfYe/pub?gid=0&single=true&output=csv"
-csv = text = requests.get(link).text.encode("ISO-8859-1").decode()
+
+# csv = text = requests.get(link).text.encode("ISO-8859-1").decode()
+
+response = requests.get(link)
+response.encoding = "utf-8"  # force correct decoding, don't rely on guesswork
+csv = response.text
+
 propertyMatchDict = {"identifier":"notation","description":"definition","parent":"broader", "note (source)": "source"}
 
 with open("data.csv", "w", encoding="utf-8") as f:
