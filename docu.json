@@ -79,7 +79,7 @@
         "prefLabel": "Eingangsdatum",
         "definition": "Datum, an dem das Objekt in die aktuell zuständige Sammlung aufgenommen wurde. An dieser Stelle ist (noch) nicht das Datum, an dem das Objekt in die Restaurierungseinrichtung eingeliefert wurde gemeint. ",
         "Verpflichtungsgrad": "bedingte Pflicht",
-        "Feldwert": "Text",
+        "Feldwert": "Date/Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -96,8 +96,8 @@
       },
       {
         "notation": "F3G8D1",
-        "prefLabel": "Ansprechperson",
-        "altLabel": "Ansprechpartner:in",
+        "prefLabel": "Ansprechpartner:in",
+        "altLabel": "Ansprechperson",
         "definition": "Benannte Person, die für Rückfragen in Bezug auf das Objekt und den Umgang mit diesem kontaktiert werden kann. Dies kann bei Privatbesitz der/die Eigentümer:in sein oder bei Objekten aus öffentlichen Einrichtungen z.B. der/die zuständige Kurator:in.  ",
         "Verpflichtungsgrad": "optional",
         "Feldwert": "Text/URI ",
@@ -200,7 +200,7 @@
         "prefLabel": "Anlass der Zustandserfassung",
         "altLabel": "Grund der Zustandserfassung",
         "definition": "Angaben, vor welchem Hintergrund die Zustandserfassung durchgeführt wurde. \n\nZum Beispiel im Zuge der Neu-Aufnahme eines Objektes in die Sammlung, in Vor- oder Nachbereitung einer konservatorisch-restauratorischen Maßnahme, vor oder nach einer Leihnahme, etc. ",
-        "Verpflichtungsgrad": "bedingte Pflicht",
+        "Verpflichtungsgrad": "Pflicht",
         "Feldwert": "Text",
         "Wiederholbar": "Nein",
         "narrower": [
@@ -223,7 +223,7 @@
         "altLabel": "Datum der Erfassung (Zustandserfassung) ",
         "definition": "Angabe des Datums, an dem die Erfassung des Zustandes durchgeführt wurde. ",
         "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Text",
+        "Feldwert": "DateText",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -405,7 +405,7 @@
         "definition": "Beschreibung von Spuren früherer, nicht dokumentierter konservatorisch-restauratorischer Eingriffe am Objekt sowie der vermuteten Behandlungsmaßnahmen, die diese Spuren verursacht haben könnten.",
         "Verpflichtungsgrad": "empfohlen",
         "Feldwert": "Text",
-        "Wiederholbar": "Nein"
+        "Wiederholbar": "Ja"
       }
     ]
   },
@@ -451,7 +451,7 @@
         "altLabel": "Datum der Untersuchung",
         "definition": "Datum, an dem die jeweilige Untersuchung durchgeführt wurde.\n\nAuch vage Angaben über den genauen Zeitpunkt einer Untersuchung, z.B. bei der Nacherfassung historischer Untersuchungen, sind Informationen. Auch die Angabe \"unbekannt\" ist möglich.",
         "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Text",
+        "Feldwert": "Date/Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -537,7 +537,7 @@
   },
   {
     "notation": "CD5C3F",
-    "prefLabel": "Probenahme",
+    "prefLabel": "Probennahme",
     "altLabel": "Beprobung| Probenentnahme",
     "definition": "Containerbegriff für Informationen, die die systematische Entnahme von Materialproben aus einem Objekt für Analyse- und Untersuchungszwecke dokumentieren.",
     "Verpflichtungsgrad": "bedingte Pflicht",
@@ -545,7 +545,7 @@
     "narrower": [
       {
         "notation": "C8CG15",
-        "prefLabel": "Zuständige Person (Probenahme)",
+        "prefLabel": "Zuständige Person (Probennahme)",
         "definition": "Benennung der Person, die die Entnahme der Probe durchgeführt hat bzw. für diese verantwortlich ist. ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text",
@@ -554,7 +554,7 @@
       },
       {
         "notation": "F72743",
-        "prefLabel": "Durchführende Einrichtung (Probenahme)",
+        "prefLabel": "Durchführende Einrichtung (Probennahme)",
         "definition": "Benennung der Einrichtung, die die Probenentnahme durchgeführt hat. ",
         "Verpflichtungsgrad": "bedingte Pflicht",
         "Feldwert": "Text/URI",
@@ -568,7 +568,7 @@
         "altLabel": "Datum der Beprobung",
         "definition": "Datum, an dem die Probe aus dem Objekt entnommen wurde.\n\nAuch vage Angaben über den genauen Zeitpunkt der Probennahme, z.B. bei der Nacherfassung historischer Unterlagen, sind Informationen. Auch die Angabe \"unbekannt\" ist möglich.",
         "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Text",
+        "Feldwert": "Date/Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -593,7 +593,7 @@
       },
       {
         "notation": "C33D85",
-        "prefLabel": "Anlass der Probenahme",
+        "prefLabel": "Anlass der Probennahme",
         "altLabel": "Grund der Beprobung",
         "definition": "Hintergrundinformationen, warum die Probe entnommen wurde. Angabe zur Fragestellung, die mit der Probennahme bearbeitet werden soll, oder der geplanten Untersuchungsart.\n\nBeispiel: Materialbestimmung, Altersdatierung",
         "Verpflichtungsgrad": "bedingte Pflicht",
@@ -602,7 +602,7 @@
       },
       {
         "notation": "F58F6D",
-        "prefLabel": "Stelle der Probenahme",
+        "prefLabel": "Stelle der Probennahme",
         "altLabel": "Lokalisation der Probennahme",
         "definition": "Angabe, an welcher Stelle des Objekts die Probe entnommen wurde. Möglichst genaue Beschreibung des Probenortes zur späteren Zuordnung.\n\nBeispiele: Vorderseite, linker unterer Rand, Bruchkante der Scherbe, Sockelinnenseite",
         "Verpflichtungsgrad": "Pflicht",
@@ -756,7 +756,7 @@
                     "prefLabel": "Herstellungsdatum",
                     "definition": "Erfassung des Produktions- oder Abfülldatums industrieller Produkte zur Nachvollziehbarkeit von Rezepturänderungen und Qualitätsschwankungen. Dient der Rückverfolgung von Chargen bei ungewöhnlichen Vorkommnissen und ermöglicht das Einholen relevanter Hintergrundinformationen zur Langzeitstabilität",
                     "Verpflichtungsgrad": "optional",
-                    "Feldwert": "Text",
+                    "Feldwert": "Date/Text",
                     "Wiederholbar": "Nein",
                     "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
                     "Typ": "{\n    \"type\": \"date\"\n}"
@@ -800,7 +800,7 @@
         "prefLabel": "Datum der Gefährdungsbewertung",
         "definition": "Erfassung des Datums, an dem die Gefährdungsbewertung durchgeführt wurde.",
         "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Date/String",
+        "Feldwert": "Date/Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -935,7 +935,7 @@
             "prefLabel": "Datum des Monitoring",
             "definition": "Zeitpunkt der durchgeführten Kontrollmaßnahme zur chronologischen Dokumentation und Nachvollziehbarkeit",
             "Verpflichtungsgrad": "bedingte Pflicht",
-            "Feldwert": "Date/ String",
+            "Feldwert": "Date/Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
             "Typ": "{\n    \"type\": \"date\"\n}"
@@ -1023,7 +1023,7 @@
         "prefLabel": "Erstellungsdatum des Datensatzes",
         "definition": "Zeitpunkt, zu dem der Bericht erstellt wurde.",
         "Verpflichtungsgrad": "Pflicht",
-        "Feldwert": "Text",
+        "Feldwert": "Date/Text",
         "Wiederholbar": "Nein",
         "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. ",
         "Typ": "{\n    \"type\": \"date\"\n}"
@@ -1070,7 +1070,7 @@
             "prefLabel": "Änderungsdatum (Datensatz)",
             "definition": "Zeitpunkt, zu dem der Bericht geändert wurde",
             "Verpflichtungsgrad": "empfohlen",
-            "Feldwert": "Date/String",
+            "Feldwert": "Date/Text",
             "Wiederholbar": "Nein",
             "Verwendungshinweis": "Das Datum sollte nach Möglichkeit gemäß ISO 8601 in der Form YYYY-MM-DD erfasst werden. "
           },
